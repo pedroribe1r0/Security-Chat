@@ -1,0 +1,2 @@
+source /home/pedro/Documents/Security-Chat/secure-chat-server/build/gdbinit/symbols
+source /home/pedro/Documents/Security-Chat/secure-chat-server/build/gdbinit/connect

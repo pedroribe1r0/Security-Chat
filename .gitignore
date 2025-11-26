@@ -1,0 +1,41 @@
+# ------------------------------------
+# .gitignore para Projetos ESP-IDF (C/C++)
+# ------------------------------------
+
+# Arquivos e Diretórios de Compilação (ESSENCIAL)
+# Ignora a pasta de saída da compilação, onde estão todos os objetos e binários.
+/build/
+
+# Binários do Firmware
+# Binários finais (imagens de flash)
+*.bin
+*.elf
+*.map
+
+# Arquivos de Configuração de Compilação
+# O CMake gera estes arquivos para rastrear o estado da compilação e caminhos.
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+
+# Arquivos de Componentes Externos (Se você baixou cJSON, etc., para dentro do projeto)
+# Se você tiver componentes externos que não deseja rastrear, liste-os aqui.
+# Exemplo:
+# external/cJSON/build/
+
+# Arquivos de Configuração do ESP-IDF
+# O sdkconfig armazena a configuração do menuconfig. 
+# Geralmente, é melhor rastreá-lo (para reprodutibilidade), 
+# mas se você tiver alterações locais que não devem ir para o Git:
+# sdkconfig 
+
+# Arquivos Temporários e de Log
+# Arquivos que o editor ou sistema operacional podem criar.
+*~
+*.log
+.DS_Store
+*.swp
+.vscode/
+
+# Arquivos do NVS (Se você usar um NVS partition table file)
+# nvs_flash.bin

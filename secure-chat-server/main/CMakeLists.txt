@@ -4,7 +4,9 @@ idf_component_register(SRCS
                     "./src/wifi-connect.c"
                     "./src/register-service.c"
                     "./src/user-repository.c"
-
+                    "./src/hardware_config.c"
+                    "./src/send-msg-service.c"
+                    "./src/msg-repository.c"
                     INCLUDE_DIRS 
                     "." 
                     "include")

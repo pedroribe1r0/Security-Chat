@@ -47,7 +47,7 @@ static Req *parse_json(char *buffer){
 static void socket_server_task(void *pvParameters){
     int sock = socket(AF_INET, SOCK_STREAM, IPPROTO_IP);
 
-    QueueHandle_t registerQueue = (QueueHandle_t) pvParameters;
+    Queues* queues = (Queues*)pvParameters;
 
     if(sock < 0){
         ESP_LOGE(TAG, "Error starting socket server");
@@ -106,7 +106,17 @@ static void socket_server_task(void *pvParameters){
         if(strcmp(input->header, "register") == 0){
             ESP_LOGE(TAG, "Sending to register queue");
 
-            BaseType_t err = xQueueSend(registerQueue, (void*)&input, 0);
+            BaseType_t err = xQueueSend(queues->registerQueue, (void*)&input, 0);
+            if(err != pdTRUE){
+                ESP_LOGE(TAG, "Queue full, closing connection");
+                free(input);
+                close(client_sock);
+            }
+        }
+        else if(strcmp(input->header, "send") == 0){
+            ESP_LOGE(TAG, "Sending to sendMSGQueue");
+
+            BaseType_t err = xQueueSend(queues->sendMsgQueue, (void*)&input, 0);
             if(err != pdTRUE){
                 ESP_LOGE(TAG, "Queue full, closing connection");
                 free(input);
@@ -115,20 +125,26 @@ static void socket_server_task(void *pvParameters){
         }
         else{
             ESP_LOGE(TAG, "Invalid header");
+            cJSON* res;
+            cJSON_AddStringToObject(res, "error", "invalid header");
+            const char* json_string = cJSON_Print(res);
+            send(input->client_sock, json_string, strlen(json_string), 0);
+
             free(input);
             close(client_sock);
         }
     }
 }
 
-void socket_server_start(QueueHandle_t registerQueue)
+void socket_server_start(Queues* queues)
 {
     xTaskCreate(
         socket_server_task,
         "chat_server_task",
         CHAT_SERVER_STACK,
-        (void*)registerQueue,
+        (void*)queues,
         5,
         NULL
     );
 }
+

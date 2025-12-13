@@ -3,6 +3,7 @@
 #include "wifi-connect.h"
 #include "user-repository.h"
 #include "register-service.h"
+#include "send-msg-service.h"
 
 static const char* TAG = "MAIN";
 
@@ -15,6 +16,12 @@ void app_main(void){
     ESP_ERROR_CHECK(ret);
 
     QueueHandle_t registerQueue = xQueueCreate(10, sizeof(Req*)); 
+    QueueHandle_t sendMsgQueue = xQueueCreate(10, sizeof(Req*));
+
+    Queues* queues = (Queues*)malloc(sizeof(Queues)); 
+
+    queues->registerQueue = registerQueue;
+    queues->sendMsgQueue = sendMsgQueue;
 
     ESP_LOGI(TAG, "Connecting to WiFi...");
     wifi_init_sta();
@@ -24,9 +31,12 @@ void app_main(void){
     user_repo_init();
 
     ESP_LOGI(TAG, "Starting Socket Server...");
-    socket_server_start(registerQueue);
+    socket_server_start(queues);
 
     ESP_LOGI(TAG, "Starting Register Service");
     start_register_service(registerQueue);
+
+    ESP_LOGI(TAG, "Startign send message task");
+    start_sendMsg_service(queues->sendMsgQueue);
     
 }

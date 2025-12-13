@@ -22,4 +22,9 @@ typedef struct Req{
     int client_sock;
 } Req;
 
-void socket_server_start(QueueHandle_t registerQueue);
+typedef struct Queues {
+    QueueHandle_t registerQueue;
+    QueueHandle_t sendMsgQueue;
+} Queues;
+
+void socket_server_start(Queues* queues);

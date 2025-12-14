@@ -7,5 +7,3 @@
 #include "cJSON.h"
 
 void start_sendMsg_service(QueueHandle_t sendMsgQueue);
-
-extern char encryptHashCode[10];

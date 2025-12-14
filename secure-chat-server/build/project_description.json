@@ -1,7 +1,7 @@
 {
     "version":            "1.2",
     "project_name":       "secure-chat-server",
-    "project_version":    "5fc9ea3-dirty",
+    "project_version":    "e88e1a6-dirty",
     "project_path":       "/home/pedro/Documents/Security-Chat/secure-chat-server",
     "idf_path":           "/home/pedro/esp/esp-idf",
     "build_dir":          "/home/pedro/Documents/Security-Chat/secure-chat-server/build",
@@ -1525,7 +1525,7 @@
             "managed_reqs": [],
             "managed_priv_reqs": [ "espressif__cjson" ],
             "file": "/home/pedro/Documents/Security-Chat/secure-chat-server/build/esp-idf/main/libmain.a",
-            "sources": [ "/home/pedro/Documents/Security-Chat/secure-chat-server/main/secure-chat-server.c", "/home/pedro/Documents/Security-Chat/secure-chat-server/main/src/socket-server.c", "/home/pedro/Documents/Security-Chat/secure-chat-server/main/src/wifi-connect.c", "/home/pedro/Documents/Security-Chat/secure-chat-server/main/src/register-service.c", "/home/pedro/Documents/Security-Chat/secure-chat-server/main/src/user-repository.c", "/home/pedro/Documents/Security-Chat/secure-chat-server/main/src/hardware_config.c", "/home/pedro/Documents/Security-Chat/secure-chat-server/main/src/send-msg-service.c", "/home/pedro/Documents/Security-Chat/secure-chat-server/main/src/msg-repository.c" ],
+            "sources": [ "/home/pedro/Documents/Security-Chat/secure-chat-server/main/secure-chat-server.c", "/home/pedro/Documents/Security-Chat/secure-chat-server/main/src/socket-server.c", "/home/pedro/Documents/Security-Chat/secure-chat-server/main/src/wifi-connect.c", "/home/pedro/Documents/Security-Chat/secure-chat-server/main/src/register-service.c", "/home/pedro/Documents/Security-Chat/secure-chat-server/main/src/user-repository.c", "/home/pedro/Documents/Security-Chat/secure-chat-server/main/src/hardware_config.c", "/home/pedro/Documents/Security-Chat/secure-chat-server/main/src/send-msg-service.c", "/home/pedro/Documents/Security-Chat/secure-chat-server/main/src/msg-repository.c", "/home/pedro/Documents/Security-Chat/secure-chat-server/main/src/pool-msg-service.c" ],
             "include_dirs": [ ".", "include" ]
         },
         "mbedtls": {

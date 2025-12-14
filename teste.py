@@ -2,105 +2,158 @@ import socket
 import json
 import sys
 import time
+import threading
 
 # --- CONFIGURAÇÕES ---
-SERVER_IP = '192.168.0.29'  # Seu IP
-SERVER_PORT = 3333          
-BUFFER_SIZE = 1024          
+SERVER_IP = '192.168.0.29'  # <--- COLOQUE SEU IP AQUI
+SERVER_PORT = 3333
+POOL_INTERVAL = 2           # Tempo em segundos entre atualizações (Pooling)
 
-# Nome do usuário de teste
-TEST_USER = "tester_01"
+# Cores para o terminal ficarem bonitos
+class Colors:
+    HEADER = '\033[95m'
+    BLUE = '\033[94m'
+    GREEN = '\033[92m'
+    YELLOW = '\033[93m'
+    FAIL = '\033[91m'
+    ENDC = '\033[0m'
+    BOLD = '\033[1m'
 
-def send_request(payload, description, timeout=5):
-    """Função genérica para abrir socket, enviar JSON e receber resposta."""
+# Estado Global
+my_username = ""
+my_hash = ""
+seen_msg_ids = set() # Para não repetir mensagens que já mostramos
+running = True
+
+def send_request(payload, timeout=5):
+    """Abre socket, manda JSON, recebe resposta e fecha socket."""
     try:
-        client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-        #client_socket.settimeout(timeout) # Timeout importante!
+        s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+        s.settimeout(timeout)
+        s.connect((SERVER_IP, SERVER_PORT))
         
-        print(f"\n[{description}] Conectando a {SERVER_IP}:{SERVER_PORT}...")
-        client_socket.connect((SERVER_IP, SERVER_PORT))
+        s.sendall(json.dumps(payload).encode('utf-8'))
         
-        json_payload = json.dumps(payload)
-        print(f"[{description}] Enviando: {json_payload}")
-        client_socket.sendall(json_payload.encode('utf-8'))
+        # Buffer grande para histórico
+        data = s.recv(4096) 
+        s.close()
         
-        # Espera resposta
-        print(f"[{description}] Aguardando resposta...")
-        data = client_socket.recv(BUFFER_SIZE)
+        if not data: return None
+        return json.loads(data.decode('utf-8'))
         
-        client_socket.close()
-        
-        if data:
-            response_str = data.decode('utf-8')
-            print(f"[{description}] Resposta Raw: {response_str}")
-            return json.loads(response_str)
-        else:
-            print(f"[{description}] Sem resposta (Conexão fechada pelo servidor).")
-            return None
-
-    except socket.timeout:
-        print(f"❌ [{description}] Timeout! (Você demorou para apertar o botão?)")
-        return None
     except Exception as e:
-        print(f"❌ [{description}] Erro: {e}")
+        # Silencia erros de timeout no pooling para não sujar a tela
+        if "timed out" not in str(e):
+            # print(f"{Colors.FAIL}Erro de conexão: {e}{Colors.ENDC}")
+            pass
         return None
 
-def run_test():
-    # --- PASSO 1: REGISTRAR (Precisa apertar o botão no ESP32!) ---
-    print("="*40)
-    print("ETAPA 1: REGISTRO (Prepare-se para apertar o botão!)")
-    print("="*40)
+def pooling_thread():
+    """Fica rodando em background pedindo novas mensagens"""
+    global seen_msg_ids
     
-    reg_payload = {
-        "header": "register",
-        "username": TEST_USER
-    }
-    
-    # Timeout de 20 segundos para dar tempo de você ler o LCD e apertar o botão
-    reg_response = send_request(reg_payload, "REGISTER", timeout=20)
-    
-    if not reg_response:
-        return # Falha fatal
+    while running:
+        if not my_hash: 
+            time.sleep(1)
+            continue
 
-    if "error" in reg_response:
-        print(f"❌ Erro no registro: {reg_response['error']}")
-        # Se o erro for "User already registered", podemos tentar prosseguir se soubermos o hash,
-        # mas para teste é melhor reiniciar o ESP32 ou mudar o nome do usuário.
-        return
+        payload = {
+            "header": "pool",
+            "username": my_username,
+            "hashCode": my_hash
+        }
+        
+        resp = send_request(payload, timeout=3)
+        
+        if resp and isinstance(resp, list):
+            # Ordena por ID para mostrar na ordem certa
+            # O ID vem do C como número
+            try:
+                msgs = sorted(resp, key=lambda x: x['id'])
+                
+                for m in msgs:
+                    msg_id = m.get('id')
+                    sender = m.get('user')
+                    content = m.get('msg')
+                    
+                    if msg_id not in seen_msg_ids:
+                        seen_msg_ids.add(msg_id)
+                        
+                        # Formatação bonita
+                        if sender == my_username:
+                            # Minhas mensagens (ignora ou mostra diferente)
+                            pass 
+                        else:
+                            # Mensagem dos outros
+                            print(f"\r{Colors.YELLOW}[{sender}]: {content}{Colors.ENDC}")
+                            # Restaura o prompt de input visualmente
+                            print(f"{Colors.BLUE}[Você]: {Colors.ENDC}", end="", flush=True)
+            except:
+                pass
 
-    # Pega o hash retornado (pode ser hashPass ou encryptHashCode dependendo do seu repo)
-    # Baseado no seu código anterior: cJSON_AddStringToObject(res, "hashPass", hash);
-    user_hash = reg_response.get("hashPass")
-    
-    if not user_hash:
-        print("❌ Erro: Servidor não retornou 'hashPass'.")
-        return
+        time.sleep(POOL_INTERVAL)
 
-    print(f"✅ Registro Sucesso! Hash recebido: {user_hash}")
-    print("Esperando 2 segundos antes de mandar mensagem...")
-    time.sleep(2)
+def main():
+    global my_username, my_hash, running
 
-    # --- PASSO 2: ENVIAR MENSAGEM ---
-    print("\n" + "="*40)
-    print("ETAPA 2: ENVIAR MENSAGEM")
-    print("="*40)
+    print(f"{Colors.HEADER}=== ESP32 SECURE CHAT ==={Colors.ENDC}")
+    print(f"Conectando em {SERVER_IP}:{SERVER_PORT}")
 
-    msg_payload = {
-        "header": "send",     # Verifique se no socket-server.c está "send-msg" ou "chat"
-        "username": TEST_USER,
-        "hashCode": "user_hash",    # A senha que ganhamos no passo 1
-        "msg": "Ola ESP32, funcionando!"
-    }
-
-    msg_response = send_request(msg_payload, "SEND_MSG", timeout=5)
-
-    if msg_response:
-        if "error" in msg_response:
-            print(f"❌ Falha ao enviar msg: {msg_response['error']}")
+    # --- 1. REGISTRO ---
+    while True:
+        my_username = input("Escolha seu Username: ").strip()
+        if not my_username: continue
+        
+        print(f"{Colors.BOLD}Solicitando registro... OLHE PARA O LCD DO ESP32!{Colors.ENDC}")
+        print("Aguardando botão (20s timeout)...")
+        
+        payload = {"header": "register", "username": my_username}
+        resp = send_request(payload, timeout=25) # Tempo longo para o humano
+        
+        if resp and "hashPass" in resp:
+            my_hash = resp['hashPass']
+            print(f"{Colors.GREEN}✅ Acesso Permitido! Token: {my_hash}{Colors.ENDC}")
+            break
+        elif resp and "error" in resp:
+            print(f"{Colors.FAIL}❌ Erro: {resp['error']}{Colors.ENDC}")
+            if "registered" in resp['error']:
+                print("Tente outro nome.")
         else:
-            print("✅ SUCESSO! Mensagem enviada e salva.")
-            print(f"Status: {msg_response.get('status')}")
-            print(f"Msg ecoada: {msg_response.get('msg')}")
+            print(f"{Colors.FAIL}❌ Sem resposta ou Recusado pelo Admin.{Colors.ENDC}")
+            return
 
-if __name__ == '__main__':
-    run_test()
+    # --- 2. INICIA POOLING (RECEBIMENTO) ---
+    t = threading.Thread(target=pooling_thread)
+    t.daemon = True # Mata a thread se o programa fechar
+    t.start()
+    
+    print("-" * 40)
+    print("Chat iniciado! Digite e dê Enter para enviar.")
+    print("-" * 40)
+
+    # --- 3. LOOP DE ENVIO ---
+    try:
+        while True:
+            msg = input(f"{Colors.BLUE}[Você]: {Colors.ENDC}")
+            if not msg: continue
+            
+            # Limpa a linha anterior para não ficar duplicado (estético)
+            sys.stdout.write("\033[F") # Cursor up one line
+            sys.stdout.write("\033[K") # Clear line
+            print(f"{Colors.GREEN}[Você]: {msg}{Colors.ENDC}")
+
+            payload = {
+                "header": "send", # Verifique se no C está "send" ou "send-msg"
+                "username": my_username,
+                "hashCode": my_hash,
+                "msg": msg
+            }
+            
+            send_request(payload)
+            
+    except KeyboardInterrupt:
+        print("\nSaindo...")
+        running = False
+
+if __name__ == "__main__":
+    main()

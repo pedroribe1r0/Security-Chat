@@ -19,6 +19,6 @@ void msg_repo_init(void);
 
 void msg_repo_save(const char* sender, const char* content);
 
-int msg_repo_get_since(ChatMessage* output_buffer);
+ChatMessage* msg_repo_get_all(int* return_count);
 
 #endif

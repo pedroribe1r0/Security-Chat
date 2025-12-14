@@ -103,12 +103,18 @@ static void socket_server_task(void *pvParameters){
 
         input->client_sock = client_sock;
 
+        cJSON* res = NULL;
+
         if(strcmp(input->header, "register") == 0){
             ESP_LOGE(TAG, "Sending to register queue");
 
             BaseType_t err = xQueueSend(queues->registerQueue, (void*)&input, 0);
             if(err != pdTRUE){
-                ESP_LOGE(TAG, "Queue full, closing connection");
+                ESP_LOGE(TAG, "Register queue full, closing connection");
+
+                res = cJSON_CreateObject();
+                cJSON_AddStringToObject(res, "error", "full server, try again later");
+
                 free(input);
                 close(client_sock);
             }
@@ -118,20 +124,43 @@ static void socket_server_task(void *pvParameters){
 
             BaseType_t err = xQueueSend(queues->sendMsgQueue, (void*)&input, 0);
             if(err != pdTRUE){
-                ESP_LOGE(TAG, "Queue full, closing connection");
+                ESP_LOGE(TAG, "Send queue full, closing connection");
+
+                res = cJSON_CreateObject();
+                cJSON_AddStringToObject(res, "error", "full server, try again later");
+
+                free(input);
+                close(client_sock);
+            }
+        }
+        else if(strcmp(input->header, "pool") == 0){
+            ESP_LOGE(TAG, "Sending to pooling queue");
+
+            BaseType_t err = xQueueSend(queues->poolMsgQueue, (void*)&input, 0);
+            if(err != pdTRUE){
+                ESP_LOGE(TAG, "Pool queue full, closing conection");
+
+                res = cJSON_CreateObject();
+                cJSON_AddStringToObject(res, "error", "full server, try again later");
+
                 free(input);
                 close(client_sock);
             }
         }
         else{
             ESP_LOGE(TAG, "Invalid header");
-            cJSON* res;
+            res = cJSON_CreateObject();
             cJSON_AddStringToObject(res, "error", "invalid header");
+            
+            free(input);
+            close(client_sock);
+        }
+
+        if(res != NULL){
             const char* json_string = cJSON_Print(res);
             send(input->client_sock, json_string, strlen(json_string), 0);
 
-            free(input);
-            close(client_sock);
+            cJSON_Delete(res);
         }
     }
 }

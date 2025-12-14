@@ -7,6 +7,7 @@ idf_component_register(SRCS
                     "./src/hardware_config.c"
                     "./src/send-msg-service.c"
                     "./src/msg-repository.c"
+                    "./src/pool-msg-service.c"
                     INCLUDE_DIRS 
                     "." 
                     "include")

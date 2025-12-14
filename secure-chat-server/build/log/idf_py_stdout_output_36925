@@ -1,0 +1,1149 @@
+Command: /home/pedro/.espressif/python_env/idf6.1_py3.10_env/bin/python /home/pedro/esp/esp-idf/tools/idf_monitor.py -p /dev/ttyUSB0 -b 115200 --toolchain-prefix xtensa-esp32-elf- --target esp32 --revision 0 /home/pedro/Documents/Security-Chat/secure-chat-server/build/secure-chat-server.elf /home/pedro/Documents/Security-Chat/secure-chat-server/build/bootloader/bootloader.elf -m '/home/pedro/.espressif/python_env/idf6.1_py3.10_env/bin/python' '/home/pedro/esp/esp-idf/tools/idf.py' '-p' '/dev/ttyUSB0'
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0040,len:6376
+load:0x40078000,len:15900
+ho 0 tail 12 room 4
+load:0x40080400,len:3920
+entry 0x40080644
+[0;32mI (29) boot: ESP-IDF v6.1-dev-828-g41e9060961 2nd stage bootloader[0m
+[0;32mI (29) boot: compile time Nov 25 2025 21:00:15[0m
+[0;32mI (29) boot: Multicore bootloader[0m
+[0;32mI (32) boot: chip revision: v3.0[0m
+[0;32mI (35) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (39) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (42) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (46) boot: Enabling RNG early entropy source...[0m
+[0;32mI (50) boot: Partition Table:[0m
+[0;32mI (53) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (59) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (66) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (72) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (79) boot: End of partition table[0m
+[0;32mI (82) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=1b0f4h (110836) map[0m
+[0;32mI (129) esp_image: segment 1: paddr=0002b11c vaddr=3ffb0000 size=04184h ( 16772) load[0m
+[0;32mI (136) esp_image: segment 2: paddr=0002f2a8 vaddr=40080000 size=00d70h (  3440) load[0m
+[0;32mI (137) esp_image: segment 3: paddr=00030020 vaddr=400d0020 size=8ee58h (585304) map[0m
+[0;32mI (349) esp_image: segment 4: paddr=000bee80 vaddr=40080d70 size=15d70h ( 89456) load[0m
+[0;32mI (386) esp_image: segment 5: paddr=000d4bf8 vaddr=50000000 size=00028h (    40) load[0m
+[0;32mI (397) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (397) boot: Disabling RNG early entropy source...[0m
+[0;32mI (408) cpu_start: Multicore app[0m
+[0;32mI (416) cpu_start: GPIO 3 and 1 are used as console UART I/O pins[0m
+[0;32mI (416) cpu_start: Pro cpu start user code[0m
+[0;32mI (416) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (418) app_init: Application information:[0m
+[0;32mI (422) app_init: Project name:     secure-chat-server[0m
+[0;32mI (427) app_init: App version:      e88e1a6-dirty[0m
+[0;32mI (431) app_init: Compile time:     Dec 14 2025 15:58:28[0m
+[0;32mI (436) app_init: ELF file SHA256:  e3763b8c9...[0m
+[0;32mI (441) app_init: ESP-IDF:          v6.1-dev-828-g41e9060961[0m
+[0;32mI (446) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (450) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (454) efuse_init: Chip rev:         v3.0[0m
+[0;32mI (458) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (464) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (469) heap_init: At 3FFB9DF8 len 00026208 (152 KiB): DRAM[0m
+[0;32mI (474) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (480) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (485) heap_init: At 40096AE0 len 00009520 (37 KiB): IRAM[0m
+[0;32mI (492) spi_flash: detected chip: generic[0m
+[0;32mI (494) spi_flash: flash io: dio[0m
+[0;33mW (497) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;33mW (509) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+[0;32mI (520) main_task: Started on CPU0[0m
+[0;32mI (530) main_task: Calling app_main()[0m
+[0;32mI (550) MAIN: Connecting to WiFi...[0m
+[0;32mI (570) wifi:wifi driver task: 3ffc1f54, prio:23, stack:6656, core=0[0m
+[0;32mI (580) wifi:wifi firmware version: 6a8253a[0m
+[0;32mI (580) wifi:wifi certification version: v7.0[0m
+[0;32mI (580) wifi:config NVS flash: enabled[0m
+[0;32mI (580) wifi:config nano formatting: disabled[0m
+[0;32mI (590) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (590) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (600) wifi:Init management short buffer num: 32[0m
+[0;32mI (600) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (610) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (610) wifi:Init static rx buffer num: 10[0m
+[0;32mI (610) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (620) wifi_init: rx ba win: 6[0m
+[0;32mI (620) wifi_init: accept mbox: 6[0m
+[0;32mI (620) wifi_init: tcpip mbox: 32[0m
+[0;32mI (630) wifi_init: udp mbox: 6[0m
+[0;32mI (630) wifi_init: tcp mbox: 6[0m
+[0;32mI (630) wifi_init: tcp tx win: 5760[0m
+[0;32mI (640) wifi_init: tcp rx win: 5760[0m
+[0;32mI (640) wifi_init: tcp mss: 1440[0m
+[0;32mI (640) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (650) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (650) phy_init: phy_version 4863,a3a4459,Oct 28 2025,14:30:06[0m
+[0;32mI (730) wifi:mode : sta (b0:a7:32:f2:cd:f0)[0m
+[0;32mI (730) wifi:enable tsf[0m
+[0;32mI (730) WIFI_STATION: wifi_init_sta finished.[0m
+[0;32mI (730) WIFI_STATION: Aguardando conexão WiFi...[0m
+[0;32mI (740) wifi:new:<8,0>, old:<1,0>, ap:<255,255>, sta:<8,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (750) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (750) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (760) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (780) wifi:<ba-add>idx:0 (ifx:0, cc:58:30:02:43:61), tid:0, ssn:0, winSize:64[0m
+[0;32mI (780) wifi:<ba-add>idx:1 (ifx:0, cc:58:30:02:43:61), tid:5, ssn:0, winSize:64[0m
+[0;32mI (800) wifi:connected with PEDRO, aid = 1, channel 8, BW20, bssid = cc:58:30:02:43:61[0m
+[0;32mI (800) wifi:security: WPA2-PSK, phy: bgn, rssi: -20[0m
+[0;32mI (800) wifi:pm start, type: 1[0m
+
+[0;32mI (800) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (810) wifi:AP's beacon interval = 102400 us, DTIM period = 1[0m
+[0;32mI (1870) esp_netif_handlers: sta ip: 192.168.0.29, mask: 255.255.255.0, gw: 192.168.0.1[0m
+[0;32mI (1870) WIFI_STATION: got ip:192.168.0.29[0m
+[0;32mI (1870) WIFI_STATION: connected to ap SSID:PEDRO[0m
+[0;32mI (1870) MAIN: Starting Socket Server...[0m
+[1;31mE (1880) SOCKET_SERVER: Socket listening[0m
+[0;32mI (1880) MAIN: Starting Register Task[0m
+[0;32mI (2060) MAIN: Starting Send Message Task[0m
+[0;32mI (2060) MAIN: Starting Pool Message Task[0m
+[0;32mI (2060) main_task: Returned from app_main()[0m
+[1;31mE (10740) SOCKET_SERVER: Payload recived {"header": "register", "username": "Roxo"}[0m
+[1;31mE (10740) SOCKET_SERVER: Sending to register queue[0m
+[1;31mE (10740) SOCKET_SERVER: Socket listening[0m
+[0;32mI (10740) REGISTER_SERVICE: New Request Recived: Roxo[0m
+[0;32mI (13570) USER_REPO: DB: User registrado: Roxo[0m
+[1;31mE (13640) SOCKET_SERVER: Payload recived {"header": "pool", "username": "Roxo", "hashCode": "PhfPycfa6"}[0m
+[1;31mE (13640) SOCKET_SERVER: Sending to pooling queue[0m
+[1;31mE (13640) SOCKET_SERVER: Socket listening[0m
+[0;32mI (13640) POOL_MSG_TASK: Data pool successfull[0m
+[1;31mE (16060) SOCKET_SERVER: Payload recived {"header": "pool", "username": "Roxo", "hashCode": "PhfPycfa6"}[0m
+[1;31mE (16060) SOCKET_SERVER: Sending to pooling queue[0m
+[1;31mE (16060) SOCKET_SERVER: Socket listening[0m
+[0;32mI (16060) POOL_MSG_TASK: Data pool successfull[0m
+[1;31mE (17090) SOCKET_SERVER: Payload recived {"header": "send", "username": "Roxo", "hashCode": "PhfPycfa6", "msg": "teste"}[0m
+[1;31mE (17090) SOCKET_SERVER: Sending to sendMSGQueue[0m
+[1;31mE (17090) SOCKET_SERVER: Socket listening[0m
+[0;32mI (17090) SEND_MSG_TASK: Message saved: teste[0m
+[1;31mE (18340) SOCKET_SERVER: Payload recived {"header": "pool", "username": "Roxo", "hashCode": "PhfPycfa6"}[0m
+[1;31mE (18340) SOCKET_SERVER: Sending to pooling queue[0m
+[1;31mE (18340) SOCKET_SERVER: Socket listening[0m
+[0;32mI (18340) POOL_MSG_TASK: Data pool successfull[0m
+[1;31mE (20770) SOCKET_SERVER: Payload recived {"header": "pool", "username": "Roxo", "hashCode": "PhfPycfa6"}[0m
+[1;31mE (20780) SOCKET_SERVER: Sending to pooling queue[0m
+[1;31mE (20780) SOCKET_SERVER: Socket listening[0m
+[0;32mI (20780) POOL_MSG_TASK: Data pool successfull[0m
+[1;31mE (23050) SOCKET_SERVER: Payload recived {"header": "pool", "username": "Roxo", "hashCode": "PhfPycfa6"}[0m
+[1;31mE (23050) SOCKET_SERVER: Sending to pooling queue[0m
+[1;31mE (23050) SOCKET_SERVER: Socket listening[0m
+[0;32mI (23050) POOL_MSG_TASK: Data pool successfull[0m
+[1;31mE (25480) SOCKET_SERVER: Payload recived {"header": "pool", "username": "Roxo", "hashCode": "PhfPycfa6"}[0m
+[1;31mE (25490) SOCKET_SERVER: Sending to pooling queue[0m
+[1;31mE (25490) SOCKET_SERVER: Socket listening[0m
+[0;32mI (25490) POOL_MSG_TASK: Data pool successfull[0m
+[1;31mE (27940) SOCKET_SERVER: Payload recived {"header": "pool", "username": "Roxo", "hashCode": "PhfPycfa6"}[0m
+[1;31mE (27940) SOCKET_SERVER: Sending to pooling queue[0m
+[1;31mE (27940) SOCKET_SERVER: Socket listening[0m
+[0;32mI (27940) POOL_MSG_TASK: Data pool successfull[0m
+[1;31mE (29370) SOCKET_SERVER: Payload recived {"header": "register", "username": "Weekend"}[0m
+[1;31mE (29380) SOCKET_SERVER: Sending to register queue[0m
+[1;31mE (29380) SOCKET_SERVER: Socket listening[0m
+[0;32mI (29380) REGISTER_SERVICE: New Request Recived: Weekend[0m
+[1;31mE (30210) SOCKET_SERVER: Payload recived {"header": "pool", "username": "Roxo", "hashCode": "PhfPycfa6"}[0m
+[1;31mE (30220) SOCKET_SERVER: Sending to pooling queue[0m
+[1;31mE (30220) SOCKET_SERVER: Socket listening[0m
+[0;32mI (30220) POOL_MSG_TASK: Data pool successfull[0m
+[0;32mI (32260) USER_REPO: DB: User registrado: Weekend[0m
+[1;31mE (32300) SOCKET_SERVER: Payload recived {"header": "pool", "username": "Weekend", "hashCode": "qwWabZbfy"}[0m
+[1;31mE (32300) SOCKET_SERVER: Sending to pooling queue[0m
+[1;31mE (32300) SOCKET_SERVER: Socket listening[0m
+[0;32mI (32300) POOL_MSG_TASK: Data pool successfull[0m
+[1;31mE (32360) SOCKET_SERVER: Payload recived {"header": "pool", "username": "Roxo", "hashCode": "PhfPycfa6"}[0m
+[1;31mE (32360) SOCKET_SERVER: Sending to pooling queue[0m
+[1;31mE (32360) SOCKET_SERVER: Socket listening[0m
+[0;32mI (32360) POOL_MSG_TASK: Data pool successfull[0m
+[1;31mE (34600) SOCKET_SERVER: Payload recived {"header": "send", "username": "Weekend", "hashCode": "qwWabZbfy", "msg": "eai"}[0m
+[1;31mE (34600) SOCKET_SERVER: Sending to sendMSGQueue[0m
+[1;31mE (34600) SOCKET_SERVER: Socket listening[0m
+[0;32mI (34600) SEND_MSG_TASK: Message saved: eai[0m
+[1;31mE (34610) SOCKET_SERVER: Payload recived {"header": "pool", "username": "Weekend", "hashCode": "qwWabZbfy"}[0m
+[1;31mE (34620) SOCKET_SERVER: Sending to pooling queue[0m
+[1;31mE (34620) SOCKET_SERVER: Socket listening[0m
+[0;32mI (34620) POOL_MSG_TASK: Data pool successfull[0m
+[1;31mE (34810) SOCKET_SERVER: Payload recived {"header": "pool", "username": "Roxo", "hashCode": "PhfPycfa6"}[0m
+[1;31mE (34810) SOCKET_SERVER: Sending to pooling queue[0m
+[1;31mE (34810) SOCKET_SERVER: Socket listening[0m
+[0;32mI (34810) POOL_MSG_TASK: Data pool successfull[0m
+[1;31mE (37060) SOCKET_SERVER: Payload recived {"header": "pool", "username": "Weekend", "hashCode": "qwWabZbfy"}[0m
+[1;31mE (37060) SOCKET_SERVER: Sending to pooling queue[0m
+[1;31mE (37060) SOCKET_SERVER: Socket listening[0m
+[0;32mI (37060) POOL_MSG_TASK: Data pool successfull[0m
+[1;31mE (37260) SOCKET_SERVER: Payload recived {"header": "pool", "username": "Roxo", "hashCode": "PhfPycfa6"}[0m
+[1;31mE (37260) SOCKET_SERVER: Sending to pooling queue[0m
+[1;31mE (37270) SOCKET_SERVER: Socket listening[0m
+[0;32mI (37270) POOL_MSG_TASK: Data pool successfull[0m
+[1;31mE (39510) SOCKET_SERVER: Payload recived {"header": "pool", "username": "Weekend", "hashCode": "qwWabZbfy"}[0m
+[1;31mE (39510) SOCKET_SERVER: Sending to pooling queue[0m
+[1;31mE (39520) SOCKET_SERVER: Socket listening[0m
+[0;32mI (39520) POOL_MSG_TASK: Data pool successfull[0m
+[1;31mE (39720) SOCKET_SERVER: Payload recived {"header": "pool", "username": "Roxo", "hashCode": "PhfPycfa6"}[0m
+[1;31mE (39720) SOCKET_SERVER: Sending to pooling queue[0m
+[1;31mE (39720) SOCKET_SERVER: Socket listening[0m
+[0;32mI (39720) POOL_MSG_TASK: Data pool successfull[0m
+[1;31mE (39930) SOCKET_SERVER: Payload recived {"header": "send", "username": "Roxo", "hashCode": "PhfPycfa6", "msg": "bao?"}[0m
+[1;31mE (39930) SOCKET_SERVER: Sending to sendMSGQueue[0m
+[1;31mE (39930) SOCKET_SERVER: Socket listening[0m
+[0;32mI (39930) SEND_MSG_TASK: Message saved: bao?[0m
+[1;31mE (41980) SOCKET_SERVER: Payload recived {"header": "pool", "username": "Weekend", "hashCode": "qwWabZbfy"}[0m
+[1;31mE (41980) SOCKET_SERVER: Sending to pooling queue[0m
+[1;31mE (41980) SOCKET_SERVER: Socket listening[0m
+[0;32mI (41980) POOL_MSG_TASK: Data pool successfull[0m
+[1;31mE (42180) SOCKET_SERVER: Payload recived {"header": "pool", "username": "Roxo", "hashCode": "PhfPycfa6"}[0m
+[1;31mE (42180) SOCKET_SERVER: Sending to pooling queue[0m
+[1;31mE (42180) SOCKET_SERVER: Socket listening[0m
+[0;32mI (42180) POOL_MSG_TASK: Data pool successfull[0m
+[1;31mE (44430) SOCKET_SERVER: Payload recived {"header": "pool", "username": "Weekend", "hashCode": "qwWabZbfy"}[0m
+[1;31mE (44430) SOCKET_SERVER: Sending to pooling queue[0m
+[1;31mE (44430) SOCKET_SERVER: Socket listening[0m
+[0;32mI (44430) POOL_MSG_TASK: Data pool successfull[0m
+[1;31mE (44630) SOCKET_SERVER: Payload recived {"header": "pool", "username": "Roxo", "hashCode": "PhfPycfa6"}[0m
+[1;31mE (44630) SOCKET_SERVER: Sending to pooling queue[0m
+[1;31mE (44640) SOCKET_SERVER: Socket listening[0m
+[0;32mI (44640) POOL_MSG_TASK: Data pool successfull[0m
+[1;31mE (46890) SOCKET_SERVER: Payload recived {"header": "pool", "username": "Weekend", "hashCode": "qwWabZbfy"}[0m
+[1;31mE (46890) SOCKET_SERVER: Sending to pooling queue[0m
+[1;31mE (46890) SOCKET_SERVER: Socket listening[0m
+[0;32mI (46890) POOL_MSG_TASK: Data pool successfull[0m
+[1;31mE (47100) SOCKET_SERVER: Payload recived {"header": "pool", "username": "Roxo", "hashCode": "PhfPycfa6"}[0m
+[1;31mE (47100) SOCKET_SERVER: Sending to pooling queue[0m
+[1;31mE (47100) SOCKET_SERVER: Socket listening[0m
+[0;32mI (47100) POOL_MSG_TASK: Data pool successfull[0m
+[1;31mE (49350) SOCKET_SERVER: Payload recived {"header": "pool", "username": "Weekend", "hashCode": "qwWabZbfy"}[0m
+[1;31mE (49350) SOCKET_SERVER: Sending to pooling queue[0m
+[1;31mE (49350) SOCKET_SERVER: Socket listening[0m
+[0;32mI (49350) POOL_MSG_TASK: Data pool successfull[0m
+[1;31mE (49560) SOCKET_SERVER: Payload recived {"header": "pool", "username": "Roxo", "hashCode": "PhfPycfa6"}[0m
+[1;31mE (49560) SOCKET_SERVER: Sending to pooling queue[0m
+[1;31mE (49560) SOCKET_SERVER: Socket listening[0m
+[0;32mI (49560) POOL_MSG_TASK: Data pool successfull[0m
+[1;31mE (51800) SOCKET_SERVER: Payload recived {"header": "pool", "username": "Weekend", "hashCode": "qwWabZbfy"}[0m
+[1;31mE (51800) SOCKET_SERVER: Sending to pooling queue[0m
+[1;31mE (51810) SOCKET_SERVER: Socket listening[0m
+[0;32mI (51810) POOL_MSG_TASK: Data pool successfull[0m
+[1;31mE (52010) SOCKET_SERVER: Payload recived {"header": "pool", "username": "Roxo", "hashCode": "PhfPycfa6"}[0m
+[1;31mE (52010) SOCKET_SERVER: Sending to pooling queue[0m
+[1;31mE (52010) SOCKET_SERVER: Socket listening[0m
+[0;32mI (52010) POOL_MSG_TASK: Data pool successfull[0m
+[1;31mE (54260) SOCKET_SERVER: Payload recived {"header": "pool", "username": "Weekend", "hashCode": "qwWabZbfy"}[0m
+[1;31mE (54260) SOCKET_SERVER: Sending to pooling queue[0m
+[1;31mE (54260) SOCKET_SERVER: Socket listening[0m
+[0;32mI (54260) POOL_MSG_TASK: Data pool successfull[0m
+[1;31mE (54310) SOCKET_SERVER: Payload recived {"header": "pool", "username": "Roxo", "hashCode": "PhfPycfa6"}[0m
+[1;31mE (54310) SOCKET_SERVER: Sending to pooling queue[0m
+[1;31mE (54310) SOCKET_SERVER: Socket listening[0m
+[0;32mI (54310) POOL_MSG_TASK: Data pool successfull[0m
+[1;31mE (56620) SOCKET_SERVER: Payload recived {"header": "pool", "username": "Weekend", "hashCode": "qwWabZbfy"}[0m
+[1;31mE (56620) SOCKET_SERVER: Sending to pooling queue[0m
+[1;31mE (56620) SOCKET_SERVER: Socket listening[0m
+[0;32mI (56620) POOL_MSG_TASK: Data pool successfull[0m
+[1;31mE (56620) SOCKET_SERVER: Payload recived {"header": "pool", "username": "Roxo", "hashCode": "PhfPycfa6"}[0m
+[1;31mE (56640) SOCKET_SERVER: Sending to pooling queue[0m
+[1;31mE (56640) SOCKET_SERVER: Socket listening[0m
+[0;32mI (56640) POOL_MSG_TASK: Data pool successfull[0m
+[1;31mE (59070) SOCKET_SERVER: Payload recived {"header": "pool", "username": "Weekend", "hashCode": "qwWabZbfy"}[0m
+[1;31mE (59070) SOCKET_SERVER: Sending to pooling queue[0m
+[1;31mE (59080) SOCKET_SERVER: Socket listening[0m
+[0;32mI (59080) POOL_MSG_TASK: Data pool successfull[0m
+[1;31mE (59080) SOCKET_SERVER: Payload recived {"header": "pool", "username": "Roxo", "hashCode": "PhfPycfa6"}[0m
+[1;31mE (59090) SOCKET_SERVER: Sending to pooling queue[0m
+[1;31mE (59100) SOCKET_SERVER: Socket listening[0m
+[0;32mI (59100) POOL_MSG_TASK: Data pool successfull[0m
+[1;31mE (61530) SOCKET_SERVER: Payload recived {"header": "pool", "username": "Roxo", "hashCode": "PhfPycfa6"}[0m
+[1;31mE (61530) SOCKET_SERVER: Sending to pooling queue[0m
+[1;31mE (61540) SOCKET_SERVER: Socket listening[0m
+[0;32mI (61540) POOL_MSG_TASK: Data pool successfull[0m
+[1;31mE (61540) SOCKET_SERVER: Payload recived {"header": "pool", "username": "Weekend", "hashCode": "qwWabZbfy"}[0m
+[1;31mE (61550) SOCKET_SERVER: Sending to pooling queue[0m
+[1;31mE (61560) SOCKET_SERVER: Socket listening[0m
+[0;32mI (61560) POOL_MSG_TASK: Data pool successfull[0m
+[1;31mE (63990) SOCKET_SERVER: Payload recived {"header": "pool", "username": "Roxo", "hashCode": "PhfPycfa6"}[0m
+[1;31mE (63990) SOCKET_SERVER: Sending to pooling queue[0m
+[1;31mE (63990) SOCKET_SERVER: Socket listening[0m
+[0;32mI (63990) POOL_MSG_TASK: Data pool successfull[0m
+[1;31mE (63990) SOCKET_SERVER: Payload recived {"header": "pool", "username": "Weekend", "hashCode": "qwWabZbfy"}[0m
+[1;31mE (64010) SOCKET_SERVER: Sending to pooling queue[0m
+[1;31mE (64010) SOCKET_SERVER: Socket listening[0m
+[0;32mI (64010) POOL_MSG_TASK: Data pool successfull[0m
+[1;31mE (66450) SOCKET_SERVER: Payload recived {"header": "pool", "username": "Roxo", "hashCode": "PhfPycfa6"}[0m
+[1;31mE (66450) SOCKET_SERVER: Sending to pooling queue[0m
+[1;31mE (66450) SOCKET_SERVER: Socket listening[0m
+[0;32mI (66450) POOL_MSG_TASK: Data pool successfull[0m
+[1;31mE (66450) SOCKET_SERVER: Payload recived {"header": "pool", "username": "Weekend", "hashCode": "qwWabZbfy"}[0m
+[1;31mE (66470) SOCKET_SERVER: Sending to pooling queue[0m
+[1;31mE (66470) SOCKET_SERVER: Socket listening[0m
+[0;32mI (66470) POOL_MSG_TASK: Data pool successfull[0m
+[1;31mE (68900) SOCKET_SERVER: Payload recived {"header": "pool", "username": "Roxo", "hashCode": "PhfPycfa6"}[0m
+[1;31mE (68900) SOCKET_SERVER: Sending to pooling queue[0m
+[1;31mE (68910) SOCKET_SERVER: Socket listening[0m
+[0;32mI (68910) POOL_MSG_TASK: Data pool successfull[0m
+[1;31mE (68910) SOCKET_SERVER: Payload recived {"header": "pool", "username": "Weekend", "hashCode": "qwWabZbfy"}[0m
+[1;31mE (68920) SOCKET_SERVER: Sending to pooling queue[0m
+[1;31mE (68930) SOCKET_SERVER: Socket listening[0m
+[0;32mI (68930) POOL_MSG_TASK: Data pool successfull[0m
+[1;31mE (109150) SOCKET_SERVER: Payload recived {"header": "register", "username": "Roxo3"}[0m
+[1;31mE (109150) SOCKET_SERVER: Sending to register queue[0m
+[1;31mE (109150) SOCKET_SERVER: Socket listening[0m
+[0;32mI (109150) REGISTER_SERVICE: New Request Recived: Roxo3[0m
+[1;31mE (113960) SOCKET_SERVER: Payload recived {"header": "register", "username": "Weekend2"}[0m
+[1;31mE (113960) SOCKET_SERVER: Sending to register queue[0m
+[1;31mE (113960) SOCKET_SERVER: Socket listening[0m
+[0;32mI (124240) USER_REPO: DB: User registrado: Roxo3[0m
+[0;32mI (124240) REGISTER_SERVICE: New Request Recived: Weekend2[0m
+[1;31mE (124610) SOCKET_SERVER: Payload recived {"header": "pool", "username": "Roxo3", "hashCode": "bqRaqIEMc"}[0m
+[1;31mE (124610) SOCKET_SERVER: Sending to pooling queue[0m
+[1;31mE (124610) SOCKET_SERVER: Socket listening[0m
+[0;32mI (124610) POOL_MSG_TASK: Data pool successfull[0m
+[1;31mE (127070) SOCKET_SERVER: Payload recived {"header": "pool", "username": "Roxo3", "hashCode": "bqRaqIEMc"}[0m
+[1;31mE (127070) SOCKET_SERVER: Sending to pooling queue[0m
+[1;31mE (127070) SOCKET_SERVER: Socket listening[0m
+[0;32mI (127070) POOL_MSG_TASK: Data pool successfull[0m
+[1;31mE (129530) SOCKET_SERVER: Payload recived {"header": "pool", "username": "Roxo3", "hashCode": "bqRaqIEMc"}[0m
+[1;31mE (129530) SOCKET_SERVER: Sending to pooling queue[0m
+[1;31mE (129530) SOCKET_SERVER: Socket listening[0m
+[0;32mI (129530) POOL_MSG_TASK: Data pool successfull[0m
+[0;32mI (157490) USER_REPO: DB: User registrado: Weekend2[0m
+ DRAM
+[0;32mI (469) heap_init: At 3FFB9DF8 len 00026208 (152 KiB): DRAM[0m
+[0;32mI (474) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (480) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (485) heap_init: At 40096AE0 len 00009520 (37 KiB): IRAM[0m
+[0;32mI (492) spi_flash: detected chip: generic[0m
+[0;32mI (494) spi_flash: flash io: dio[0m
+[0;33mW (497) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;33mW (509) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+[0;32mI (520) main_task: Started on CPU0[0m
+[0;32mI (530) main_task: Calling app_main()[0m
+[0;32mI (550) MAIN: Connecting to WiFi...[0m
+[0;32mI (570) wifi:wifi driver task: 3ffc1f54, prio:23, stack:6656, core=0[0m
+[0;32mI (580) wifi:wifi firmware version: 6a8253a[0m
+[0;32mI (580) wifi:wifi certification version: v7.0[0m
+[0;32mI (580) wifi:config NVS flash: enabled[0m
+[0;32mI (580) wifi:config nano formatting: disabled[0m
+[0;32mI (590) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (590) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (600) wifi:Init management short buffer num: 32[0m
+[0;32mI (600) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (610) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (610) wifi:Init static rx buffer num: 10[0m
+[0;32mI (610) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (620) wifi_init: rx ba win: 6[0m
+[0;32mI (620) wifi_init: accept mbox: 6[0m
+[0;32mI (620) wifi_init: tcpip mbox: 32[0m
+[0;32mI (630) wifi_init: udp mbox: 6[0m
+[0;32mI (630) wifi_init: tcp mbox: 6[0m
+[0;32mI (630) wifi_init: tcp tx win: 5760[0m
+[0;32mI (640) wifi_init: tcp rx win: 5760[0m
+[0;32mI (640) wifi_init: tcp mss: 1440[0m
+[0;32mI (640) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (650) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (650) phy_init: phy_version 4863,a3a4459,Oct 28 2025,14:30:06[0m
+[0;32mI (730) wifi:mode : sta (b0:a7:32:f2:cd:f0)[0m
+[0;32mI (730) wifi:enable tsf[0m
+[0;32mI (730) WIFI_STATION: wifi_init_sta finished.[0m
+[0;32mI (730) WIFI_STATION: Aguardando conexão WiFi...[0m
+[0;32mI (750) wifi:new:<8,0>, old:<1,0>, ap:<255,255>, sta:<8,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (750) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (750) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (760) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (770) wifi:<ba-add>idx:0 (ifx:0, cc:58:30:02:43:61), tid:0, ssn:0, winSize:64[0m
+[0;32mI (770) wifi:<ba-add>idx:1 (ifx:0, cc:58:30:02:43:61), tid:5, ssn:0, winSize:64[0m
+[0;32mI (790) wifi:connected with PEDRO, aid = 1, channel 8, BW20, bssid = cc:58:30:02:43:61[0m
+[0;32mI (790) wifi:security: WPA2-PSK, phy: bgn, rssi: -23[0m
+[0;32mI (790) wifi:pm start, type: 1[0m
+
+[0;32mI (790) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (850) wifi:AP's beacon interval = 102400 us, DTIM period = 1[0m
+[0;32mI (2890) esp_netif_handlers: sta ip: 192.168.0.29, mask: 255.255.255.0, gw: 192.168.0.1[0m
+[0;32mI (2890) WIFI_STATION: got ip:192.168.0.29[0m
+[0;32mI (2890) WIFI_STATION: connected to ap SSID:PEDRO[0m
+[0;32mI (2890) MAIN: Starting Socket Server...[0m
+[0;32mI (2900) MAIN: Starting Register Task[0m
+[1;31mE (2900) SOCKET_SERVER: Socket listening[0m
+[0;32mI (3080) MAIN: Starting Send Message Task[0m
+[0;32mI (3080) MAIN: Starting Pool Message Task[0m
+[0;32mI (3080) main_task: Returned from app_main()[0m
+[1;31mE (8630) SOCKET_SERVER: Payload recived {"header": "register", "username": "roxo"}[0m
+[1;31mE (8630) SOCKET_SERVER: Sending to register queue[0m
+[1;31mE (8630) SOCKET_SERVER: Socket listening[0m
+[0;32mI (8630) REGISTER_SERVICE: New Request Recived: roxo[0m
+[1;31mE (11910) SOCKET_SERVER: Payload recived {"header": "register", "username": "sa bado"}[0m
+[1;31mE (11910) SOCKET_SERVER: Sending to register queue[0m
+[1;31mE (11910) SOCKET_SERVER: Socket listening[0m
+[0;32mI (15180) USER_REPO: DB: User registrado: roxo[0m
+[0;32mI (15190) REGISTER_SERVICE: New Request Recived: sa bado[0m
+[1;31mE (15600) SOCKET_SERVER: Payload recived {"header": "pool", "username": "roxo", "hashCode": "IbKZvnyjv"}[0m
+[1;31mE (15600) SOCKET_SERVER: Sending to pooling queue[0m
+[1;31mE (15600) SOCKET_SERVER: Socket listening[0m
+[0;32mI (15600) POOL_MSG_TASK: Data pool successfull[0m
+[1;31mE (18050) SOCKET_SERVER: Payload recived {"header": "pool", "username": "roxo", "hashCode": "IbKZvnyjv"}[0m
+[1;31mE (18050) SOCKET_SERVER: Sending to pooling queue[0m
+[1;31mE (18060) SOCKET_SERVER: Socket listening[0m
+[0;32mI (18060) POOL_MSG_TASK: Data pool successfull[0m
+[1;31mE (20510) SOCKET_SERVER: Payload recived {"header": "pool", "username": "roxo", "hashCode": "IbKZvnyjv"}[0m
+[1;31mE (20510) SOCKET_SERVER: Sending to pooling queue[0m
+[1;31mE (20510) SOCKET_SERVER: Socket listening[0m
+[0;32mI (20510) POOL_MSG_TASK: Data pool successfull[0m
+[1;31mE (22970) SOCKET_SERVER: Payload recived {"header": "pool", "username": "roxo", "hashCode": "IbKZvnyjv"}[0m
+[1;31mE (22970) SOCKET_SERVER: Sending to pooling queue[0m
+[1;31mE (22970) SOCKET_SERVER: Socket listening[0m
+[0;32mI (22970) POOL_MSG_TASK: Data pool successfull[0m
+[1;31mE (25430) SOCKET_SERVER: Payload recived {"header": "pool", "username": "roxo", "hashCode": "IbKZvnyjv"}[0m
+[1;31mE (25430) SOCKET_SERVER: Sending to pooling queue[0m
+[1;31mE (25430) SOCKET_SERVER: Socket listening[0m
+[0;32mI (25430) POOL_MSG_TASK: Data pool successfull[0m
+[1;31mE (27890) SOCKET_SERVER: Payload recived {"header": "pool", "username": "roxo", "hashCode": "IbKZvnyjv"}[0m
+[1;31mE (27890) SOCKET_SERVER: Sending to pooling queue[0m
+[1;31mE (27890) SOCKET_SERVER: Socket listening[0m
+[0;32mI (27890) POOL_MSG_TASK: Data pool successfull[0m
+[1;31mE (29320) SOCKET_SERVER: Payload recived {"header": "register", "username": "sa badin"}[0m
+[1;31mE (29320) SOCKET_SERVER: Sending to register queue[0m
+[1;31mE (29320) SOCKET_SERVER: Socket listening[0m
+[0;32mI (29320) REGISTER_SERVICE: New Request Recived: sa badin[0m
+[1;31mE (30340) SOCKET_SERVER: Payload recived {"header": "pool", "username": "roxo", "hashCode": "IbKZvnyjv"}[0m
+[1;31mE (30340) SOCKET_SERVER: Sending to pooling queue[0m
+[1;31mE (30340) SOCKET_SERVER: Socket listening[0m
+[0;32mI (30340) POOL_MSG_TASK: Data pool successfull[0m
+[0;32mI (32410) USER_REPO: DB: User registrado: sa badin[0m
+[1;31mE (32700) SOCKET_SERVER: Payload recived {"header": "pool", "username": "roxo", "hashCode": "IbKZvnyjv"}[0m
+[1;31mE (32700) SOCKET_SERVER: Sending to pooling queue[0m
+[1;31mE (32700) SOCKET_SERVER: Socket listening[0m
+[0;32mI (32700) POOL_MSG_TASK: Data pool successfull[0m
+[1;31mE (32710) SOCKET_SERVER: Payload recived {"header": "pool", "username": "sa badin", "hashCode": "iTsilwuyR"}[0m
+[1;31mE (32720) SOCKET_SERVER: Sending to pooling queue[0m
+[1;31mE (32720) SOCKET_SERVER: Socket listening[0m
+[0;32mI (32720) POOL_MSG_TASK: Data pool successfull[0m
+[1;31mE (35160) SOCKET_SERVER: Payload recived {"header": "pool", "username": "roxo", "hashCode": "IbKZvnyjv"}[0m
+[1;31mE (35160) SOCKET_SERVER: Sending to pooling queue[0m
+[1;31mE (35160) SOCKET_SERVER: Socket listening[0m
+[0;32mI (35160) POOL_MSG_TASK: Data pool successfull[0m
+[1;31mE (35160) SOCKET_SERVER: Payload recived {"header": "pool", "username": "sa badin", "hashCode": "iTsilwuyR"}[0m
+[1;31mE (35180) SOCKET_SERVER: Sending to pooling queue[0m
+[1;31mE (35180) SOCKET_SERVER: Socket listening[0m
+[0;32mI (35180) POOL_MSG_TASK: Data pool successfull[0m
+[1;31mE (37610) SOCKET_SERVER: Payload recived {"header": "pool", "username": "roxo", "hashCode": "IbKZvnyjv"}[0m
+[1;31mE (37620) SOCKET_SERVER: Sending to pooling queue[0m
+[1;31mE (37620) SOCKET_SERVER: Socket listening[0m
+[0;32mI (37620) POOL_MSG_TASK: Data pool successfull[0m
+[1;31mE (37620) SOCKET_SERVER: Payload recived {"header": "pool", "username": "sa badin", "hashCode": "iTsilwuyR"}[0m
+[1;31mE (37640) SOCKET_SERVER: Sending to pooling queue[0m
+[1;31mE (37640) SOCKET_SERVER: Socket listening[0m
+[0;32mI (37640) POOL_MSG_TASK: Data pool successfull[0m
+1 (ifx:0, cc:58:30:02:43:61), tid:5, ssn:0, winSize:64
+[0;32mI (790) wifi:connected with PEDRO, aid = 1, channel 8, BW20, bssid = cc:58:30:02:43:61[0m
+[0;32mI (790) wifi:security: WPA2-PSK, phy: bgn, rssi: -20[0m
+[0;32mI (800) wifi:pm start, type: 1[0m
+
+[0;32mI (800) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (880) wifi:AP's beacon interval = 102400 us, DTIM period = 1[0m
+[0;32mI (1860) esp_netif_handlers: sta ip: 192.168.0.29, mask: 255.255.255.0, gw: 192.168.0.1[0m
+[0;32mI (1860) WIFI_STATION: got ip:192.168.0.29[0m
+[0;32mI (1860) WIFI_STATION: connected to ap SSID:PEDRO[0m
+[0;32mI (1860) MAIN: Starting Socket Server...[0m
+[1;31mE (1870) SOCKET_SERVER: Socket listening[0m
+[0;32mI (1870) MAIN: Starting Register Task[0m
+[0;32mI (2050) MAIN: Starting Send Message Task[0m
+[0;32mI (2050) MAIN: Starting Pool Message Task[0m
+[0;32mI (2050) main_task: Returned from app_main()[0m
+[1;31mE (3550) SOCKET_SERVER: Payload recived {"header": "pool", "username": "sa badin", "hashCode": "iTsilwuyR"}[0m
+[1;31mE (3550) SOCKET_SERVER: Sending to pooling queue[0m
+[1;31mE (3550) SOCKET_SERVER: Socket listening[0m
+[0;32mI (3550) POOL_MSG_TASK: Invalid token[0m
+[1;31mE (3560) SOCKET_SERVER: Payload recived {"header": "pool", "username": "roxo", "hashCode": "IbKZvnyjv"}[0m
+[1;31mE (3570) SOCKET_SERVER: Sending to pooling queue[0m
+[1;31mE (3570) SOCKET_SERVER: Socket listening[0m
+[0;32mI (3570) POOL_MSG_TASK: Invalid token[0m
+[0;32mI (1860) esp_netif_handlers: sta ip: 192.168.0.29, mask: 255.255.255.0, gw: 192.168.0.1[0m
+[0;32mI (1860) WIFI_STATION: got ip:192.168.0.29[0m
+[0;32mI (1860) WIFI_STATION: connected to ap SSID:PEDRO[0m
+[0;32mI (1860) MAIN: Starting Socket Server...[0m
+[1;31mE (1870) SOCKET_SERVER: Socket listening[0m
+[0;32mI (1870) MAIN: Starting Register Task[0m
+[0;32mI (2050) MAIN: Starting Send Message Task[0m
+[0;32mI (2050) MAIN: Starting Pool Message Task[0m
+[0;32mI (2050) main_task: Returned from app_main()[0m
+[1;31mE (3920) SOCKET_SERVER: Payload recived {"header": "pool", "username": "roxo", "hashCode": "IbKZvnyjv"}[0m
+[1;31mE (3920) SOCKET_SERVER: Sending to pooling queue[0m
+[1;31mE (3930) SOCKET_SERVER: Socket listening[0m
+[0;32mI (3930) POOL_MSG_TASK: Invalid token[0m
+[1;31mE (3930) SOCKET_SERVER: Payload recived {"header": "pool", "username": "sa badin", "hashCode": "iTsilwuyR"}[0m
+[1;31mE (3940) SOCKET_SERVER: Sending to pooling queue[0m
+[1;31mE (3950) SOCKET_SERVER: Socket listening[0m
+[0;32mI (3950) POOL_MSG_TASK: Invalid token[0m
+[1;31mE (6380) SOCKET_SERVER: Payload recived {"header": "pool", "username": "roxo", "hashCode": "IbKZvnyjv"}[0m
+[1;31mE (6380) SOCKET_SERVER: Sending to pooling queue[0m
+[1;31mE (6380) SOCKET_SERVER: Socket listening[0m
+[0;32mI (6380) POOL_MSG_TASK: Invalid token[0m
+[1;31mE (41200) SOCKET_SERVER: Payload recived {"header": "register", "username": "Roxo"}[0m
+[1;31mE (41200) SOCKET_SERVER: Sending to register queue[0m
+[1;31mE (41200) SOCKET_SERVER: Socket listening[0m
+[0;32mI (41200) REGISTER_SERVICE: New Request Recived: Roxo[0m
+[1;31mE (69380) SOCKET_SERVER: Payload recived {"header": "register", "username": "Roxo"}[0m
+[1;31mE (69380) SOCKET_SERVER: Sending to register queue[0m
+[1;31mE (69380) SOCKET_SERVER: Socket listening[0m
+[0;32mI (69380) REGISTER_SERVICE: New Request Recived: Roxo[0m
+[1;31mE (80420) SOCKET_SERVER: Payload recived {"header": "register", "username": "Roxo"}[0m
+[1;31mE (80420) SOCKET_SERVER: Sending to register queue[0m
+[1;31mE (80420) SOCKET_SERVER: Socket listening[0m
+[0;32mI (80420) REGISTER_SERVICE: New Request Recived: Roxo[0m
+[1;31mE (89550) SOCKET_SERVER: Payload recived {"header": "register", "username": "Sabadin"}[0m
+[1;31mE (89550) SOCKET_SERVER: Sending to register queue[0m
+[1;31mE (89550) SOCKET_SERVER: Socket listening[0m
+[0;32mI (94100) USER_REPO: DB: User registrado: Roxo[0m
+[0;32mI (94100) REGISTER_SERVICE: New Request Recived: Sabadin[0m
+[1;31mE (94170) SOCKET_SERVER: Payload recived {"header": "pool", "username": "Roxo", "hashCode": "L7AMcG1AH"}[0m
+[1;31mE (94170) SOCKET_SERVER: Sending to pooling queue[0m
+[1;31mE (94170) SOCKET_SERVER: Socket listening[0m
+[0;32mI (94170) POOL_MSG_TASK: Data pool successfull[0m
+[1;31mE (96600) SOCKET_SERVER: Payload recived {"header": "pool", "username": "Roxo", "hashCode": "L7AMcG1AH"}[0m
+[1;31mE (96600) SOCKET_SERVER: Sending to pooling queue[0m
+[1;31mE (96600) SOCKET_SERVER: Socket listening[0m
+[0;32mI (96600) POOL_MSG_TASK: Data pool successfull[0m
+[1;31mE (99050) SOCKET_SERVER: Payload recived {"header": "pool", "username": "Roxo", "hashCode": "L7AMcG1AH"}[0m
+[1;31mE (99060) SOCKET_SERVER: Sending to pooling queue[0m
+[1;31mE (99060) SOCKET_SERVER: Socket listening[0m
+[0;32mI (99060) POOL_MSG_TASK: Data pool successfull[0m
+[0;32mI (99340) USER_REPO: DB: User registrado: Sabadin[0m
+[1;31mE (99400) SOCKET_SERVER: Payload recived {"header": "pool", "username": "Sabadin", "hashCode": "wUUirQ9k8"}[0m
+[1;31mE (99400) SOCKET_SERVER: Sending to pooling queue[0m
+[1;31mE (99400) SOCKET_SERVER: Socket listening[0m
+[0;32mI (99410) POOL_MSG_TASK: Data pool successfull[0m
+[1;31mE (101510) SOCKET_SERVER: Payload recived {"header": "pool", "username": "Roxo", "hashCode": "L7AMcG1AH"}[0m
+[1;31mE (101510) SOCKET_SERVER: Sending to pooling queue[0m
+[1;31mE (101520) SOCKET_SERVER: Socket listening[0m
+[0;32mI (101520) POOL_MSG_TASK: Data pool successfull[0m
+[1;31mE (101720) SOCKET_SERVER: Payload recived {"header": "pool", "username": "Sabadin", "hashCode": "wUUirQ9k8"}[0m
+[1;31mE (101720) SOCKET_SERVER: Sending to pooling queue[0m
+[1;31mE (101720) SOCKET_SERVER: Socket listening[0m
+[0;32mI (101720) POOL_MSG_TASK: Data pool successfull[0m
+[1;31mE (103870) SOCKET_SERVER: Payload recived {"header": "pool", "username": "Roxo", "hashCode": "L7AMcG1AH"}[0m
+[1;31mE (103870) SOCKET_SERVER: Sending to pooling queue[0m
+[1;31mE (103870) SOCKET_SERVER: Socket listening[0m
+[0;32mI (103870) POOL_MSG_TASK: Data pool successfull[0m
+[1;31mE (104180) SOCKET_SERVER: Payload recived {"header": "pool", "username": "Sabadin", "hashCode": "wUUirQ9k8"}[0m
+[1;31mE (104180) SOCKET_SERVER: Sending to pooling queue[0m
+[1;31mE (104180) SOCKET_SERVER: Socket listening[0m
+[0;32mI (104180) POOL_MSG_TASK: Data pool successfull[0m
+[1;31mE (106330) SOCKET_SERVER: Payload recived {"header": "pool", "username": "Roxo", "hashCode": "L7AMcG1AH"}[0m
+[1;31mE (106330) SOCKET_SERVER: Sending to pooling queue[0m
+[1;31mE (106330) SOCKET_SERVER: Socket listening[0m
+[0;32mI (106330) POOL_MSG_TASK: Data pool successfull[0m
+[1;31mE (106530) SOCKET_SERVER: Payload recived {"header": "pool", "username": "Sabadin", "hashCode": "wUUirQ9k8"}[0m
+[1;31mE (106530) SOCKET_SERVER: Sending to pooling queue[0m
+[1;31mE (106540) SOCKET_SERVER: Socket listening[0m
+[0;32mI (106540) POOL_MSG_TASK: Data pool successfull[0m
+[1;31mE (108170) SOCKET_SERVER: Payload recived {"header": "send", "username": "Sabadin", "hashCode": "wUUirQ9k8", "msg": "bruh"}[0m
+[1;31mE (108170) SOCKET_SERVER: Sending to sendMSGQueue[0m
+[1;31mE (108170) SOCKET_SERVER: Socket listening[0m
+[0;32mI (108170) SEND_MSG_TASK: Message saved: bruh[0m
+[1;31mE (108780) SOCKET_SERVER: Payload recived {"header": "pool", "username": "Roxo", "hashCode": "L7AMcG1AH"}[0m
+[1;31mE (108790) SOCKET_SERVER: Sending to pooling queue[0m
+[1;31mE (108790) SOCKET_SERVER: Socket listening[0m
+[0;32mI (108790) POOL_MSG_TASK: Data pool successfull[0m
+[1;31mE (108990) SOCKET_SERVER: Payload recived {"header": "pool", "username": "Sabadin", "hashCode": "wUUirQ9k8"}[0m
+[1;31mE (108990) SOCKET_SERVER: Sending to pooling queue[0m
+[1;31mE (108990) SOCKET_SERVER: Socket listening[0m
+[0;32mI (108990) POOL_MSG_TASK: Data pool successfull[0m
+[1;31mE (111060) SOCKET_SERVER: Payload recived {"header": "pool", "username": "Roxo", "hashCode": "L7AMcG1AH"}[0m
+[1;31mE (111060) SOCKET_SERVER: Sending to pooling queue[0m
+[1;31mE (111060) SOCKET_SERVER: Socket listening[0m
+[0;32mI (111060) POOL_MSG_TASK: Data pool successfull[0m
+[1;31mE (111070) SOCKET_SERVER: Payload recived {"header": "pool", "username": "Sabadin", "hashCode": "wUUirQ9k8"}[0m
+[1;31mE (111080) SOCKET_SERVER: Sending to pooling queue[0m
+[1;31mE (111080) SOCKET_SERVER: Socket listening[0m
+[0;32mI (111080) POOL_MSG_TASK: Data pool successfull[0m
+[1;31mE (113390) SOCKET_SERVER: Payload recived {"header": "pool", "username": "Sabadin", "hashCode": "wUUirQ9k8"}[0m
+[1;31mE (113390) SOCKET_SERVER: Sending to pooling queue[0m
+[1;31mE (113400) SOCKET_SERVER: Socket listening[0m
+[0;32mI (113400) POOL_MSG_TASK: Data pool successfull[0m
+[1;31mE (113400) SOCKET_SERVER: Payload recived {"header": "pool", "username": "Roxo", "hashCode": "L7AMcG1AH"}[0m
+[1;31mE (113410) SOCKET_SERVER: Sending to pooling queue[0m
+[1;31mE (113420) SOCKET_SERVER: Socket listening[0m
+[0;32mI (113420) POOL_MSG_TASK: Data pool successfull[0m
+[1;31mE (113700) SOCKET_SERVER: Payload recived {"header": "send", "username": "Sabadin", "hashCode": "wUUirQ9k8", "msg": "aaaaa"}[0m
+[1;31mE (113710) SOCKET_SERVER: Sending to sendMSGQueue[0m
+[1;31mE (113710) SOCKET_SERVER: Socket listening[0m
+[0;32mI (113710) SEND_MSG_TASK: Message saved: aaaaa[0m
+[1;31mE (115670) SOCKET_SERVER: Payload recived {"header": "pool", "username": "Roxo", "hashCode": "L7AMcG1AH"}[0m
+[1;31mE (115670) SOCKET_SERVER: Sending to pooling queue[0m
+[1;31mE (115670) SOCKET_SERVER: Socket listening[0m
+[0;32mI (115670) POOL_MSG_TASK: Data pool successfull[0m
+[1;31mE (115850) SOCKET_SERVER: Payload recived {"header": "pool", "username": "Sabadin", "hashCode": "wUUirQ9k8"}[0m
+[1;31mE (115850) SOCKET_SERVER: Sending to pooling queue[0m
+[1;31mE (115850) SOCKET_SERVER: Socket listening[0m
+[0;32mI (115860) POOL_MSG_TASK: Data pool successfull[0m
+[1;31mE (118100) SOCKET_SERVER: Payload recived {"header": "pool", "username": "Roxo", "hashCode": "L7AMcG1AH"}[0m
+[1;31mE (118100) SOCKET_SERVER: Sending to pooling queue[0m
+[1;31mE (118110) SOCKET_SERVER: Socket listening[0m
+[0;32mI (118110) POOL_MSG_TASK: Data pool successfull[0m
+[1;31mE (118310) SOCKET_SERVER: Payload recived {"header": "pool", "username": "Sabadin", "hashCode": "wUUirQ9k8"}[0m
+[1;31mE (118310) SOCKET_SERVER: Sending to pooling queue[0m
+[1;31mE (118310) SOCKET_SERVER: Socket listening[0m
+[0;32mI (118310) POOL_MSG_TASK: Data pool successfull[0m
+[1;31mE (119440) SOCKET_SERVER: Payload recived {"header": "send", "username": "Roxo", "hashCode": "L7AMcG1AH", "msg": "aaaaa"}[0m
+[1;31mE (119440) SOCKET_SERVER: Sending to sendMSGQueue[0m
+[1;31mE (119440) SOCKET_SERVER: Socket listening[0m
+[0;32mI (119440) SEND_MSG_TASK: Message saved: aaaaa[0m
+[1;31mE (120560) SOCKET_SERVER: Payload recived {"header": "pool", "username": "Roxo", "hashCode": "L7AMcG1AH"}[0m
+[1;31mE (120560) SOCKET_SERVER: Sending to pooling queue[0m
+[1;31mE (120560) SOCKET_SERVER: Socket listening[0m
+[0;32mI (120560) POOL_MSG_TASK: Data pool successfull[0m
+[1;31mE (120730) SOCKET_SERVER: Payload recived {"header": "pool", "username": "Sabadin", "hashCode": "wUUirQ9k8"}[0m
+[1;31mE (120740) SOCKET_SERVER: Sending to pooling queue[0m
+[1;31mE (120740) SOCKET_SERVER: Socket listening[0m
+[0;32mI (120740) POOL_MSG_TASK: Data pool successfull[0m
+[1;31mE (122830) SOCKET_SERVER: Payload recived {"header": "pool", "username": "Roxo", "hashCode": "L7AMcG1AH"}[0m
+[1;31mE (122830) SOCKET_SERVER: Sending to pooling queue[0m
+[1;31mE (122840) SOCKET_SERVER: Socket listening[0m
+[0;32mI (122840) POOL_MSG_TASK: Data pool successfull[0m
+[1;31mE (122840) SOCKET_SERVER: Payload recived {"header": "pool", "username": "Sabadin", "hashCode": "wUUirQ9k8"}[0m
+[1;31mE (122850) SOCKET_SERVER: Sending to pooling queue[0m
+[1;31mE (122860) SOCKET_SERVER: Socket listening[0m
+[0;32mI (122860) POOL_MSG_TASK: Data pool successfull[0m
+[1;31mE (124980) SOCKET_SERVER: Payload recived {"header": "pool", "username": "Roxo", "hashCode": "L7AMcG1AH"}[0m
+[1;31mE (124980) SOCKET_SERVER: Sending to pooling queue[0m
+[1;31mE (124990) SOCKET_SERVER: Socket listening[0m
+[0;32mI (124990) POOL_MSG_TASK: Data pool successfull[0m
+[1;31mE (124990) SOCKET_SERVER: Payload recived {"header": "pool", "username": "Sabadin", "hashCode": "wUUirQ9k8"}[0m
+[1;31mE (125000) SOCKET_SERVER: Sending to pooling queue[0m
+[1;31mE (125010) SOCKET_SERVER: Socket listening[0m
+[0;32mI (125010) POOL_MSG_TASK: Data pool successfull[0m
+[1;31mE (127130) SOCKET_SERVER: Payload recived {"header": "pool", "username": "Roxo", "hashCode": "L7AMcG1AH"}[0m
+[1;31mE (127140) SOCKET_SERVER: Sending to pooling queue[0m
+[1;31mE (127140) SOCKET_SERVER: Socket listening[0m
+[0;32mI (127140) POOL_MSG_TASK: Data pool successfull[0m
+[1;31mE (127140) SOCKET_SERVER: Payload recived {"header": "pool", "username": "Sabadin", "hashCode": "wUUirQ9k8"}[0m
+[1;31mE (127160) SOCKET_SERVER: Sending to pooling queue[0m
+[1;31mE (127160) SOCKET_SERVER: Socket listening[0m
+[0;32mI (127160) POOL_MSG_TASK: Data pool successfull[0m
+[1;31mE (129280) SOCKET_SERVER: Payload recived {"header": "pool", "username": "Roxo", "hashCode": "L7AMcG1AH"}[0m
+[1;31mE (129290) SOCKET_SERVER: Sending to pooling queue[0m
+[1;31mE (129290) SOCKET_SERVER: Socket listening[0m
+[0;32mI (129290) POOL_MSG_TASK: Data pool successfull[0m
+[1;31mE (129290) SOCKET_SERVER: Payload recived {"header": "pool", "username": "Sabadin", "hashCode": "wUUirQ9k8"}[0m
+[1;31mE (129310) SOCKET_SERVER: Sending to pooling queue[0m
+[1;31mE (129310) SOCKET_SERVER: Socket listening[0m
+[0;32mI (129310) POOL_MSG_TASK: Data pool successfull[0m
+[1;31mE (131430) SOCKET_SERVER: Payload recived {"header": "pool", "username": "Roxo", "hashCode": "L7AMcG1AH"}[0m
+[1;31mE (131430) SOCKET_SERVER: Sending to pooling queue[0m
+[1;31mE (131430) SOCKET_SERVER: Socket listening[0m
+[0;32mI (131430) POOL_MSG_TASK: Data pool successfull[0m
+[1;31mE (131450) SOCKET_SERVER: Payload recived {"header": "pool", "username": "Sabadin", "hashCode": "wUUirQ9k8"}[0m
+[1;31mE (131450) SOCKET_SERVER: Sending to pooling queue[0m
+[1;31mE (131450) SOCKET_SERVER: Socket listening[0m
+[0;32mI (131450) POOL_MSG_TASK: Data pool successfull[0m
+[1;31mE (133670) SOCKET_SERVER: Payload recived {"header": "pool", "username": "Roxo", "hashCode": "L7AMcG1AH"}[0m
+[1;31mE (133670) SOCKET_SERVER: Sending to pooling queue[0m
+[1;31mE (133670) SOCKET_SERVER: Socket listening[0m
+[0;32mI (133670) POOL_MSG_TASK: Data pool successfull[0m
+[1;31mE (133680) SOCKET_SERVER: Payload recived {"header": "pool", "username": "Sabadin", "hashCode": "wUUirQ9k8"}[0m
+[1;31mE (133690) SOCKET_SERVER: Sending to pooling queue[0m
+[1;31mE (133690) SOCKET_SERVER: Socket listening[0m
+[0;32mI (133690) POOL_MSG_TASK: Data pool successfull[0m
+[1;31mE (136130) SOCKET_SERVER: Payload recived {"header": "pool", "username": "Roxo", "hashCode": "L7AMcG1AH"}[0m
+[1;31mE (136130) SOCKET_SERVER: Sending to pooling queue[0m
+[1;31mE (136130) SOCKET_SERVER: Socket listening[0m
+[0;32mI (136130) POOL_MSG_TASK: Data pool successfull[0m
+[1;31mE (136130) SOCKET_SERVER: Payload recived {"header": "pool", "username": "Sabadin", "hashCode": "wUUirQ9k8"}[0m
+[1;31mE (136150) SOCKET_SERVER: Sending to pooling queue[0m
+[1;31mE (136150) SOCKET_SERVER: Socket listening[0m
+[0;32mI (136150) POOL_MSG_TASK: Data pool successfull[0m
+[1;31mE (138580) SOCKET_SERVER: Payload recived {"header": "pool", "username": "Sabadin", "hashCode": "wUUirQ9k8"}[0m
+[1;31mE (138580) SOCKET_SERVER: Sending to pooling queue[0m
+[1;31mE (138590) SOCKET_SERVER: Socket listening[0m
+[0;32mI (138590) POOL_MSG_TASK: Data pool successfull[0m
+[1;31mE (138590) SOCKET_SERVER: Payload recived {"header": "pool", "username": "Roxo", "hashCode": "L7AMcG1AH"}[0m
+[1;31mE (138600) SOCKET_SERVER: Sending to pooling queue[0m
+[1;31mE (138610) SOCKET_SERVER: Socket listening[0m
+[0;32mI (138610) POOL_MSG_TASK: Data pool successfull[0m
+[1;31mE (141040) SOCKET_SERVER: Payload recived {"header": "pool", "username": "Roxo", "hashCode": "L7AMcG1AH"}[0m
+[1;31mE (141040) SOCKET_SERVER: Sending to pooling queue[0m
+[1;31mE (141040) SOCKET_SERVER: Socket listening[0m
+[0;32mI (141040) POOL_MSG_TASK: Data pool successfull[0m
+[1;31mE (141050) SOCKET_SERVER: Payload recived {"header": "pool", "username": "Sabadin", "hashCode": "wUUirQ9k8"}[0m
+[1;31mE (141060) SOCKET_SERVER: Sending to pooling queue[0m
+[1;31mE (141070) SOCKET_SERVER: Socket listening[0m
+[0;32mI (141070) POOL_MSG_TASK: Data pool successfull[0m
+[1;31mE (143500) SOCKET_SERVER: Payload recived {"header": "pool", "username": "Sabadin", "hashCode": "wUUirQ9k8"}[0m
+[1;31mE (143500) SOCKET_SERVER: Sending to pooling queue[0m
+[1;31mE (143500) SOCKET_SERVER: Socket listening[0m
+[0;32mI (143500) POOL_MSG_TASK: Data pool successfull[0m
+[1;31mE (143510) SOCKET_SERVER: Payload recived {"header": "pool", "username": "Roxo", "hashCode": "L7AMcG1AH"}[0m
+[1;31mE (143520) SOCKET_SERVER: Sending to pooling queue[0m
+[1;31mE (143520) SOCKET_SERVER: Socket listening[0m
+[0;32mI (143520) POOL_MSG_TASK: Data pool successfull[0m
+[1;31mE (145960) SOCKET_SERVER: Payload recived {"header": "pool", "username": "Sabadin", "hashCode": "wUUirQ9k8"}[0m
+[1;31mE (145960) SOCKET_SERVER: Sending to pooling queue[0m
+[1;31mE (145960) SOCKET_SERVER: Socket listening[0m
+[0;32mI (145960) POOL_MSG_TASK: Data pool successfull[0m
+[1;31mE (145970) SOCKET_SERVER: Payload recived {"header": "pool", "username": "Roxo", "hashCode": "L7AMcG1AH"}[0m
+[1;31mE (145980) SOCKET_SERVER: Sending to pooling queue[0m
+[1;31mE (145990) SOCKET_SERVER: Socket listening[0m
+[0;32mI (145990) POOL_MSG_TASK: Data pool successfull[0m
+[1;31mE (147290) SOCKET_SERVER: Payload recived {"header": "send", "username": "Roxo", "hashCode": "L7AMcG1AH", "msg": "krai, num \u00e9 que agr da pra conversar mesmo"}[0m
+[1;31mE (147290) SOCKET_SERVER: Sending to sendMSGQueue[0m
+[1;31mE (147300) SOCKET_SERVER: Socket listening[0m
+[0;32mI (147300) SEND_MSG_TASK: Message saved: krai, num é que agr da pra conversar mesmo[0m
+[1;31mE (148410) SOCKET_SERVER: Payload recived {"header": "pool", "username": "Sabadin", "hashCode": "wUUirQ9k8"}[0m
+[1;31mE (148410) SOCKET_SERVER: Sending to pooling queue[0m
+[1;31mE (148420) SOCKET_SERVER: Socket listening[0m
+[0;32mI (148420) POOL_MSG_TASK: Data pool successfull[0m
+[1;31mE (148420) SOCKET_SERVER: Payload recived {"header": "pool", "username": "Roxo", "hashCode": "L7AMcG1AH"}[0m
+[1;31mE (148430) SOCKET_SERVER: Sending to pooling queue[0m
+[1;31mE (148440) SOCKET_SERVER: Socket listening[0m
+[0;32mI (148440) POOL_MSG_TASK: Data pool successfull[0m
+[1;31mE (150870) SOCKET_SERVER: Payload recived {"header": "pool", "username": "Roxo", "hashCode": "L7AMcG1AH"}[0m
+[1;31mE (150870) SOCKET_SERVER: Sending to pooling queue[0m
+[1;31mE (150880) SOCKET_SERVER: Socket listening[0m
+[0;32mI (150880) POOL_MSG_TASK: Data pool successfull[0m
+[1;31mE (150880) SOCKET_SERVER: Payload recived {"header": "pool", "username": "Sabadin", "hashCode": "wUUirQ9k8"}[0m
+[1;31mE (150890) SOCKET_SERVER: Sending to pooling queue[0m
+[1;31mE (150900) SOCKET_SERVER: Socket listening[0m
+[0;32mI (150900) POOL_MSG_TASK: Data pool successfull[0m
+[1;31mE (153330) SOCKET_SERVER: Payload recived {"header": "pool", "username": "Roxo", "hashCode": "L7AMcG1AH"}[0m
+[1;31mE (153330) SOCKET_SERVER: Sending to pooling queue[0m
+[1;31mE (153330) SOCKET_SERVER: Socket listening[0m
+[0;32mI (153330) POOL_MSG_TASK: Data pool successfull[0m
+[1;31mE (153340) SOCKET_SERVER: Payload recived {"header": "pool", "username": "Sabadin", "hashCode": "wUUirQ9k8"}[0m
+[1;31mE (153350) SOCKET_SERVER: Sending to pooling queue[0m
+[1;31mE (153360) SOCKET_SERVER: Socket listening[0m
+[0;32mI (153360) POOL_MSG_TASK: Data pool successfull[0m
+[1;31mE (155680) SOCKET_SERVER: Payload recived {"header": "pool", "username": "Roxo", "hashCode": "L7AMcG1AH"}[0m
+[1;31mE (155690) SOCKET_SERVER: Sending to pooling queue[0m
+[1;31mE (155690) SOCKET_SERVER: Socket listening[0m
+[0;32mI (155690) POOL_MSG_TASK: Data pool successfull[0m
+[1;31mE (155690) SOCKET_SERVER: Payload recived {"header": "pool", "username": "Sabadin", "hashCode": "wUUirQ9k8"}[0m
+[1;31mE (155710) SOCKET_SERVER: Sending to pooling queue[0m
+[1;31mE (155710) SOCKET_SERVER: Socket listening[0m
+[0;32mI (155710) POOL_MSG_TASK: Data pool successfull[0m
+[1;31mE (158140) SOCKET_SERVER: Payload recived {"header": "pool", "username": "Roxo", "hashCode": "L7AMcG1AH"}[0m
+[1;31mE (158150) SOCKET_SERVER: Sending to pooling queue[0m
+[1;31mE (158150) SOCKET_SERVER: Socket listening[0m
+[0;32mI (158150) POOL_MSG_TASK: Data pool successfull[0m
+[1;31mE (158150) SOCKET_SERVER: Payload recived {"header": "pool", "username": "Sabadin", "hashCode": "wUUirQ9k8"}[0m
+[1;31mE (158170) SOCKET_SERVER: Sending to pooling queue[0m
+[1;31mE (158170) SOCKET_SERVER: Socket listening[0m
+[0;32mI (158170) POOL_MSG_TASK: Data pool successfull[0m
+[1;31mE (160600) SOCKET_SERVER: Payload recived {"header": "pool", "username": "Roxo", "hashCode": "L7AMcG1AH"}[0m
+[1;31mE (160600) SOCKET_SERVER: Sending to pooling queue[0m
+[1;31mE (160610) SOCKET_SERVER: Socket listening[0m
+[0;32mI (160610) POOL_MSG_TASK: Data pool successfull[0m
+[1;31mE (160610) SOCKET_SERVER: Payload recived {"header": "pool", "username": "Sabadin", "hashCode": "wUUirQ9k8"}[0m
+[1;31mE (160630) SOCKET_SERVER: Sending to pooling queue[0m
+[1;31mE (160630) SOCKET_SERVER: Socket listening[0m
+[0;32mI (160630) POOL_MSG_TASK: Data pool successfull[0m
+[1;31mE (163060) SOCKET_SERVER: Payload recived {"header": "pool", "username": "Sabadin", "hashCode": "wUUirQ9k8"}[0m
+[1;31mE (163060) SOCKET_SERVER: Sending to pooling queue[0m
+[1;31mE (163060) SOCKET_SERVER: Socket listening[0m
+[0;32mI (163060) POOL_MSG_TASK: Data pool successfull[0m
+[1;31mE (163070) SOCKET_SERVER: Payload recived {"header": "pool", "username": "Roxo", "hashCode": "L7AMcG1AH"}[0m
+[1;31mE (163080) SOCKET_SERVER: Sending to pooling queue[0m
+[1;31mE (163090) SOCKET_SERVER: Socket listening[0m
+[0;32mI (163090) POOL_MSG_TASK: Data pool successfull[0m
+[1;31mE (165520) SOCKET_SERVER: Payload recived {"header": "send", "username": "Sabadin", "hashCode": "wUUirQ9k8", "msg": "eai?"}[0m
+[1;31mE (165520) SOCKET_SERVER: Sending to sendMSGQueue[0m
+[1;31mE (165520) SOCKET_SERVER: Socket listening[0m
+[0;32mI (165520) SEND_MSG_TASK: Message saved: eai?[0m
+[1;31mE (166540) SOCKET_SERVER: Payload recived {"header": "pool", "username": "Roxo", "hashCode": "L7AMcG1AH"}[0m
+[1;31mE (166550) SOCKET_SERVER: Sending to pooling queue[0m
+[1;31mE (166550) SOCKET_SERVER: Socket listening[0m
+[0;32mI (166550) POOL_MSG_TASK: Data pool successfull[0m
+[1;31mE (166550) SOCKET_SERVER: Payload recived {"header": "pool", "username": "Sabadin", "hashCode": "wUUirQ9k8"}[0m
+[1;31mE (166570) SOCKET_SERVER: Sending to pooling queue[0m
+[1;31mE (166570) SOCKET_SERVER: Socket listening[0m
+[0;32mI (166570) POOL_MSG_TASK: Data pool successfull[0m
+[1;31mE (169000) SOCKET_SERVER: Payload recived {"header": "pool", "username": "Roxo", "hashCode": "L7AMcG1AH"}[0m
+[1;31mE (169000) SOCKET_SERVER: Sending to pooling queue[0m
+[1;31mE (169000) SOCKET_SERVER: Socket listening[0m
+[0;32mI (169000) POOL_MSG_TASK: Data pool successfull[0m
+[1;31mE (169010) SOCKET_SERVER: Payload recived {"header": "pool", "username": "Sabadin", "hashCode": "wUUirQ9k8"}[0m
+[1;31mE (169020) SOCKET_SERVER: Sending to pooling queue[0m
+[1;31mE (169020) SOCKET_SERVER: Socket listening[0m
+[0;32mI (169020) POOL_MSG_TASK: Data pool successfull[0m
+[1;31mE (171460) SOCKET_SERVER: Payload recived {"header": "pool", "username": "Sabadin", "hashCode": "wUUirQ9k8"}[0m
+[1;31mE (171460) SOCKET_SERVER: Sending to pooling queue[0m
+[1;31mE (171460) SOCKET_SERVER: Socket listening[0m
+[0;32mI (171460) POOL_MSG_TASK: Data pool successfull[0m
+[1;31mE (171470) SOCKET_SERVER: Payload recived {"header": "pool", "username": "Roxo", "hashCode": "L7AMcG1AH"}[0m
+[1;31mE (171480) SOCKET_SERVER: Sending to pooling queue[0m
+[1;31mE (171480) SOCKET_SERVER: Socket listening[0m
+[0;32mI (171480) POOL_MSG_TASK: Data pool successfull[0m
+[1;31mE (173910) SOCKET_SERVER: Payload recived {"header": "pool", "username": "Sabadin", "hashCode": "wUUirQ9k8"}[0m
+[1;31mE (173910) SOCKET_SERVER: Sending to pooling queue[0m
+[1;31mE (173920) SOCKET_SERVER: Socket listening[0m
+[0;32mI (173920) POOL_MSG_TASK: Data pool successfull[0m
+[1;31mE (173920) SOCKET_SERVER: Payload recived {"header": "pool", "username": "Roxo", "hashCode": "L7AMcG1AH"}[0m
+[1;31mE (173930) SOCKET_SERVER: Sending to pooling queue[0m
+[1;31mE (173940) SOCKET_SERVER: Socket listening[0m
+[0;32mI (173940) POOL_MSG_TASK: Data pool successfull[0m
+[1;31mE (176370) SOCKET_SERVER: Payload recived {"header": "pool", "username": "Sabadin", "hashCode": "wUUirQ9k8"}[0m
+[1;31mE (176370) SOCKET_SERVER: Sending to pooling queue[0m
+[1;31mE (176370) SOCKET_SERVER: Socket listening[0m
+[0;32mI (176370) POOL_MSG_TASK: Data pool successfull[0m
+[1;31mE (225420) SOCKET_SERVER: Payload recived {"header": "register", "username": "sa bado"}[0m
+[1;31mE (225420) SOCKET_SERVER: Sending to register queue[0m
+[1;31mE (225420) SOCKET_SERVER: Socket listening[0m
+[0;32mI (225420) REGISTER_SERVICE: New Request Recived: sa bado[0m
+[0;32mI (227550) USER_REPO: DB: User registrado: sa bado[0m
+[1;31mE (227610) SOCKET_SERVER: Payload recived {"header": "pool", "username": "sa bado", "hashCode": "c4M5yDEBs"}[0m
+[1;31mE (227610) SOCKET_SERVER: Sending to pooling queue[0m
+[1;31mE (227610) SOCKET_SERVER: Socket listening[0m
+[0;32mI (227610) POOL_MSG_TASK: Data pool successfull[0m
+[1;31mE (229520) SOCKET_SERVER: Payload recived {"header": "register", "username": "ro xo"}[0m
+[1;31mE (229520) SOCKET_SERVER: Sending to register queue[0m
+[1;31mE (229520) SOCKET_SERVER: Socket listening[0m
+[0;32mI (229520) REGISTER_SERVICE: New Request Recived: ro xo[0m
+[1;31mE (229930) SOCKET_SERVER: Payload recived {"header": "pool", "username": "sa bado", "hashCode": "c4M5yDEBs"}[0m
+[1;31mE (229930) SOCKET_SERVER: Sending to pooling queue[0m
+[1;31mE (229930) SOCKET_SERVER: Socket listening[0m
+[0;32mI (229930) POOL_MSG_TASK: Data pool successfull[0m
+[0;32mI (232110) USER_REPO: DB: User registrado: ro xo[0m
+[1;31mE (232290) SOCKET_SERVER: Payload recived {"header": "pool", "username": "sa bado", "hashCode": "c4M5yDEBs"}[0m
+[1;31mE (232290) SOCKET_SERVER: Sending to pooling queue[0m
+[1;31mE (232290) SOCKET_SERVER: Socket listening[0m
+[0;32mI (232290) POOL_MSG_TASK: Data pool successfull[0m
+[1;31mE (232490) SOCKET_SERVER: Payload recived {"header": "pool", "username": "ro xo", "hashCode": "PPxMxS0Yt"}[0m
+[1;31mE (232490) SOCKET_SERVER: Sending to pooling queue[0m
+[1;31mE (232490) SOCKET_SERVER: Socket listening[0m
+[0;32mI (232490) POOL_MSG_TASK: Data pool successfull[0m
+[1;31mE (234740) SOCKET_SERVER: Payload recived {"header": "pool", "username": "sa bado", "hashCode": "c4M5yDEBs"}[0m
+[1;31mE (234740) SOCKET_SERVER: Sending to pooling queue[0m
+[1;31mE (234750) SOCKET_SERVER: Socket listening[0m
+[0;32mI (234750) POOL_MSG_TASK: Data pool successfull[0m
+[1;31mE (234950) SOCKET_SERVER: Payload recived {"header": "pool", "username": "ro xo", "hashCode": "PPxMxS0Yt"}[0m
+[1;31mE (234950) SOCKET_SERVER: Sending to pooling queue[0m
+[1;31mE (234950) SOCKET_SERVER: Socket listening[0m
+[0;32mI (234950) POOL_MSG_TASK: Data pool successfull[0m
+[1;31mE (235870) SOCKET_SERVER: Payload recived {"header": "send", "username": "ro xo", "hashCode": "PPxMxS0Yt", "msg": "ue cara"}[0m
+[1;31mE (235870) SOCKET_SERVER: Sending to sendMSGQueue[0m
+[1;31mE (235870) SOCKET_SERVER: Socket listening[0m
+[0;32mI (235870) SEND_MSG_TASK: Message saved: ue cara[0m
+[1;31mE (237200) SOCKET_SERVER: Payload recived {"header": "pool", "username": "sa bado", "hashCode": "c4M5yDEBs"}[0m
+[1;31mE (237200) SOCKET_SERVER: Sending to pooling queue[0m
+[1;31mE (237200) SOCKET_SERVER: Socket listening[0m
+[0;32mI (237200) POOL_MSG_TASK: Data pool successfull[0m
+[1;31mE (237410) SOCKET_SERVER: Payload recived {"header": "pool", "username": "ro xo", "hashCode": "PPxMxS0Yt"}[0m
+[1;31mE (237410) SOCKET_SERVER: Sending to pooling queue[0m
+[1;31mE (237410) SOCKET_SERVER: Socket listening[0m
+[0;32mI (237410) POOL_MSG_TASK: Data pool successfull[0m
+[1;31mE (239660) SOCKET_SERVER: Payload recived {"header": "pool", "username": "sa bado", "hashCode": "c4M5yDEBs"}[0m
+[1;31mE (239660) SOCKET_SERVER: Sending to pooling queue[0m
+[1;31mE (239660) SOCKET_SERVER: Socket listening[0m
+[0;32mI (239660) POOL_MSG_TASK: Data pool successfull[0m
+[1;31mE (239700) SOCKET_SERVER: Payload recived {"header": "pool", "username": "ro xo", "hashCode": "PPxMxS0Yt"}[0m
+[1;31mE (239700) SOCKET_SERVER: Sending to pooling queue[0m
+[1;31mE (239700) SOCKET_SERVER: Socket listening[0m
+[0;32mI (239700) POOL_MSG_TASK: Data pool successfull[0m
+[1;31mE (241830) SOCKET_SERVER: Payload recived {"header": "pool", "username": "sa bado", "hashCode": "c4M5yDEBs"}[0m
+[1;31mE (241830) SOCKET_SERVER: Sending to pooling queue[0m
+[1;31mE (241830) SOCKET_SERVER: Socket listening[0m
+[0;32mI (241830) POOL_MSG_TASK: Data pool successfull[0m
+[1;31mE (241840) SOCKET_SERVER: Payload recived {"header": "pool", "username": "ro xo", "hashCode": "PPxMxS0Yt"}[0m
+[1;31mE (241850) SOCKET_SERVER: Sending to pooling queue[0m
+[1;31mE (241860) SOCKET_SERVER: Socket listening[0m
+[0;32mI (241860) POOL_MSG_TASK: Data pool successfull[0m
+[1;31mE (243980) SOCKET_SERVER: Payload recived {"header": "pool", "username": "sa bado", "hashCode": "c4M5yDEBs"}[0m
+[1;31mE (243980) SOCKET_SERVER: Sending to pooling queue[0m
+[1;31mE (243980) SOCKET_SERVER: Socket listening[0m
+[0;32mI (243980) POOL_MSG_TASK: Data pool successfull[0m
+[1;31mE (243990) SOCKET_SERVER: Payload recived {"header": "pool", "username": "ro xo", "hashCode": "PPxMxS0Yt"}[0m
+[1;31mE (244000) SOCKET_SERVER: Sending to pooling queue[0m
+[1;31mE (244000) SOCKET_SERVER: Socket listening[0m
+[0;32mI (244000) POOL_MSG_TASK: Data pool successfull[0m
+[1;31mE (246410) SOCKET_SERVER: Payload recived {"header": "pool", "username": "ro xo", "hashCode": "PPxMxS0Yt"}[0m
+[1;31mE (246420) SOCKET_SERVER: Sending to pooling queue[0m
+[1;31mE (246420) SOCKET_SERVER: Socket listening[0m
+[0;32mI (246420) POOL_MSG_TASK: Data pool successfull[0m
+[1;31mE (246420) SOCKET_SERVER: Payload recived {"header": "pool", "username": "sa bado", "hashCode": "c4M5yDEBs"}[0m
+[1;31mE (246440) SOCKET_SERVER: Sending to pooling queue[0m
+[1;31mE (246440) SOCKET_SERVER: Socket listening[0m
+[0;32mI (246440) POOL_MSG_TASK: Data pool successfull[0m
+[1;31mE (248690) SOCKET_SERVER: Payload recived {"header": "pool", "username": "ro xo", "hashCode": "PPxMxS0Yt"}[0m
+[1;31mE (248690) SOCKET_SERVER: Sending to pooling queue[0m
+[1;31mE (248690) SOCKET_SERVER: Socket listening[0m
+[0;32mI (248690) POOL_MSG_TASK: Data pool successfull[0m
+[1;31mE (248700) SOCKET_SERVER: Payload recived {"header": "pool", "username": "sa bado", "hashCode": "c4M5yDEBs"}[0m
+[1;31mE (248710) SOCKET_SERVER: Sending to pooling queue[0m
+[1;31mE (248710) SOCKET_SERVER: Socket listening[0m
+[0;32mI (248720) POOL_MSG_TASK: Data pool successfull[0m
+[1;31mE (250840) SOCKET_SERVER: Payload recived {"header": "pool", "username": "ro xo", "hashCode": "PPxMxS0Yt"}[0m
+[1;31mE (250840) SOCKET_SERVER: Sending to pooling queue[0m
+[1;31mE (250850) SOCKET_SERVER: Socket listening[0m
+[0;32mI (250850) POOL_MSG_TASK: Data pool successfull[0m
+[1;31mE (250850) SOCKET_SERVER: Payload recived {"header": "pool", "username": "sa bado", "hashCode": "c4M5yDEBs"}[0m
+[1;31mE (250860) SOCKET_SERVER: Sending to pooling queue[0m
+[1;31mE (250870) SOCKET_SERVER: Socket listening[0m
+[0;32mI (250870) POOL_MSG_TASK: Data pool successfull[0m
+[0;32mI (730) wifi:mode : sta (b0:a7:32:f2:cd:f0)[0m
+[0;32mI (730) wifi:enable tsf[0m
+[0;32mI (740) WIFI_STATION: wifi_init_sta finished.[0m
+[0;32mI (740) WIFI_STATION: Aguardando conexão WiFi...[0m
+[0;32mI (750) wifi:new:<8,0>, old:<1,0>, ap:<255,255>, sta:<8,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (750) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (760) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (760) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (780) wifi:<ba-add>idx:0 (ifx:0, cc:58:30:02:43:61), tid:0, ssn:0, winSize:64[0m
+[0;32mI (780) wifi:<ba-add>idx:1 (ifx:0, cc:58:30:02:43:61), tid:5, ssn:0, winSize:64[0m
+[0;32mI (790) wifi:connected with PEDRO, aid = 1, channel 8, BW20, bssid = cc:58:30:02:43:61[0m
+[0;32mI (790) wifi:security: WPA2-PSK, phy: bgn, rssi: -22[0m
+[0;32mI (800) wifi:pm start, type: 1[0m
+
+[0;32mI (800) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (820) wifi:AP's beacon interval = 102400 us, DTIM period = 1[0m
+[0;32mI (2870) esp_netif_handlers: sta ip: 192.168.0.29, mask: 255.255.255.0, gw: 192.168.0.1[0m
+[0;32mI (2870) WIFI_STATION: got ip:192.168.0.29[0m
+[0;32mI (2870) WIFI_STATION: connected to ap SSID:PEDRO[0m
+[0;32mI (2870) MAIN: Starting Socket Server...[0m
+[0;32mI (2880) MAIN: Starting Register Task[0m
+[1;31mE (2880) SOCKET_SERVER: Socket listening[0m
+[0;32mI (3060) MAIN: Starting Send Message Task[0m
+[0;32mI (3060) MAIN: Starting Pool Message Task[0m
+[0;32mI (3060) main_task: Returned from app_main()[0m
+[1;31mE (10890) SOCKET_SERVER: Payload recived {"header": "register", "username": "roxo1"}[0m
+[1;31mE (10890) SOCKET_SERVER: Sending to register queue[0m
+[1;31mE (10890) SOCKET_SERVER: Socket listening[0m
+[0;32mI (10890) REGISTER_SERVICE: New Request Recived: roxo1[0m
+[0;32mI (14140) USER_REPO: DB: User registrado: roxo1[0m
+[1;31mE (14550) SOCKET_SERVER: Payload recived {"header": "pool", "username": "roxo1", "hashCode": "YgdIjRlW0"}[0m
+[1;31mE (14550) SOCKET_SERVER: Sending to pooling queue[0m
+[1;31mE (14550) SOCKET_SERVER: Socket listening[0m
+[0;32mI (14550) POOL_MSG_TASK: Data pool successfull[0m
+[1;31mE (15390) SOCKET_SERVER: Payload recived {"header": "send", "username": "roxo1", "hashCode": "YgdIjRlW0", "msg": "eai"}[0m
+[1;31mE (15390) SOCKET_SERVER: Sending to sendMSGQueue[0m
+[1;31mE (15390) SOCKET_SERVER: Socket listening[0m
+[0;32mI (15390) SEND_MSG_TASK: Message saved: eai[0m
+[1;31mE (16830) SOCKET_SERVER: Payload recived {"header": "pool", "username": "roxo1", "hashCode": "YgdIjRlW0"}[0m
+[1;31mE (16830) SOCKET_SERVER: Sending to pooling queue[0m
+[1;31mE (16830) SOCKET_SERVER: Socket listening[0m
+[0;32mI (16830) POOL_MSG_TASK: Data pool successfull[0m
+[1;31mE (18780) SOCKET_SERVER: Payload recived {"header": "send", "username": "roxo1", "hashCode": "YgdIjRlW0", "msg": "deixando registrado aq"}[0m
+[1;31mE (18780) SOCKET_SERVER: Sending to sendMSGQueue[0m
+[1;31mE (18780) SOCKET_SERVER: Socket listening[0m
+[0;32mI (18780) SEND_MSG_TASK: Message saved: deixando registrado aq[0m
+[1;31mE (19260) SOCKET_SERVER: Payload recived {"header": "pool", "username": "roxo1", "hashCode": "YgdIjRlW0"}[0m
+[1;31mE (19260) SOCKET_SERVER: Sending to pooling queue[0m
+[1;31mE (19260) SOCKET_SERVER: Socket listening[0m
+[0;32mI (19260) POOL_MSG_TASK: Data pool successfull[0m
+[1;31mE (21330) SOCKET_SERVER: Payload recived {"header": "send", "username": "roxo1", "hashCode": "YgdIjRlW0", "msg": "bye"}[0m
+[1;31mE (21340) SOCKET_SERVER: Sending to sendMSGQueue[0m
+[1;31mE (21340) SOCKET_SERVER: Socket listening[0m
+[0;32mI (21340) SEND_MSG_TASK: Message saved: bye[0m
+[1;31mE (21540) SOCKET_SERVER: Payload recived {"header": "pool", "username": "roxo1", "hashCode": "YgdIjRlW0"}[0m
+[1;31mE (21540) SOCKET_SERVER: Sending to pooling queue[0m
+[1;31mE (21540) SOCKET_SERVER: Socket listening[0m
+[0;32mI (21540) POOL_MSG_TASK: Data pool successfull[0m
+[1;31mE (25630) SOCKET_SERVER: Payload recived {"header": "register", "username": "roxo2"}[0m
+[1;31mE (25630) SOCKET_SERVER: Sending to register queue[0m
+[1;31mE (25630) SOCKET_SERVER: Socket listening[0m
+[0;32mI (25630) REGISTER_SERVICE: New Request Recived: roxo2[0m
+[0;32mI (28200) USER_REPO: DB: User registrado: roxo2[0m
+[1;31mE (28580) SOCKET_SERVER: Payload recived {"header": "pool", "username": "roxo2", "hashCode": "Zy70fXpEx"}[0m
+[1;31mE (28590) SOCKET_SERVER: Sending to pooling queue[0m
+[1;31mE (28590) SOCKET_SERVER: Socket listening[0m
+[0;32mI (28590) POOL_MSG_TASK: Data pool successfull[0m
+[1;31mE (31040) SOCKET_SERVER: Payload recived {"header": "pool", "username": "roxo2", "hashCode": "Zy70fXpEx"}[0m
+[1;31mE (31040) SOCKET_SERVER: Sending to pooling queue[0m
+[1;31mE (31040) SOCKET_SERVER: Socket listening[0m
+[0;32mI (31040) POOL_MSG_TASK: Data pool successfull[0m
+[1;31mE (33500) SOCKET_SERVER: Payload recived {"header": "pool", "username": "roxo2", "hashCode": "Zy70fXpEx"}[0m
+[1;31mE (33500) SOCKET_SERVER: Sending to pooling queue[0m
+[1;31mE (33500) SOCKET_SERVER: Socket listening[0m
+[0;32mI (33500) POOL_MSG_TASK: Data pool successfull[0m
+[1;31mE (35850) SOCKET_SERVER: Payload recived {"header": "pool", "username": "roxo2", "hashCode": "Zy70fXpEx"}[0m
+[1;31mE (35850) SOCKET_SERVER: Sending to pooling queue[0m
+[1;31mE (35850) SOCKET_SERVER: Socket listening[0m
+[0;32mI (35850) POOL_MSG_TASK: Data pool successfull[0m
+[1;31mE (37200) SOCKET_SERVER: Payload recived {"header": "send", "username": "roxo2", "hashCode": "Zy70fXpEx", "msg": "por que tava parando o pooling antes???"}[0m
+[1;31mE (37200) SOCKET_SERVER: Sending to sendMSGQueue[0m
+[1;31mE (37210) SOCKET_SERVER: Socket listening[0m
+[0;32mI (37210) SEND_MSG_TASK: Message saved: por que tava parando o pooling antes???[0m
+[1;31mE (38120) SOCKET_SERVER: Payload recived {"header": "pool", "username": "roxo2", "hashCode": "Zy70fXpEx"}[0m
+[1;31mE (38120) SOCKET_SERVER: Sending to pooling queue[0m
+[1;31mE (38130) SOCKET_SERVER: Socket listening[0m
+[0;32mI (38130) POOL_MSG_TASK: Data pool successfull[0m
+[1;31mE (38130) SOCKET_SERVER: Payload recived {"header": "send", "username": "roxo2", "hashCode": "Zy70fXpEx", "msg": "eai"}[0m
+[1;31mE (38140) SOCKET_SERVER: Sending to sendMSGQueue[0m
+[1;31mE (38150) SOCKET_SERVER: Socket listening[0m
+[0;32mI (38150) SEND_MSG_TASK: Message saved: eai[0m
+[1;31mE (39440) SOCKET_SERVER: Payload recived {"header": "send", "username": "roxo2", "hashCode": "Zy70fXpEx", "msg": "krai"}[0m
+[1;31mE (39440) SOCKET_SERVER: Sending to sendMSGQueue[0m
+[1;31mE (39440) SOCKET_SERVER: Socket listening[0m
+[0;32mI (39440) SEND_MSG_TASK: Message saved: krai[0m
+[1;31mE (42830) SOCKET_SERVER: Payload recived {"header": "register", "username": "roxo3"}[0m
+[1;31mE (42830) SOCKET_SERVER: Sending to register queue[0m
+[1;31mE (42830) SOCKET_SERVER: Socket listening[0m
+[0;32mI (42830) REGISTER_SERVICE: New Request Recived: roxo3[0m
+[0;32mI (44880) USER_REPO: DB: User registrado: roxo3[0m
+[1;31mE (44920) SOCKET_SERVER: Payload recived {"header": "pool", "username": "roxo3", "hashCode": "19sjp8F7A"}[0m
+[1;31mE (44920) SOCKET_SERVER: Sending to pooling queue[0m
+[1;31mE (44920) SOCKET_SERVER: Socket listening[0m
+[0;32mI (44920) POOL_MSG_TASK: Data pool successfull[0m
+[1;31mE (47320) SOCKET_SERVER: Payload recived {"header": "pool", "username": "roxo3", "hashCode": "19sjp8F7A"}[0m
+[1;31mE (47320) SOCKET_SERVER: Sending to pooling queue[0m
+[1;31mE (47330) SOCKET_SERVER: Socket listening[0m
+[0;32mI (47330) POOL_MSG_TASK: Data pool successfull[0m
+[1;31mE (49680) SOCKET_SERVER: Payload recived {"header": "pool", "username": "roxo3", "hashCode": "19sjp8F7A"}[0m
+[1;31mE (49680) SOCKET_SERVER: Sending to pooling queue[0m
+[1;31mE (49680) SOCKET_SERVER: Socket listening[0m
+[0;32mI (49680) POOL_MSG_TASK: Data pool successfull[0m
+[1;31mE (50080) SOCKET_SERVER: Payload recived {"header": "send", "username": "roxo3", "hashCode": "19sjp8F7A", "msg": "nao faz sentido"}[0m
+[1;31mE (50090) SOCKET_SERVER: Sending to sendMSGQueue[0m
+[1;31mE (50090) SOCKET_SERVER: Socket listening[0m
+[0;32mI (50090) SEND_MSG_TASK: Message saved: nao faz sentido[0m
+[1;31mE (52030) SOCKET_SERVER: Payload recived {"header": "pool", "username": "roxo3", "hashCode": "19sjp8F7A"}[0m
+[1;31mE (52030) SOCKET_SERVER: Sending to pooling queue[0m
+[1;31mE (52030) SOCKET_SERVER: Socket listening[0m
+[0;32mI (52030) POOL_MSG_TASK: Data pool successfull[0m
+[1;31mE (54490) SOCKET_SERVER: Payload recived {"header": "pool", "username": "roxo3", "hashCode": "19sjp8F7A"}[0m
+[1;31mE (54490) SOCKET_SERVER: Sending to pooling queue[0m
+[1;31mE (54490) SOCKET_SERVER: Socket listening[0m
+[0;32mI (54490) POOL_MSG_TASK: Data pool successfull[0m
+[1;31mE (56430) SOCKET_SERVER: Payload recived {"header": "register", "username": "roxo4"}[0m
+[1;31mE (56440) SOCKET_SERVER: Sending to register queue[0m
+[1;31mE (56440) SOCKET_SERVER: Socket listening[0m
+[0;32mI (56440) REGISTER_SERVICE: New Request Recived: roxo4[0m
+[1;31mE (56850) SOCKET_SERVER: Payload recived {"header": "pool", "username": "roxo3", "hashCode": "19sjp8F7A"}[0m
+[1;31mE (56850) SOCKET_SERVER: Sending to pooling queue[0m
+[1;31mE (56850) SOCKET_SERVER: Socket listening[0m
+[0;32mI (56850) POOL_MSG_TASK: Data pool successfull[0m
+[0;32mI (59300) USER_REPO: DB: User registrado: roxo4[0m
+[1;31mE (59310) SOCKET_SERVER: Payload recived {"header": "pool", "username": "roxo3", "hashCode": "19sjp8F7A"}[0m
+[1;31mE (59310) SOCKET_SERVER: Sending to pooling queue[0m
+[1;31mE (59310) SOCKET_SERVER: Socket listening[0m
+[0;32mI (59310) POOL_MSG_TASK: Data pool successfull[0m
+[1;31mE (59340) SOCKET_SERVER: Payload recived {"header": "pool", "username": "roxo4", "hashCode": "zIkSsRyhG"}[0m
+[1;31mE (59350) SOCKET_SERVER: Sending to pooling queue[0m
+[1;31mE (59350) SOCKET_SERVER: Socket listening[0m
+[0;32mI (59350) POOL_MSG_TASK: Data pool successfull[0m
+[1;31mE (61350) SOCKET_SERVER: Payload recived {"header": "send", "username": "roxo4", "hashCode": "zIkSsRyhG", "msg": "vamo la"}[0m
+[1;31mE (61350) SOCKET_SERVER: Sending to sendMSGQueue[0m
+[1;31mE (61350) SOCKET_SERVER: Socket listening[0m
+[0;32mI (61350) SEND_MSG_TASK: Message saved: vamo la[0m
+[1;31mE (61560) SOCKET_SERVER: Payload recived {"header": "pool", "username": "roxo3", "hashCode": "19sjp8F7A"}[0m
+[1;31mE (61560) SOCKET_SERVER: Sending to pooling queue[0m
+[1;31mE (61560) SOCKET_SERVER: Socket listening[0m
+[0;32mI (61560) POOL_MSG_TASK: Data pool successfull[0m
+[1;31mE (61760) SOCKET_SERVER: Payload recived {"header": "pool", "username": "roxo4", "hashCode": "zIkSsRyhG"}[0m
+[1;31mE (61760) SOCKET_SERVER: Sending to pooling queue[0m
+[1;31mE (61760) SOCKET_SERVER: Socket listening[0m
+[0;32mI (61760) POOL_MSG_TASK: Data pool successfull[0m
+[1;31mE (63600) SOCKET_SERVER: Payload recived {"header": "send", "username": "roxo4", "hashCode": "zIkSsRyhG", "msg": "qq ta rolando"}[0m
+[1;31mE (63600) SOCKET_SERVER: Sending to sendMSGQueue[0m
+[1;31mE (63610) SOCKET_SERVER: Socket listening[0m
+[0;32mI (63610) SEND_MSG_TASK: Message saved: qq ta rolando[0m
+[1;31mE (63840) SOCKET_SERVER: accept failed: errno=23[0m
+[1;31mE (63840) SOCKET_SERVER: Socket listening[0m
+[1;31mE (63870) SOCKET_SERVER: accept failed: errno=23[0m
+[1;31mE (63870) SOCKET_SERVER: Socket listening[0m
+[1;31mE (65450) SOCKET_SERVER: accept failed: errno=23[0m
+[1;31mE (65450) SOCKET_SERVER: Socket listening[0m
+[1;31mE (65980) SOCKET_SERVER: accept failed: errno=23[0m
+[1;31mE (65980) SOCKET_SERVER: Socket listening[0m
+[1;31mE (65990) SOCKET_SERVER: accept failed: errno=23[0m
+[1;31mE (65990) SOCKET_SERVER: Socket listening[0m
+[1;31mE (66080) SOCKET_SERVER: accept failed: errno=23[0m
+[1;31mE (66080) SOCKET_SERVER: Socket listening[0m
+[1;31mE (67090) SOCKET_SERVER: accept failed: errno=23[0m
+[1;31mE (67090) SOCKET_SERVER: Socket listening[0m
+[1;31mE (68320) SOCKET_SERVER: accept failed: errno=23[0m
+[1;31mE (68320) SOCKET_SERVER: Socket listening[0m
+[1;31mE (68320) SOCKET_SERVER: accept failed: errno=23[0m
+[1;31mE (68320) SOCKET_SERVER: Socket listening[0m
+[1;31mE (69240) SOCKET_SERVER: accept failed: errno=23[0m
+[1;31mE (69240) SOCKET_SERVER: Socket listening[0m
+[1;31mE (70770) SOCKET_SERVER: accept failed: errno=23[0m
+[1;31mE (70770) SOCKET_SERVER: Socket listening[0m
+[1;31mE (74770) SOCKET_SERVER: accept failed: errno=23[0m
+[1;31mE (74770) SOCKET_SERVER: Socket listening[0m
+[1;31mE (92500) SOCKET_SERVER: accept failed: errno=23[0m
+[1;31mE (92500) SOCKET_SERVER: Socket listening[0m
+[1;31mE (102030) SOCKET_SERVER: accept failed: errno=23[0m
+[1;31mE (102030) SOCKET_SERVER: Socket listening[0m
+[0;32mI (2980) esp_netif_handlers: sta ip: 192.168.0.29, mask: 255.255.255.0, gw: 192.168.0.1[0m
+[0;32mI (2980) WIFI_STATION: got ip:192.168.0.29[0m
+[0;32mI (2980) WIFI_STATION: connected to ap SSID:PEDRO[0m
+[0;32mI (2980) MAIN: Starting Socket Server...[0m
+[0;32mI (2990) MAIN: Starting Register Task[0m
+[1;31mE (2990) SOCKET_SERVER: Socket listening[0m
+[0;32mI (3170) MAIN: Starting Send Message Task[0m
+[0;32mI (3170) MAIN: Starting Pool Message Task[0m
+[0;32mI (3170) main_task: Returned from app_main()[0m
+[1;31mE (12500) SOCKET_SERVER: Payload recived {"header": "register", "username": "roxo1"}[0m
+[1;31mE (12500) SOCKET_SERVER: Sending to register queue[0m
+[1;31mE (12500) SOCKET_SERVER: Socket listening[0m
+[0;32mI (12500) REGISTER_SERVICE: New Request Recived: roxo1[0m
+[1;31mE (17000) SOCKET_SERVER: Payload recived {"header": "register", "username": "roxo2"}[0m
+[1;31mE (17000) SOCKET_SERVER: Sending to register queue[0m
+[1;31mE (17000) SOCKET_SERVER: Socket listening[0m
+[0;32mI (18840) USER_REPO: DB: User registrado: roxo1[0m
+[0;32mI (18840) REGISTER_SERVICE: New Request Recived: roxo2[0m
+[1;31mE (19250) SOCKET_SERVER: Payload recived {"header": "pool", "username": "roxo1", "hashCode": "HLZfCmuAA"}[0m
+[1;31mE (19250) SOCKET_SERVER: Sending to pooling queue[0m
+[1;31mE (19260) SOCKET_SERVER: Socket listening[0m
+[0;32mI (19260) POOL_MSG_TASK: Data pool successfull[0m
+[0;32mI (20590) USER_REPO: DB: User registrado: roxo2[0m
+[1;31mE (21000) SOCKET_SERVER: Payload recived {"header": "pool", "username": "roxo2", "hashCode": "vGomtm2wo"}[0m
+[1;31mE (21000) SOCKET_SERVER: Sending to pooling queue[0m
+[1;31mE (21000) SOCKET_SERVER: Socket listening[0m
+[0;32mI (21000) POOL_MSG_TASK: Data pool successfull[0m
+[1;31mE (21710) SOCKET_SERVER: Payload recived {"header": "pool", "username": "roxo1", "hashCode": "HLZfCmuAA"}[0m
+[1;31mE (21710) SOCKET_SERVER: Sending to pooling queue[0m
+[1;31mE (21710) SOCKET_SERVER: Socket listening[0m
+[0;32mI (21710) POOL_MSG_TASK: Data pool successfull[0m
+[1;31mE (23150) SOCKET_SERVER: Payload recived {"header": "send", "username": "roxo1", "hashCode": "HLZfCmuAA", "msg": "vamo la"}[0m
+[1;31mE (23150) SOCKET_SERVER: Sending to sendMSGQueue[0m
+[1;31mE (23150) SOCKET_SERVER: Socket listening[0m
+[0;32mI (23150) SEND_MSG_TASK: Message saved: vamo la[0m
+[1;31mE (23350) SOCKET_SERVER: Payload recived {"header": "pool", "username": "roxo2", "hashCode": "vGomtm2wo"}[0m
+[1;31mE (23350) SOCKET_SERVER: Sending to pooling queue[0m
+[1;31mE (23350) SOCKET_SERVER: Socket listening[0m
+[0;32mI (23350) POOL_MSG_TASK: Data pool successfull[0m
+[1;31mE (24170) SOCKET_SERVER: Payload recived {"header": "pool", "username": "roxo1", "hashCode": "HLZfCmuAA"}[0m
+[1;31mE (24170) SOCKET_SERVER: Sending to pooling queue[0m
+[1;31mE (24180) SOCKET_SERVER: Socket listening[0m
+[0;32mI (24180) POOL_MSG_TASK: Data pool successfull[0m
+[1;31mE (25510) SOCKET_SERVER: Payload recived {"header": "send", "username": "roxo1", "hashCode": "HLZfCmuAA", "msg": "\u00e9 bom dar certo"}[0m
+[1;31mE (25510) SOCKET_SERVER: Sending to sendMSGQueue[0m
+[1;31mE (25520) SOCKET_SERVER: Socket listening[0m
+[0;32mI (25520) SEND_MSG_TASK: Message saved: é bom dar certo[0m
+[1;31mE (25530) SOCKET_SERVER: Payload recived {"header": "pool", "username": "roxo2", "hashCode": "vGomtm2wo"}[0m
+[1;31mE (25540) SOCKET_SERVER: Sending to pooling queue[0m
+[1;31mE (25540) SOCKET_SERVER: Socket listening[0m
+[0;32mI (25540) POOL_MSG_TASK: Data pool successfull[0m
+[1;31mE (26520) SOCKET_SERVER: Payload recived {"header": "pool", "username": "roxo1", "hashCode": "HLZfCmuAA"}[0m
+[1;31mE (26520) SOCKET_SERVER: Sending to pooling queue[0m
+[1;31mE (26530) SOCKET_SERVER: Socket listening[0m
+[0;32mI (26530) POOL_MSG_TASK: Data pool successfull[0m
+[1;31mE (26930) SOCKET_SERVER: Payload recived {"header": "send", "username": "roxo1", "hashCode": "HLZfCmuAA", "msg": "oioi"}[0m
+[1;31mE (26930) SOCKET_SERVER: Sending to sendMSGQueue[0m
+[1;31mE (26940) SOCKET_SERVER: Socket listening[0m
+[0;32mI (26940) SEND_MSG_TASK: Message saved: oioi[0m
+[1;31mE (27550) SOCKET_SERVER: Payload recived {"header": "send", "username": "roxo1", "hashCode": "HLZfCmuAA", "msg": "oi"}[0m
+[1;31mE (27550) SOCKET_SERVER: Sending to sendMSGQueue[0m
+[1;31mE (27550) SOCKET_SERVER: Socket listening[0m
+[0;32mI (27550) SEND_MSG_TASK: Message saved: oi[0m
+[1;31mE (27960) SOCKET_SERVER: Payload recived {"header": "pool", "username": "roxo2", "hashCode": "vGomtm2wo"}[0m
+[1;31mE (27960) SOCKET_SERVER: Sending to pooling queue[0m
+[1;31mE (27960) SOCKET_SERVER: Socket listening[0m
+[0;32mI (27960) POOL_MSG_TASK: Data pool successfull[0m
+[1;31mE (28160) SOCKET_SERVER: Payload recived {"header": "send", "username": "roxo1", "hashCode": "HLZfCmuAA", "msg": "oi"}[0m
+[1;31mE (28170) SOCKET_SERVER: Sending to sendMSGQueue[0m
+[1;31mE (28170) SOCKET_SERVER: Socket listening[0m
+[0;32mI (28170) SEND_MSG_TASK: Message saved: oi[0m
+[1;31mE (28780) SOCKET_SERVER: Payload recived {"header": "send", "username": "roxo1", "hashCode": "HLZfCmuAA", "msg": "oi"}[0m
+[1;31mE (28780) SOCKET_SERVER: Sending to sendMSGQueue[0m
+[1;31mE (28780) SOCKET_SERVER: Socket listening[0m
+[0;32mI (28780) SEND_MSG_TASK: Message saved: oi[0m
+[1;31mE (28980) SOCKET_SERVER: Payload recived {"header": "pool", "username": "roxo1", "hashCode": "HLZfCmuAA"}[0m
+[1;31mE (28980) SOCKET_SERVER: Sending to pooling queue[0m
+[1;31mE (28990) SOCKET_SERVER: Socket listening[0m
+[0;32mI (28990) POOL_MSG_TASK: Data pool successfull[0m
+[1;31mE (30270) SOCKET_SERVER: Payload recived {"header": "pool", "username": "roxo2", "hashCode": "vGomtm2wo"}[0m
+[1;31mE (30280) SOCKET_SERVER: Sending 

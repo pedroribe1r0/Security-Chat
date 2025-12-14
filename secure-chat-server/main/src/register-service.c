@@ -71,7 +71,7 @@ static void handle_register_queue(void *pvParameters){
 
             cJSON *res = cJSON_CreateObject();
 
-            if(!req->username == ""){
+            if(strcmp(req->username, "") != 0){
                 lcd_clear();
                 lcd_set_cursor(0, 0);
                 lcd_string(req->username);

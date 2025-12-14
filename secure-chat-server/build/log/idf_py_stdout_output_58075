@@ -1,0 +1,238 @@
+Command: /home/pedro/.espressif/python_env/idf6.1_py3.10_env/bin/python /home/pedro/esp/esp-idf/tools/idf_monitor.py -p /dev/ttyUSB0 -b 115200 --toolchain-prefix xtensa-esp32-elf- --target esp32 --revision 0 /home/pedro/Documents/Security-Chat/secure-chat-server/build/secure-chat-server.elf /home/pedro/Documents/Security-Chat/secure-chat-server/build/bootloader/bootloader.elf -m '/home/pedro/.espressif/python_env/idf6.1_py3.10_env/bin/python' '/home/pedro/esp/esp-idf/tools/idf.py' '-p' '/dev/ttyUSB0'
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0040,len:6376
+load:0x40078000,len:15900
+ho 0 tail 12 room 4
+load:0x40080400,len:3920
+entry 0x40080644
+[0;32mI (29) boot: ESP-IDF v6.1-dev-828-g41e9060961 2nd stage bootloader[0m
+[0;32mI (29) boot: compile time Nov 25 2025 21:00:15[0m
+[0;32mI (29) boot: Multicore bootloader[0m
+[0;32mI (32) boot: chip revision: v3.0[0m
+[0;32mI (35) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (39) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (42) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (46) boot: Enabling RNG early entropy source...[0m
+[0;32mI (50) boot: Partition Table:[0m
+[0;32mI (53) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (59) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (66) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (72) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (79) boot: End of partition table[0m
+[0;32mI (82) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=1b0f4h (110836) map[0m
+[0;32mI (129) esp_image: segment 1: paddr=0002b11c vaddr=3ffb0000 size=04184h ( 16772) load[0m
+[0;32mI (136) esp_image: segment 2: paddr=0002f2a8 vaddr=40080000 size=00d70h (  3440) load[0m
+[0;32mI (137) esp_image: segment 3: paddr=00030020 vaddr=400d0020 size=8ee5ch (585308) map[0m
+[0;32mI (349) esp_image: segment 4: paddr=000bee84 vaddr=40080d70 size=15d70h ( 89456) load[0m
+[0;32mI (386) esp_image: segment 5: paddr=000d4bfc vaddr=50000000 size=00028h (    40) load[0m
+[0;32mI (397) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (397) boot: Disabling RNG early entropy source...[0m
+[0;32mI (408) cpu_start: Multicore app[0m
+[0;32mI (416) cpu_start: GPIO 3 and 1 are used as console UART I/O pins[0m
+[0;32mI (416) cpu_start: Pro cpu start user code[0m
+[0;32mI (416) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (418) app_init: Application information:[0m
+[0;32mI (422) app_init: Project name:     secure-chat-server[0m
+[0;32mI (427) app_init: App version:      e88e1a6-dirty[0m
+[0;32mI (431) app_init: Compile time:     Dec 14 2025 15:58:28[0m
+[0;32mI (436) app_init: ELF file SHA256:  76a647691...[0m
+[0;32mI (441) app_init: ESP-IDF:          v6.1-dev-828-g41e9060961[0m
+[0;32mI (446) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (450) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (454) efuse_init: Chip rev:         v3.0[0m
+[0;32mI (458) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (464) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (469) heap_init: At 3FFB9DF8 len 00026208 (152 KiB): DRAM[0m
+[0;32mI (474) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (480) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (485) heap_init: At 40096AE0 len 00009520 (37 KiB): IRAM[0m
+[0;32mI (492) spi_flash: detected chip: generic[0m
+[0;32mI (494) spi_flash: flash io: dio[0m
+[0;33mW (497) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;33mW (510) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+[0;32mI (520) main_task: Started on CPU0[0m
+[0;32mI (530) main_task: Calling app_main()[0m
+[0;32mI (550) MAIN: Connecting to WiFi...[0m
+[0;32mI (570) wifi:wifi driver task: 3ffc1f54, prio:23, stack:6656, core=0[0m
+[0;32mI (580) wifi:wifi firmware version: 6a8253a[0m
+[0;32mI (580) wifi:wifi certification version: v7.0[0m
+[0;32mI (580) wifi:config NVS flash: enabled[0m
+[0;32mI (580) wifi:config nano formatting: disabled[0m
+[0;32mI (590) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (590) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (600) wifi:Init management short buffer num: 32[0m
+[0;32mI (600) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (610) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (610) wifi:Init static rx buffer num: 10[0m
+[0;32mI (610) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (620) wifi_init: rx ba win: 6[0m
+[0;32mI (620) wifi_init: accept mbox: 6[0m
+[0;32mI (620) wifi_init: tcpip mbox: 32[0m
+[0;32mI (630) wifi_init: udp mbox: 6[0m
+[0;32mI (630) wifi_init: tcp mbox: 6[0m
+[0;32mI (630) wifi_init: tcp tx win: 5760[0m
+[0;32mI (640) wifi_init: tcp rx win: 5760[0m
+[0;32mI (640) wifi_init: tcp mss: 1440[0m
+[0;32mI (640) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (650) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (650) phy_init: phy_version 4863,a3a4459,Oct 28 2025,14:30:06[0m
+[0;32mI (730) wifi:mode : sta (b0:a7:32:f2:cd:f0)[0m
+[0;32mI (730) wifi:enable tsf[0m
+[0;32mI (730) WIFI_STATION: wifi_init_sta finished.[0m
+[0;32mI (730) WIFI_STATION: Aguardando conexão WiFi...[0m
+[0;32mI (740) wifi:new:<8,0>, old:<1,0>, ap:<255,255>, sta:<8,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (750) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (750) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (760) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (770) wifi:<ba-add>idx:0 (ifx:0, cc:58:30:02:43:61), tid:5, ssn:0, winSize:64[0m
+[0;32mI (780) wifi:<ba-add>idx:1 (ifx:0, cc:58:30:02:43:61), tid:0, ssn:0, winSize:64[0m
+[0;32mI (800) wifi:connected with PEDRO, aid = 1, channel 8, BW20, bssid = cc:58:30:02:43:61[0m
+[0;32mI (800) wifi:security: WPA2-PSK, phy: bgn, rssi: -22[0m
+[0;32mI (810) wifi:pm start, type: 1[0m
+
+[0;32mI (810) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (820) wifi:AP's beacon interval = 102400 us, DTIM period = 1[0m
+[0;32mI (1870) esp_netif_handlers: sta ip: 192.168.0.29, mask: 255.255.255.0, gw: 192.168.0.1[0m
+[0;32mI (1870) WIFI_STATION: got ip:192.168.0.29[0m
+[0;32mI (1870) WIFI_STATION: connected to ap SSID:PEDRO[0m
+[0;32mI (1870) MAIN: Starting Socket Server...[0m
+[1;31mE (1880) SOCKET_SERVER: Socket listening[0m
+[0;32mI (1880) MAIN: Starting Register Task[0m
+[0;32mI (2060) MAIN: Starting Send Message Task[0m
+[0;32mI (2060) MAIN: Starting Pool Message Task[0m
+[0;32mI (2060) main_task: Returned from app_main()[0m
+[1;31mE (10270) SOCKET_SERVER: Payload recived {"header": "register", "username": "roxo2"}[0m
+[1;31mE (10270) SOCKET_SERVER: Sending to register queue[0m
+[1;31mE (10270) SOCKET_SERVER: Socket listening[0m
+[0;32mI (10270) REGISTER_SERVICE: New Request Recived: roxo2[0m
+[1;31mE (12830) SOCKET_SERVER: Payload recived {"header": "register", "username": "roxo1"}[0m
+[1;31mE (12830) SOCKET_SERVER: Sending to register queue[0m
+[1;31mE (12830) SOCKET_SERVER: Socket listening[0m
+[0;32mI (19500) USER_REPO: DB: User registrado: roxo2[0m
+[0;32mI (19500) REGISTER_SERVICE: New Request Recived: roxo1[0m
+[1;31mE (19880) SOCKET_SERVER: Payload recived {"header": "pool", "username": "roxo2", "hashCode": "QHPXtnLuv"}[0m
+[1;31mE (19880) SOCKET_SERVER: Sending to pooling queue[0m
+[1;31mE (19880) SOCKET_SERVER: Socket listening[0m
+[0;32mI (19880) POOL_MSG_TASK: Data pool successfull[0m
+[1;31mE (22340) SOCKET_SERVER: Payload recived {"header": "pool", "username": "roxo2", "hashCode": "QHPXtnLuv"}[0m
+[1;31mE (22340) SOCKET_SERVER: Sending to pooling queue[0m
+[1;31mE (22340) SOCKET_SERVER: Socket listening[0m
+[0;32mI (22340) POOL_MSG_TASK: Data pool successfull[0m
+[1;31mE (24500) SOCKET_SERVER: Payload recived {"header": "register", "username": "roxo2"}[0m
+[1;31mE (24510) SOCKET_SERVER: Sending to register queue[0m
+[1;31mE (24510) SOCKET_SERVER: Socket listening[0m
+[0;32mI (24510) REGISTER_SERVICE: New Request Recived: roxo2[0m
+[1;31mE (24510) SOCKET_SERVER: Payload recived {"header": "pool", "username": "roxo2", "hashCode": "QHPXtnLuv"}[0m
+[1;31mE (24520) SOCKET_SERVER: Sending to pooling queue[0m
+[1;31mE (24530) SOCKET_SERVER: Socket listening[0m
+[0;32mI (24530) POOL_MSG_TASK: Data pool successfull[0m
+[1;31mE (26940) SOCKET_SERVER: Payload recived {"header": "pool", "username": "roxo2", "hashCode": "QHPXtnLuv"}[0m
+[1;31mE (26950) SOCKET_SERVER: Sending to pooling queue[0m
+[1;31mE (26950) SOCKET_SERVER: Socket listening[0m
+[0;32mI (26950) POOL_MSG_TASK: Data pool successfull[0m
+[1;31mE (27430) USER_REPO: User already registered[0m
+[1;31mE (29400) SOCKET_SERVER: Payload recived {"header": "pool", "username": "roxo2", "hashCode": "QHPXtnLuv"}[0m
+[1;31mE (29400) SOCKET_SERVER: Sending to pooling queue[0m
+[1;31mE (29410) SOCKET_SERVER: Socket listening[0m
+[0;32mI (29410) POOL_MSG_TASK: Data pool successfull[0m
+[1;31mE (31570) SOCKET_SERVER: Payload recived {"header": "register", "username": "roxo"}[0m
+[1;31mE (31570) SOCKET_SERVER: Sending to register queue[0m
+[1;31mE (31570) SOCKET_SERVER: Socket listening[0m
+[0;32mI (31570) REGISTER_SERVICE: New Request Recived: roxo[0m
+[1;31mE (31580) SOCKET_SERVER: Payload recived {"header": "pool", "username": "roxo2", "hashCode": "QHPXtnLuv"}[0m
+[1;31mE (31590) SOCKET_SERVER: Sending to pooling queue[0m
+[1;31mE (31590) SOCKET_SERVER: Socket listening[0m
+[0;32mI (31590) POOL_MSG_TASK: Data pool successfull[0m
+[1;31mE (33820) SOCKET_SERVER: Payload recived {"header": "pool", "username": "roxo2", "hashCode": "QHPXtnLuv"}[0m
+[1;31mE (33830) SOCKET_SERVER: Sending to pooling queue[0m
+[1;31mE (33830) SOCKET_SERVER: Socket listening[0m
+[0;32mI (33830) POOL_MSG_TASK: Data pool successfull[0m
+[0;32mI (33840) USER_REPO: DB: User registrado: roxo[0m
+[1;31mE (34030) SOCKET_SERVER: Payload recived {"header": "pool", "username": "roxo", "hashCode": "I9YOSEwrF"}[0m
+[1;31mE (34030) SOCKET_SERVER: Sending to pooling queue[0m
+[1;31mE (34040) SOCKET_SERVER: Socket listening[0m
+[0;32mI (34040) POOL_MSG_TASK: Data pool successfull[0m
+[1;31mE (35950) SOCKET_SERVER: Payload recived {"header": "send", "username": "roxo", "hashCode": "I9YOSEwrF", "msg": "vamo la"}[0m
+[1;31mE (35960) SOCKET_SERVER: Sending to sendMSGQueue[0m
+[1;31mE (35960) SOCKET_SERVER: Socket listening[0m
+[0;32mI (35960) SEND_MSG_TASK: Message saved: vamo la[0m
+[1;31mE (35980) SOCKET_SERVER: Payload recived {"header": "pool", "username": "roxo2", "hashCode": "QHPXtnLuv"}[0m
+[1;31mE (35990) SOCKET_SERVER: Sending to pooling queue[0m
+[1;31mE (35990) SOCKET_SERVER: Socket listening[0m
+[0;32mI (35990) POOL_MSG_TASK: Data pool successfull[0m
+[1;31mE (36470) SOCKET_SERVER: Payload recived {"header": "pool", "username": "roxo", "hashCode": "I9YOSEwrF"}[0m
+[1;31mE (36470) SOCKET_SERVER: Sending to pooling queue[0m
+[1;31mE (36470) SOCKET_SERVER: Socket listening[0m
+[0;32mI (36470) POOL_MSG_TASK: Data pool successfull[0m
+[1;31mE (38230) SOCKET_SERVER: Payload recived {"header": "pool", "username": "roxo2", "hashCode": "QHPXtnLuv"}[0m
+[1;31mE (38230) SOCKET_SERVER: Sending to pooling queue[0m
+[1;31mE (38230) SOCKET_SERVER: Socket listening[0m
+[0;32mI (38230) POOL_MSG_TASK: Data pool successfull[0m
+[1;31mE (38240) SOCKET_SERVER: Payload recived {"header": "send", "username": "roxo", "hashCode": "I9YOSEwrF", "msg": "deu de crash ne"}[0m
+[1;31mE (38250) SOCKET_SERVER: Sending to sendMSGQueue[0m
+[1;31mE (38250) SOCKET_SERVER: Socket listening[0m
+[0;32mI (38250) SEND_MSG_TASK: Message saved: deu de crash ne[0m
+[1;31mE (38740) SOCKET_SERVER: Payload recived {"header": "pool", "username": "roxo", "hashCode": "I9YOSEwrF"}[0m
+[1;31mE (38740) SOCKET_SERVER: Sending to pooling queue[0m
+[1;31mE (38740) SOCKET_SERVER: Socket listening[0m
+[0;32mI (38740) POOL_MSG_TASK: Data pool successfull[0m
+[1;31mE (38950) SOCKET_SERVER: Payload recived {"header": "send", "username": "roxo", "hashCode": "I9YOSEwrF", "msg": "a"}[0m
+[1;31mE (38950) SOCKET_SERVER: Sending to sendMSGQueue[0m
+[1;31mE (38960) SOCKET_SERVER: Socket listening[0m
+[0;32mI (38960) SEND_MSG_TASK: Message saved: a[0m
+[1;31mE (39640) SOCKET_SERVER: Payload recived {"header": "send", "username": "roxo", "hashCode": "I9YOSEwrF", "msg": "a"}[0m
+[1;31mE (39640) SOCKET_SERVER: Sending to sendMSGQueue[0m
+[1;31mE (39650) SOCKET_SERVER: Socket listening[0m
+[0;32mI (39650) SEND_MSG_TASK: Message saved: a[0m
+[1;31mE (40690) SOCKET_SERVER: Payload recived {"header": "send", "username": "roxo", "hashCode": "I9YOSEwrF", "msg": "a"}[0m
+[1;31mE (40690) SOCKET_SERVER: Sending to sendMSGQueue[0m
+[1;31mE (40700) SOCKET_SERVER: Socket listening[0m
+[0;32mI (40700) SEND_MSG_TASK: Message saved: a[0m
+[1;31mE (40700) SOCKET_SERVER: Payload recived {"header": "pool", "username": "roxo2", "hashCode": "QHPXtnLuv"}[0m
+[1;31mE (40710) SOCKET_SERVER: Sending to pooling queue[0m
+[1;31mE (40720) SOCKET_SERVER: Socket listening[0m
+[0;32mI (40720) POOL_MSG_TASK: Data pool successfull[0m
+[1;31mE (40800) SOCKET_SERVER: Payload recived {"header": "send", "username": "roxo", "hashCode": "I9YOSEwrF", "msg": "a"}[0m
+[1;31mE (40810) SOCKET_SERVER: Sending to sendMSGQueue[0m
+[1;31mE (40810) SOCKET_SERVER: Socket listening[0m
+[0;32mI (40810) SEND_MSG_TASK: Message saved: a[0m
+[1;31mE (41180) SOCKET_SERVER: Payload recived {"header": "pool", "username": "roxo", "hashCode": "I9YOSEwrF"}[0m
+[1;31mE (41180) SOCKET_SERVER: Sending to pooling queue[0m
+[1;31mE (41180) SOCKET_SERVER: Socket listening[0m
+[0;32mI (41180) POOL_MSG_TASK: Data pool successfull[0m
+[1;31mE (41690) SOCKET_SERVER: Payload recived {"header": "send", "username": "roxo", "hashCode": "I9YOSEwrF", "msg": "a"}[0m
+[1;31mE (41690) SOCKET_SERVER: Sending to sendMSGQueue[0m
+[1;31mE (41700) SOCKET_SERVER: Socket listening[0m
+[0;32mI (41700) SEND_MSG_TASK: Message saved: a[0m
+[1;31mE (42310) SOCKET_SERVER: Payload recived {"header": "send", "username": "roxo", "hashCode": "I9YOSEwrF", "msg": "a"}[0m
+[1;31mE (42310) SOCKET_SERVER: Sending to sendMSGQueue[0m
+[1;31mE (42310) SOCKET_SERVER: Socket listening[0m
+[0;32mI (42310) SEND_MSG_TASK: Message saved: a[0m
+[1;31mE (43120) SOCKET_SERVER: Payload recived {"header": "pool", "username": "roxo2", "hashCode": "QHPXtnLuv"}[0m
+[1;31mE (43120) SOCKET_SERVER: Sending to pooling queue[0m
+[1;31mE (43130) SOCKET_SERVER: Socket listening[0m
+[0;32mI (43130) POOL_MSG_TASK: Data pool successfull[0m
+[1;31mE (43430) SOCKET_SERVER: Payload recived {"header": "pool", "username": "roxo", "hashCode": "I9YOSEwrF"}[0m
+[1;31mE (43430) SOCKET_SERVER: Sending to pooling queue[0m
+[1;31mE (43430) SOCKET_SERVER: Socket listening[0m
+[0;32mI (43430) POOL_MSG_TASK: Data pool successfull[0m
+[1;31mE (45480) SOCKET_SERVER: Payload recived {"header": "pool", "username": "roxo2", "hashCode": "QHPXtnLuv"}[0m
+[1;31mE (45480) SOCKET_SERVER: Sending to pooling queue[0m
+[1;31mE (45480) SOCKET_SERVER: Socket listening[0m
+[0;32mI (45480) POOL_MSG_TASK: Data pool successfull[0m
+[1;31mE (45690) SOCKET_SERVER: Payload recived {"header": "send", "username": "roxo2", "hashCode": "QHPXtnLuv", "msg": "me ajuda"}[0m
+[1;31mE (45690) SOCKET_SERVER: Sending to sendMSGQueue[0m
+[1;31mE (45690) SOCKET_SERVER: Socket listening[0m
+[0;32mI (45690) SEND_MSG_TASK: Message saved: me ajuda[0m
+[1;31mE (45890) SOCKET_SERVER: accept failed: errno=23[0m
+[1;31mE (45900) SOCKET_SERVER: Socket listening[0m
+[1;31mE (47220) SOCKET_SERVER: accept failed: errno=23[0m
+[1;31mE (47220) SOCKET_SERVER: Socket listening[0m
+[1;31mE (47940) SOCKET_SERVER: accept failed: errno=23[0m
+[1;31mE (47940) SOCKET_SERVER: Socket listening[0m
+[1;31mE (48350) 

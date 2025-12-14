@@ -4,6 +4,7 @@
 #include "user-repository.h"
 #include "register-service.h"
 #include "send-msg-service.h"
+#include "pool-msg-service.h"
 
 static const char* TAG = "MAIN";
 
@@ -14,14 +15,12 @@ void app_main(void){
       ret = nvs_flash_init();
     }
     ESP_ERROR_CHECK(ret);
-
-    QueueHandle_t registerQueue = xQueueCreate(10, sizeof(Req*)); 
-    QueueHandle_t sendMsgQueue = xQueueCreate(10, sizeof(Req*));
-
+    
     Queues* queues = (Queues*)malloc(sizeof(Queues)); 
 
-    queues->registerQueue = registerQueue;
-    queues->sendMsgQueue = sendMsgQueue;
+    queues->registerQueue = xQueueCreate(10, sizeof(Req*));
+    queues->sendMsgQueue = xQueueCreate(10, sizeof(Req*));
+    queues->poolMsgQueue = xQueueCreate(10, sizeof(Req*));
 
     ESP_LOGI(TAG, "Connecting to WiFi...");
     wifi_init_sta();
@@ -33,10 +32,13 @@ void app_main(void){
     ESP_LOGI(TAG, "Starting Socket Server...");
     socket_server_start(queues);
 
-    ESP_LOGI(TAG, "Starting Register Service");
-    start_register_service(registerQueue);
+    ESP_LOGI(TAG, "Starting Register Task");
+    start_register_service(queues->registerQueue);
 
-    ESP_LOGI(TAG, "Startign send message task");
+    ESP_LOGI(TAG, "Starting Send Message Task");
     start_sendMsg_service(queues->sendMsgQueue);
+
+    ESP_LOGI(TAG, "Starting Pool Message Task");
+    start_poolMsg_service(queues->poolMsgQueue);
     
 }

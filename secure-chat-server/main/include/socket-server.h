@@ -25,6 +25,7 @@ typedef struct Req{
 typedef struct Queues {
     QueueHandle_t registerQueue;
     QueueHandle_t sendMsgQueue;
+    QueueHandle_t poolMsgQueue;
 } Queues;
 
 void socket_server_start(Queues* queues);

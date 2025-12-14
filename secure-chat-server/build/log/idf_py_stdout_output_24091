@@ -1,0 +1,1054 @@
+Command: /home/pedro/.espressif/python_env/idf6.1_py3.10_env/bin/python /home/pedro/esp/esp-idf/tools/idf_monitor.py -p /dev/ttyUSB0 -b 115200 --toolchain-prefix xtensa-esp32-elf- --target esp32 --revision 0 /home/pedro/Documents/Security-Chat/secure-chat-server/build/secure-chat-server.elf /home/pedro/Documents/Security-Chat/secure-chat-server/build/bootloader/bootloader.elf -m '/home/pedro/.espressif/python_env/idf6.1_py3.10_env/bin/python' '/home/pedro/esp/esp-idf/tools/idf.py' '-p' '/dev/ttyUSB0'
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0040,len:6376
+load:0x40078000,len:15900
+ho 0 tail 12 room 4
+load:0x40080400,len:3920
+entry 0x40080644
+[0;32mI (29) boot: ESP-IDF v6.1-dev-828-g41e9060961 2nd stage bootloader[0m
+[0;32mI (29) boot: compile time Nov 25 2025 21:00:15[0m
+[0;32mI (29) boot: Multicore bootloader[0m
+[0;32mI (32) boot: chip revision: v3.0[0m
+[0;32mI (35) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (39) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (42) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (46) boot: Enabling RNG early entropy source...[0m
+[0;32mI (50) boot: Partition Table:[0m
+[0;32mI (53) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (59) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (66) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (72) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (79) boot: End of partition table[0m
+[0;32mI (82) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=1b0f4h (110836) map[0m
+[0;32mI (129) esp_image: segment 1: paddr=0002b11c vaddr=3ffb0000 size=04184h ( 16772) load[0m
+[0;32mI (136) esp_image: segment 2: paddr=0002f2a8 vaddr=40080000 size=00d70h (  3440) load[0m
+[0;32mI (137) esp_image: segment 3: paddr=00030020 vaddr=400d0020 size=8ee4ch (585292) map[0m
+[0;32mI (349) esp_image: segment 4: paddr=000bee74 vaddr=40080d70 size=15d70h ( 89456) load[0m
+[0;32mI (386) esp_image: segment 5: paddr=000d4bec vaddr=50000000 size=00028h (    40) load[0m
+[0;32mI (397) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (397) boot: Disabling RNG early entropy source...[0m
+[0;32mI (408) cpu_start: Multicore app[0m
+[0;32mI (416) cpu_start: GPIO 3 and 1 are used as console UART I/O pins[0m
+[0;32mI (416) cpu_start: Pro cpu start user code[0m
+[0;32mI (416) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (418) app_init: Application information:[0m
+[0;32mI (422) app_init: Project name:     secure-chat-server[0m
+[0;32mI (427) app_init: App version:      e88e1a6-dirty[0m
+[0;32mI (431) app_init: Compile time:     Dec 14 2025 15:58:28[0m
+[0;32mI (436) app_init: ELF file SHA256:  35c6f80a6...[0m
+[0;32mI (441) app_init: ESP-IDF:          v6.1-dev-828-g41e9060961[0m
+[0;32mI (446) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (450) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (454) efuse_init: Chip rev:         v3.0[0m
+[0;32mI (458) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (464) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (469) heap_init: At 3FFB9DF8 len 00026208 (152 KiB): DRAM[0m
+[0;32mI (474) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (480) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (485) heap_init: At 40096AE0 len 00009520 (37 KiB): IRAM[0m
+[0;32mI (492) spi_flash: detected chip: generic[0m
+[0;32mI (494) spi_flash: flash io: dio[0m
+[0;33mW (497) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;33mW (510) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+[0;32mI (520) main_task: Started on CPU0[0m
+[0;32mI (530) main_task: Calling app_main()[0m
+[0;32mI (550) MAIN: Connecting to WiFi...[0m
+[0;32mI (570) wifi:wifi driver task: 3ffc1f54, prio:23, stack:6656, core=0[0m
+[0;32mI (580) wifi:wifi firmware version: 6a8253a[0m
+[0;32mI (580) wifi:wifi certification version: v7.0[0m
+[0;32mI (580) wifi:config NVS flash: enabled[0m
+[0;32mI (580) wifi:config nano formatting: disabled[0m
+[0;32mI (590) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (590) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (600) wifi:Init management short buffer num: 32[0m
+[0;32mI (600) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (610) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (610) wifi:Init static rx buffer num: 10[0m
+[0;32mI (610) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (620) wifi_init: rx ba win: 6[0m
+[0;32mI (620) wifi_init: accept mbox: 6[0m
+[0;32mI (620) wifi_init: tcpip mbox: 32[0m
+[0;32mI (630) wifi_init: udp mbox: 6[0m
+[0;32mI (630) wifi_init: tcp mbox: 6[0m
+[0;32mI (630) wifi_init: tcp tx win: 5760[0m
+[0;32mI (640) wifi_init: tcp rx win: 5760[0m
+[0;32mI (640) wifi_init: tcp mss: 1440[0m
+[0;32mI (640) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (650) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (650) phy_init: phy_version 4863,a3a4459,Oct 28 2025,14:30:06[0m
+[0;32mI (730) wifi:mode : sta (b0:a7:32:f2:cd:f0)[0m
+[0;32mI (730) wifi:enable tsf[0m
+[0;32mI (730) WIFI_STATION: wifi_init_sta finished.[0m
+[0;32mI (730) WIFI_STATION: Aguardando conexão WiFi...[0m
+[0;32mI (750) wifi:new:<8,0>, old:<1,0>, ap:<255,255>, sta:<8,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (750) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (760) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (770) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (790) wifi:<ba-add>idx:0 (ifx:0, cc:58:30:02:43:61), tid:0, ssn:0, winSize:64[0m
+[0;32mI (790) wifi:<ba-add>idx:1 (ifx:0, cc:58:30:02:43:61), tid:5, ssn:0, winSize:64[0m
+[0;32mI (810) wifi:connected with PEDRO, aid = 1, channel 8, BW20, bssid = cc:58:30:02:43:61[0m
+[0;32mI (810) wifi:security: WPA2-PSK, phy: bgn, rssi: -21[0m
+[0;32mI (820) wifi:pm start, type: 1[0m
+
+[0;32mI (820) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (870) wifi:AP's beacon interval = 102400 us, DTIM period = 1[0m
+[0;32mI (1880) esp_netif_handlers: sta ip: 192.168.0.29, mask: 255.255.255.0, gw: 192.168.0.1[0m
+[0;32mI (1880) WIFI_STATION: got ip:192.168.0.29[0m
+[0;32mI (1880) WIFI_STATION: connected to ap SSID:PEDRO[0m
+[0;32mI (1880) MAIN: Starting Socket Server...[0m
+[1;31mE (1890) SOCKET_SERVER: Socket listening[0m
+[0;32mI (1890) MAIN: Starting Register Task[0m
+[0;32mI (2080) MAIN: Starting Send Message Task[0m
+[0;32mI (2080) MAIN: Starting Pool Message Task[0m
+[0;32mI (2080) main_task: Returned from app_main()[0m
+[1;31mE (37460) SOCKET_SERVER: Payload recived {"header": "register", "username": "Weekend"}[0m
+[1;31mE (37460) SOCKET_SERVER: Sending to register queue[0m
+[1;31mE (37460) SOCKET_SERVER: Socket listening[0m
+[0;32mI (37460) REGISTER_SERVICE: New Request Recived: Weekend[0m
+[1;31mE (37470) SOCKET_SERVER: Payload recived {"header": "register", "username": "Roux"}[0m
+[1;31mE (37480) SOCKET_SERVER: Sending to register queue[0m
+[1;31mE (37480) SOCKET_SERVER: Socket listening[0m
+[0;32mI (45000) USER_REPO: DB: User registrado: Weekend[0m
+[0;32mI (45000) REGISTER_SERVICE: New Request Recived: Roux[0m
+[1;31mE (45050) SOCKET_SERVER: Payload recived {"header": "pool", "username": "Weekend", "hashCode": "BMFQoL25b"}[0m
+[1;31mE (45050) SOCKET_SERVER: Sending to pooling queue[0m
+E (
+assert failed: xQueueSemaphoreTake queue.c:1709 (( pxQueue ))
+
+
+Backtrace: 0x4008aac9:0x3ffcd890 0x4008aa91:0x3ffcd8b0 0x40089cb5:0x3ffcd8d0 0x4015b366:0x3ffcd9f0 0x400db479:0x3ffcda30 0x400db554:0x3ffcda50 0x4015abfe:0x3ffcda80
+
+
+
+
+ELF file SHA256: 35c6f80a6
+
+Rebooting...
+ets Jul 29 2019 12:21:46
+
+rst:0xc (SW_CPU_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0040,len:6376
+load:0x40078000,len:15900
+ho 0 tail 12 room 4
+load:0x40080400,len:3920
+entry 0x40080644
+[0;32mI (29) boot: ESP-IDF v6.1-dev-828-g41e9060961 2nd stage bootloader[0m
+[0;32mI (29) boot: compile time Nov 25 2025 21:00:15[0m
+[0;32mI (29) boot: Multicore bootloader[0m
+[0;32mI (32) boot: chip revision: v3.0[0m
+[0;32mI (35) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (39) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (42) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (46) boot: Enabling RNG early entropy source...[0m
+[0;32mI (50) boot: Partition Table:[0m
+[0;32mI (53) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (59) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (66) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (72) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (79) boot: End of partition table[0m
+[0;32mI (82) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=1b0f4h (110836) map[0m
+[0;32mI (129) esp_image: segment 1: paddr=0002b11c vaddr=3ffb0000 size=04184h ( 16772) load[0m
+[0;32mI (136) esp_image: segment 2: paddr=0002f2a8 vaddr=40080000 size=00d70h (  3440) load[0m
+[0;32mI (137) esp_image: segment 3: paddr=00030020 vaddr=400d0020 size=8ee4ch (585292) map[0m
+[0;32mI (349) esp_image: segment 4: paddr=000bee74 vaddr=40080d70 size=15d70h ( 89456) load[0m
+[0;32mI (386) esp_image: segment 5: paddr=000d4bec vaddr=50000000 size=00028h (    40) load[0m
+[0;32mI (397) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (397) boot: Disabling RNG early entropy source...[0m
+[0;32mI (408) cpu_start: Multicore app[0m
+[0;32mI (416) cpu_start: GPIO 3 and 1 are used as console UART I/O pins[0m
+[0;32mI (416) cpu_start: Pro cpu start user code[0m
+[0;32mI (416) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (418) app_init: Application information:[0m
+[0;32mI (422) app_init: Project name:     secure-chat-server[0m
+[0;32mI (427) app_init: App version:      e88e1a6-dirty[0m
+[0;32mI (431) app_init: Compile time:     Dec 14 2025 15:58:28[0m
+[0;32mI (436) app_init: ELF file SHA256:  35c6f80a6...[0m
+[0;32mI (441) app_init: ESP-IDF:          v6.1-dev-828-g41e9060961[0m
+[0;32mI (446) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (450) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (454) efuse_init: Chip rev:         v3.0[0m
+[0;32mI (458) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (464) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (469) heap_init: At 3FFB9DF8 len 00026208 (152 KiB): DRAM[0m
+[0;32mI (474) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (480) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (485) heap_init: At 40096AE0 len 00009520 (37 KiB): IRAM[0m
+[0;32mI (492) spi_flash: detected chip: generic[0m
+[0;32mI (494) spi_flash: flash io: dio[0m
+[0;33mW (497) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;33mW (509) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+[0;32mI (520) main_task: Started on CPU0[0m
+[0;32mI (530) main_task: Calling app_main()[0m
+[0;32mI (550) MAIN: Connecting to WiFi...[0m
+[0;32mI (570) wifi:wifi driver task: 3ffc1f54, prio:23, stack:6656, core=0[0m
+[0;32mI (580) wifi:wifi firmware version: 6a8253a[0m
+[0;32mI (580) wifi:wifi certification version: v7.0[0m
+[0;32mI (580) wifi:config NVS flash: enabled[0m
+[0;32mI (580) wifi:config nano formatting: disabled[0m
+[0;32mI (590) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (590) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (600) wifi:Init management short buffer num: 32[0m
+[0;32mI (600) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (610) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (610) wifi:Init static rx buffer num: 10[0m
+[0;32mI (610) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (620) wifi_init: rx ba win: 6[0m
+[0;32mI (620) wifi_init: accept mbox: 6[0m
+[0;32mI (620) wifi_init: tcpip mbox: 32[0m
+[0;32mI (630) wifi_init: udp mbox: 6[0m
+[0;32mI (630) wifi_init: tcp mbox: 6[0m
+[0;32mI (630) wifi_init: tcp tx win: 5760[0m
+[0;32mI (640) wifi_init: tcp rx win: 5760[0m
+[0;32mI (640) wifi_init: tcp mss: 1440[0m
+[0;32mI (640) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (650) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (650) phy_init: phy_version 4863,a3a4459,Oct 28 2025,14:30:06[0m
+[0;32mI (730) wifi:mode : sta (b0:a7:32:f2:cd:f0)[0m
+[0;32mI (730) wifi:enable tsf[0m
+[0;32mI (730) WIFI_STATION: wifi_init_sta finished.[0m
+[0;32mI (730) WIFI_STATION: Aguardando conexão WiFi...[0m
+[0;32mI (740) wifi:new:<8,0>, old:<1,0>, ap:<255,255>, sta:<8,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (740) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (750) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (750) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (770) wifi:<ba-add>idx:0 (ifx:0, cc:58:30:02:43:61), tid:0, ssn:0, winSize:64[0m
+[0;32mI (770) wifi:<ba-add>idx:1 (ifx:0, cc:58:30:02:43:61), tid:5, ssn:0, winSize:64[0m
+[0;32mI (790) wifi:connected with PEDRO, aid = 1, channel 8, BW20, bssid = cc:58:30:02:43:61[0m
+[0;32mI (790) wifi:security: WPA2-PSK, phy: bgn, rssi: -21[0m
+[0;32mI (790) wifi:pm start, type: 1[0m
+
+[0;32mI (790) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (840) wifi:AP's beacon interval = 102400 us, DTIM period = 1[0m
+[0;32mI (1850) esp_netif_handlers: sta ip: 192.168.0.29, mask: 255.255.255.0, gw: 192.168.0.1[0m
+[0;32mI (1850) WIFI_STATION: got ip:192.168.0.29[0m
+[0;32mI (1850) WIFI_STATION: connected to ap SSID:PEDRO[0m
+[0;32mI (1850) MAIN: Starting Socket Server...[0m
+[1;31mE (1860) SOCKET_SERVER: Socket listening[0m
+[0;32mI (1860) MAIN: Starting Register Task[0m
+[0;32mI (2050) MAIN: Starting Send Message Task[0m
+[0;32mI (2050) MAIN: Starting Pool Message Task[0m
+[0;32mI (2050) main_task: Returned from app_main()[0m
+[1;31mE (5350) SOCKET_SERVER: Payload recived {"header": "pool", "username": "Weekend", "hashCode": "BMFQoL25b"}[0m
+[1;31mE (5350) SOCKET_SERVER: Sending to pooling queue[0m
+[1;31mE (5350) SOCKET_SERVER: Socket listening[0m
+[0;32mI (5350) POOL_MSG_TASK: Invalid token[0m
+[1;31mE (7710) SOCKET_SERVER: Payload recived {"header": "pool", "username": "Weekend", "hashCode": "BMFQoL25b"}[0m
+[1;31mE (7710) SOCKET_SERVER: Sending to pooling queue[0m
+[1;31mE (7710) SOCKET_SERVER: Socket listening[0m
+[0;32mI (7710) POOL_MSG_TASK: Invalid token[0m
+[1;31mE (10160) SOCKET_SERVER: Payload recived {"header": "pool", "username": "Weekend", "hashCode": "BMFQoL25b"}[0m
+[1;31mE (10160) SOCKET_SERVER: Sending to pooling queue[0m
+[1;31mE (10170) SOCKET_SERVER: Socket listening[0m
+[0;32mI (10170) POOL_MSG_TASK: Invalid token[0m
+[1;31mE (57780) SOCKET_SERVER: Payload recived {"header": "register", "username": "roux"}[0m
+[1;31mE (57790) SOCKET_SERVER: Sending to register queue[0m
+[1;31mE (57790) SOCKET_SERVER: Socket listening[0m
+[0;32mI (57790) REGISTER_SERVICE: New Request Recived: roux[0m
+
+[0;32mI (640) wifi_init: tcp rx win: 5760[0m
+[0;32mI (640) wifi_init: tcp mss: 1440[0m
+[0;32mI (640) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (650) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (650) phy_init: phy_version 4863,a3a4459,Oct 28 2025,14:30:06[0m
+[0;32mI (730) wifi:mode : sta (b0:a7:32:f2:cd:f0)[0m
+[0;32mI (730) wifi:enable tsf[0m
+[0;32mI (730) WIFI_STATION: wifi_init_sta finished.[0m
+[0;32mI (730) WIFI_STATION: Aguardando conexão WiFi...[0m
+[0;32mI (750) wifi:new:<8,0>, old:<1,0>, ap:<255,255>, sta:<8,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (750) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (750) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (760) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (780) wifi:<ba-add>idx:0 (ifx:0, cc:58:30:02:43:61), tid:5, ssn:0, winSize:64[0m
+[0;32mI (780) wifi:<ba-add>idx:1 (ifx:0, cc:58:30:02:43:61), tid:0, ssn:0, winSize:64[0m
+[0;32mI (790) wifi:connected with PEDRO, aid = 1, channel 8, BW20, bssid = cc:58:30:02:43:61[0m
+[0;32mI (790) wifi:security: WPA2-PSK, phy: bgn, rssi: -20[0m
+[0;32mI (800) wifi:pm start, type: 1[0m
+
+[0;32mI (800) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (870) wifi:AP's beacon interval = 102400 us, DTIM period = 1[0m
+[0;32mI (2920) esp_netif_handlers: sta ip: 192.168.0.29, mask: 255.255.255.0, gw: 192.168.0.1[0m
+[0;32mI (2920) WIFI_STATION: got ip:192.168.0.29[0m
+[0;32mI (2920) WIFI_STATION: connected to ap SSID:PEDRO[0m
+[0;32mI (2920) MAIN: Starting Socket Server...[0m
+[0;32mI (2930) MAIN: Starting Register Task[0m
+[1;31mE (2930) SOCKET_SERVER: Socket listening[0m
+[0;32mI (3110) MAIN: Starting Send Message Task[0m
+[0;32mI (3110) MAIN: Starting Pool Message Task[0m
+[0;32mI (3110) main_task: Returned from app_main()[0m
+[0;32mI (860) wifi:AP's beacon interval = 102400 us, DTIM period = 1[0m
+[0;32mI (1850) esp_netif_handlers: sta ip: 192.168.0.29, mask: 255.255.255.0, gw: 192.168.0.1[0m
+[0;32mI (1850) WIFI_STATION: got ip:192.168.0.29[0m
+[0;32mI (1850) WIFI_STATION: connected to ap SSID:PEDRO[0m
+[0;32mI (1850) MAIN: Starting Socket Server...[0m
+[1;31mE (1860) SOCKET_SERVER: Socket listening[0m
+[0;32mI (1860) MAIN: Starting Register Task[0m
+[0;32mI (2040) MAIN: Starting Send Message Task[0m
+[0;32mI (2040) MAIN: Starting Pool Message Task[0m
+[0;32mI (2040) main_task: Returned from app_main()[0m
+[0;32mI (1870) esp_netif_handlers: sta ip: 192.168.0.29, mask: 255.255.255.0, gw: 192.168.0.1[0m
+[0;32mI (1870) WIFI_STATION: got ip:192.168.0.29[0m
+[0;32mI (1870) WIFI_STATION: connected to ap SSID:PEDRO[0m
+[0;32mI (1870) MAIN: Starting Socket Server...[0m
+[1;31mE (1880) SOCKET_SERVER: Socket listening[0m
+[0;32mI (1880) MAIN: Starting Register Task[0m
+[0;32mI (2060) MAIN: Starting Send Message Task[0m
+[0;32mI (2060) MAIN: Starting Pool Message Task[0m
+[0;32mI (2060) main_task: Returned from app_main()[0m
+[1;31mE (11150) SOCKET_SERVER: Payload recived {"header": "register", "username": "Roux"}[0m
+[1;31mE (11150) SOCKET_SERVER: Sending to register queue[0m
+[1;31mE (11150) SOCKET_SERVER: Socket listening[0m
+[0;32mI (11150) REGISTER_SERVICE: New Request Recived: Roux[0m
+[1;31mE (19750) SOCKET_SERVER: Payload recived {"header": "register", "username": "Weekend"}[0m
+[1;31mE (19750) SOCKET_SERVER: Sending to register queue[0m
+[1;31mE (19750) SOCKET_SERVER: Socket listening[0m
+[0;32mI (22520) USER_REPO: DB: User registrado: Roux[0m
+[0;32mI (22520) REGISTER_SERVICE: New Request Recived: Weekend[0m
+[1;31mE (22920) SOCKET_SERVER: Payload recived {"header": "pool", "username": "Roux", "hashCode": "yl37jprgr"}[0m
+[1;31mE (22930) SOCKET_SERVER: Sending to pooling queue[0m
+E (2
+assert failed: xQueueSemaphoreTake queue.c:1709 (( pxQueue ))
+
+
+Backtrace: 0x4008aac9:0x3ffcd890 0x4008aa91:0x3ffcd8b0 0x40089cb5:0x3ffcd8d0 0x4015b366:0x3ffcd9f0 0x400db479:0x3ffcda30 0x400db554:0x3ffcda50 0x4015abfe:0x3ffcda80
+
+
+
+
+ELF file SHA256: 35c6f80a6
+
+Rebooting...
+ets Jul 29 2019 12:21:46
+
+rst:0xc (SW_CPU_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0040,len:6376
+load:0x40078000,len:15900
+ho 0 tail 12 room 4
+load:0x40080400,len:3920
+entry 0x40080644
+[0;32mI (29) boot: ESP-IDF v6.1-dev-828-g41e9060961 2nd stage bootloader[0m
+[0;32mI (29) boot: compile time Nov 25 2025 21:00:15[0m
+[0;32mI (29) boot: Multicore bootloader[0m
+[0;32mI (32) boot: chip revision: v3.0[0m
+[0;32mI (35) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (39) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (42) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (46) boot: Enabling RNG early entropy source...[0m
+[0;32mI (50) boot: Partition Table:[0m
+[0;32mI (53) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (59) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (66) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (72) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (79) boot: End of partition table[0m
+[0;32mI (82) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=1b0f4h (110836) map[0m
+[0;32mI (129) esp_image: segment 1: paddr=0002b11c vaddr=3ffb0000 size=04184h ( 16772) load[0m
+[0;32mI (136) esp_image: segment 2: paddr=0002f2a8 vaddr=40080000 size=00d70h (  3440) load[0m
+[0;32mI (137) esp_image: segment 3: paddr=00030020 vaddr=400d0020 size=8ee4ch (585292) map[0m
+[0;32mI (349) esp_image: segment 4: paddr=000bee74 vaddr=40080d70 size=15d70h ( 89456) load[0m
+[0;32mI (386) esp_image: segment 5: paddr=000d4bec vaddr=50000000 size=00028h (    40) load[0m
+[0;32mI (397) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (397) boot: Disabling RNG early entropy source...[0m
+[0;32mI (408) cpu_start: Multicore app[0m
+[0;32mI (416) cpu_start: GPIO 3 and 1 are used as console UART I/O pins[0m
+[0;32mI (416) cpu_start: Pro cpu start user code[0m
+[0;32mI (416) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (418) app_init: Application information:[0m
+[0;32mI (422) app_init: Project name:     secure-chat-server[0m
+[0;32mI (427) app_init: App version:      e88e1a6-dirty[0m
+[0;32mI (431) app_init: Compile time:     Dec 14 2025 15:58:28[0m
+[0;32mI (436) app_init: ELF file SHA256:  35c6f80a6...[0m
+[0;32mI (440) app_init: ESP-IDF:          v6.1-dev-828-g41e9060961[0m
+[0;32mI (446) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (450) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (454) efuse_init: Chip rev:         v3.0[0m
+[0;32mI (458) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (464) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (469) heap_init: At 3FFB9DF8 len 00026208 (152 KiB): DRAM[0m
+[0;32mI (474) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (479) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (485) heap_init: At 40096AE0 len 00009520 (37 KiB): IRAM[0m
+[0;32mI (492) spi_flash: detected chip: generic[0m
+[0;32mI (494) spi_flash: flash io: dio[0m
+[0;33mW (497) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;33mW (509) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+[0;32mI (520) main_task: Started on CPU0[0m
+[0;32mI (530) main_task: Calling app_main()[0m
+[0;32mI (550) MAIN: Connecting to WiFi...[0m
+[0;32mI (570) wifi:wifi driver task: 3ffc1f54, prio:23, stack:6656, core=0[0m
+[0;32mI (580) wifi:wifi firmware version: 6a8253a[0m
+[0;32mI (580) wifi:wifi certification version: v7.0[0m
+[0;32mI (580) wifi:config NVS flash: enabled[0m
+[0;32mI (580) wifi:config nano formatting: disabled[0m
+[0;32mI (590) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (590) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (600) wifi:Init management short buffer num: 32[0m
+[0;32mI (600) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (610) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (610) wifi:Init static rx buffer num: 10[0m
+[0;32mI (610) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (620) wifi_init: rx ba win: 6[0m
+[0;32mI (620) wifi_init: accept mbox: 6[0m
+[0;32mI (620) wifi_init: tcpip mbox: 32[0m
+[0;32mI (630) wifi_init: udp mbox: 6[0m
+[0;32mI (630) wifi_init: tcp mbox: 6[0m
+[0;32mI (630) wifi_init: tcp tx win: 5760[0m
+[0;32mI (640) wifi_init: tcp rx win: 5760[0m
+[0;32mI (640) wifi_init: tcp mss: 1440[0m
+[0;32mI (640) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (650) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (650) phy_init: phy_version 4863,a3a4459,Oct 28 2025,14:30:06[0m
+[0;32mI (730) wifi:mode : sta (b0:a7:32:f2:cd:f0)[0m
+[0;32mI (730) wifi:enable tsf[0m
+[0;32mI (730) WIFI_STATION: wifi_init_sta finished.[0m
+[0;32mI (730) WIFI_STATION: Aguardando conexão WiFi...[0m
+[0;32mI (740) wifi:new:<8,0>, old:<1,0>, ap:<255,255>, sta:<8,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (750) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (750) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (760) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (770) wifi:<ba-add>idx:0 (ifx:0, cc:58:30:02:43:61), tid:0, ssn:0, winSize:64[0m
+[0;32mI (780) wifi:<ba-add>idx:1 (ifx:0, cc:58:30:02:43:61), tid:5, ssn:0, winSize:64[0m
+[0;32mI (790) wifi:connected with PEDRO, aid = 1, channel 8, BW20, bssid = cc:58:30:02:43:61[0m
+[0;32mI (790) wifi:security: WPA2-PSK, phy: bgn, rssi: -20[0m
+[0;32mI (800) wifi:pm start, type: 1[0m
+
+[0;32mI (800) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (870) wifi:AP's beacon interval = 102400 us, DTIM period = 1[0m
+[0;32mI (1850) esp_netif_handlers: sta ip: 192.168.0.29, mask: 255.255.255.0, gw: 192.168.0.1[0m
+[0;32mI (1850) WIFI_STATION: got ip:192.168.0.29[0m
+[0;32mI (1850) WIFI_STATION: connected to ap SSID:PEDRO[0m
+[0;32mI (1850) MAIN: Starting Socket Server...[0m
+[1;31mE (1860) SOCKET_SERVER: Socket listening[0m
+[0;32mI (1860) MAIN: Starting Register Task[0m
+[0;32mI (2040) MAIN: Starting Send Message Task[0m
+[0;32mI (2040) MAIN: Starting Pool Message Task[0m
+[0;32mI (2040) main_task: Returned from app_main()[0m
+[1;31mE (5180) SOCKET_SERVER: Payload recived {"header": "pool", "username": "Roux", "hashCode": "yl37jprgr"}[0m
+[1;31mE (5180) SOCKET_SERVER: Sending to pooling queue[0m
+[1;31mE (5180) SOCKET_SERVER: Socket listening[0m
+[0;32mI (5180) POOL_MSG_TASK: Invalid token[0m
+[1;31mE (7640) SOCKET_SERVER: Payload recived {"header": "pool", "username": "Roux", "hashCode": "yl37jprgr"}[0m
+[1;31mE (7640) SOCKET_SERVER: Sending to pooling queue[0m
+[1;31mE (7640) SOCKET_SERVER: Socket listening[0m
+[0;32mI (7640) POOL_MSG_TASK: Invalid token[0m
+[1;31mE (10090) SOCKET_SERVER: Payload recived {"header": "pool", "username": "Roux", "hashCode": "yl37jprgr"}[0m
+[1;31mE (10090) SOCKET_SERVER: Sending to pooling queue[0m
+[1;31mE (10100) SOCKET_SERVER: Socket listening[0m
+[0;32mI (10100) POOL_MSG_TASK: Invalid token[0m
+[1;31mE (12450) SOCKET_SERVER: Payload recived {"header": "pool", "username": "Roux", "hashCode": "yl37jprgr"}[0m
+[1;31mE (12450) SOCKET_SERVER: Sending to pooling queue[0m
+[1;31mE (12450) SOCKET_SERVER: Socket listening[0m
+[0;32mI (12450) POOL_MSG_TASK: Invalid token[0m
+[1;31mE (14720) SOCKET_SERVER: Payload recived {"header": "pool", "username": "Roux", "hashCode": "yl37jprgr"}[0m
+[1;31mE (14720) SOCKET_SERVER: Sending to pooling queue[0m
+[1;31mE (14720) SOCKET_SERVER: Socket listening[0m
+[0;32mI (14720) POOL_MSG_TASK: Invalid token[0m
+[1;31mE (15730) SOCKET_SERVER: Payload recived {"header": "register", "username": "Weekend"}[0m
+[1;31mE (15730) SOCKET_SERVER: Sending to register queue[0m
+[1;31mE (15730) SOCKET_SERVER: Socket listening[0m
+[0;32mI (15730) REGISTER_SERVICE: New Request Recived: Weekend[0m
+[1;31mE (17160) SOCKET_SERVER: Payload recived {"header": "pool", "username": "Roux", "hashCode": "yl37jprgr"}[0m
+[1;31mE (17160) SOCKET_SERVER: Sending to pooling queue[0m
+[1;31mE (17160) SOCKET_SERVER: Socket listening[0m
+[0;32mI (17160) POOL_MSG_TASK: Invalid token[0m
+[0;32mI (17850) USER_REPO: DB: User registrado: Weekend[0m
+[1;31mE (17910) SOCKET_SERVER: Payload recived {"header": "pool", "username": "Weekend", "hashCode": "6Gu8NdADp"}[0m
+[1;31mE (17910) SOCKET_SERVER: Sending to pooling queue[0m
+E (
+assert failed: xQueueSemaphoreTake queue.c:1709 (( pxQueue ))
+
+
+Backtrace: 0x4008aac9:0x3ffcd890 0x4008aa91:0x3ffcd8b0 0x40089cb5:0x3ffcd8d0 0x4015b366:0x3ffcd9f0 0x400db479:0x3ffcda30 0x400db554:0x3ffcda50 0x4015abfe:0x3ffcda80
+
+
+
+
+ELF file SHA256: 35c6f80a6
+
+Rebooting...
+ets Jul 29 2019 12:21:46
+
+rst:0xc (SW_CPU_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0040,len:6376
+load:0x40078000,len:15900
+ho 0 tail 12 room 4
+load:0x40080400,len:3920
+entry 0x40080644
+[0;32mI (29) boot: ESP-IDF v6.1-dev-828-g41e9060961 2nd stage bootloader[0m
+[0;32mI (29) boot: compile time Nov 25 2025 21:00:15[0m
+[0;32mI (29) boot: Multicore bootloader[0m
+[0;32mI (32) boot: chip revision: v3.0[0m
+[0;32mI (35) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (39) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (42) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (46) boot: Enabling RNG early entropy source...[0m
+[0;32mI (50) boot: Partition Table:[0m
+[0;32mI (53) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (59) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (66) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (72) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (79) boot: End of partition table[0m
+[0;32mI (82) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=1b0f4h (110836) map[0m
+[0;32mI (129) esp_image: segment 1: paddr=0002b11c vaddr=3ffb0000 size=04184h ( 16772) load[0m
+[0;32mI (136) esp_image: segment 2: paddr=0002f2a8 vaddr=40080000 size=00d70h (  3440) load[0m
+[0;32mI (137) esp_image: segment 3: paddr=00030020 vaddr=400d0020 size=8ee4ch (585292) map[0m
+[0;32mI (349) esp_image: segment 4: paddr=000bee74 vaddr=40080d70 size=15d70h ( 89456) load[0m
+[0;32mI (386) esp_image: segment 5: paddr=000d4bec vaddr=50000000 size=00028h (    40) load[0m
+[0;32mI (397) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (397) boot: Disabling RNG early entropy source...[0m
+[0;32mI (408) cpu_start: Multicore app[0m
+[0;32mI (416) cpu_start: GPIO 3 and 1 are used as console UART I/O pins[0m
+[0;32mI (416) cpu_start: Pro cpu start user code[0m
+[0;32mI (416) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (418) app_init: Application information:[0m
+[0;32mI (422) app_init: Project name:     secure-chat-server[0m
+[0;32mI (427) app_init: App version:      e88e1a6-dirty[0m
+[0;32mI (431) app_init: Compile time:     Dec 14 2025 15:58:28[0m
+[0;32mI (436) app_init: ELF file SHA256:  35c6f80a6...[0m
+[0;32mI (441) app_init: ESP-IDF:          v6.1-dev-828-g41e9060961[0m
+[0;32mI (446) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (450) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (454) efuse_init: Chip rev:         v3.0[0m
+[0;32mI (458) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (464) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (469) heap_init: At 3FFB9DF8 len 00026208 (152 KiB): DRAM[0m
+[0;32mI (474) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (480) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (485) heap_init: At 40096AE0 len 00009520 (37 KiB): IRAM[0m
+[0;32mI (492) spi_flash: detected chip: generic[0m
+[0;32mI (494) spi_flash: flash io: dio[0m
+[0;33mW (497) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;33mW (509) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+[0;32mI (520) main_task: Started on CPU0[0m
+[0;32mI (530) main_task: Calling app_main()[0m
+[0;32mI (550) MAIN: Connecting to WiFi...[0m
+[0;32mI (570) wifi:wifi driver task: 3ffc1f54, prio:23, stack:6656, core=0[0m
+[0;32mI (580) wifi:wifi firmware version: 6a8253a[0m
+[0;32mI (580) wifi:wifi certification version: v7.0[0m
+[0;32mI (580) wifi:config NVS flash: enabled[0m
+[0;32mI (580) wifi:config nano formatting: disabled[0m
+[0;32mI (590) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (590) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (600) wifi:Init management short buffer num: 32[0m
+[0;32mI (600) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (610) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (610) wifi:Init static rx buffer num: 10[0m
+[0;32mI (610) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (620) wifi_init: rx ba win: 6[0m
+[0;32mI (620) wifi_init: accept mbox: 6[0m
+[0;32mI (620) wifi_init: tcpip mbox: 32[0m
+[0;32mI (630) wifi_init: udp mbox: 6[0m
+[0;32mI (630) wifi_init: tcp mbox: 6[0m
+[0;32mI (630) wifi_init: tcp tx win: 5760[0m
+[0;32mI (640) wifi_init: tcp rx win: 5760[0m
+[0;32mI (640) wifi_init: tcp mss: 1440[0m
+[0;32mI (640) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (650) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (650) phy_init: phy_version 4863,a3a4459,Oct 28 2025,14:30:06[0m
+[0;32mI (730) wifi:mode : sta (b0:a7:32:f2:cd:f0)[0m
+[0;32mI (730) wifi:enable tsf[0m
+[0;32mI (730) WIFI_STATION: wifi_init_sta finished.[0m
+[0;32mI (730) WIFI_STATION: Aguardando conexão WiFi...[0m
+[0;32mI (740) wifi:new:<8,0>, old:<1,0>, ap:<255,255>, sta:<8,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (750) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (750) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (760) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (770) wifi:<ba-add>idx:0 (ifx:0, cc:58:30:02:43:61), tid:0, ssn:0, winSize:64[0m
+[0;32mI (770) wifi:<ba-add>idx:1 (ifx:0, cc:58:30:02:43:61), tid:5, ssn:0, winSize:64[0m
+[0;32mI (790) wifi:connected with PEDRO, aid = 1, channel 8, BW20, bssid = cc:58:30:02:43:61[0m
+[0;32mI (790) wifi:security: WPA2-PSK, phy: bgn, rssi: -18[0m
+[0;32mI (790) wifi:pm start, type: 1[0m
+
+[0;32mI (790) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (840) wifi:AP's beacon interval = 102400 us, DTIM period = 1[0m
+[0;32mI (1860) esp_netif_handlers: sta ip: 192.168.0.29, mask: 255.255.255.0, gw: 192.168.0.1[0m
+[0;32mI (1860) WIFI_STATION: got ip:192.168.0.29[0m
+[0;32mI (1860) WIFI_STATION: connected to ap SSID:PEDRO[0m
+[0;32mI (1860) MAIN: Starting Socket Server...[0m
+[1;31mE (1870) SOCKET_SERVER: Socket listening[0m
+[0;32mI (1870) MAIN: Starting Register Task[0m
+[0;32mI (2050) MAIN: Starting Send Message Task[0m
+[0;32mI (2050) MAIN: Starting Pool Message Task[0m
+[0;32mI (2050) main_task: Returned from app_main()[0m
+[1;31mE (2790) SOCKET_SERVER: Payload recived {"header": "pool", "username": "Roux", "hashCode": "yl37jprgr"}[0m
+[1;31mE (2790) SOCKET_SERVER: Sending to pooling queue[0m
+[1;31mE (2790) SOCKET_SERVER: Socket listening[0m
+[0;32mI (2790) POOL_MSG_TASK: Invalid token[0m
+[1;31mE (4740) SOCKET_SERVER: Payload recived {"header": "send", "username": "Roux", "hashCode": "yl37jprgr", "msg": "eai fi"}[0m
+[1;31mE (4740) SOCKET_SERVER: Sending to sendMSGQueue[0m
+[1;31mE (4740) SOCKET_SERVER: Socket listening[0m
+[0;32mI (4740) SEND_MSG_TASK: Invalid token[0m
+[1;31mE (4970) SOCKET_SERVER: Payload recived {"header": "pool", "username": "Weekend", "hashCode": "6Gu8NdADp"}[0m
+[1;31mE (4970) SOCKET_SERVER: Sending to pooling queue[0m
+[1;31mE (4980) SOCKET_SERVER: Socket listening[0m
+[0;32mI (4980) POOL_MSG_TASK: Invalid token[0m
+[1;31mE (4980) SOCKET_SERVER: Payload recived {"header": "pool", "username": "Roux", "hashCode": "yl37jprgr"}[0m
+[1;31mE (4990) SOCKET_SERVER: Sending to pooling queue[0m
+[1;31mE (5000) SOCKET_SERVER: Socket listening[0m
+[0;32mI (5000) POOL_MSG_TASK: Invalid token[0m
+[1;31mE (7400) SOCKET_SERVER: Payload recived {"header": "pool", "username": "Weekend", "hashCode": "6Gu8NdADp"}[0m
+[1;31mE (7400) SOCKET_SERVER: Sending to pooling queue[0m
+[1;31mE (7400) SOCKET_SERVER: Socket listening[0m
+[0;32mI (7400) POOL_MSG_TASK: Invalid token[0m
+[1;31mE (7410) SOCKET_SERVER: Payload recived {"header": "pool", "username": "Roux", "hashCode": "yl37jprgr"}[0m
+[1;31mE (7420) SOCKET_SERVER: Sending to pooling queue[0m
+[1;31mE (7420) SOCKET_SERVER: Socket listening[0m
+[0;32mI (7420) POOL_MSG_TASK: Invalid token[0m
+[1;31mE (9860) SOCKET_SERVER: Payload recived {"header": "pool", "username": "Roux", "hashCode": "yl37jprgr"}[0m
+[1;31mE (9860) SOCKET_SERVER: Sending to pooling queue[0m
+[1;31mE (9860) SOCKET_SERVER: Socket listening[0m
+[0;32mI (9860) POOL_MSG_TASK: Invalid token[0m
+[1;31mE (9860) SOCKET_SERVER: Payload recived {"header": "pool", "username": "Weekend", "hashCode": "6Gu8NdADp"}[0m
+[1;31mE (9870) SOCKET_SERVER: Sending to pooling queue[0m
+[1;31mE (9880) SOCKET_SERVER: Socket listening[0m
+[0;32mI (9880) POOL_MSG_TASK: Invalid token[0m
+[1;31mE (10470) SOCKET_SERVER: Payload recived {"header": "send", "username": "Weekend", "hashCode": "6Gu8NdADp", "msg": "fala comigo"}[0m
+[1;31mE (10470) SOCKET_SERVER: Sending to sendMSGQueue[0m
+[1;31mE (10470) SOCKET_SERVER: Socket listening[0m
+[0;32mI (10470) SEND_MSG_TASK: Invalid token[0m
+[1;31mE (12310) SOCKET_SERVER: Payload recived {"header": "pool", "username": "Weekend", "hashCode": "6Gu8NdADp"}[0m
+[1;31mE (12310) SOCKET_SERVER: Sending to pooling queue[0m
+[1;31mE (12320) SOCKET_SERVER: Socket listening[0m
+[0;32mI (12320) POOL_MSG_TASK: Invalid token[0m
+[1;31mE (12320) SOCKET_SERVER: Payload recived {"header": "pool", "username": "Roux", "hashCode": "yl37jprgr"}[0m
+[1;31mE (12330) SOCKET_SERVER: Sending to pooling queue[0m
+[1;31mE (12340) SOCKET_SERVER: Socket listening[0m
+[0;32mI (12340) POOL_MSG_TASK: Invalid token[0m
+[1;31mE (14770) SOCKET_SERVER: Payload recived {"header": "pool", "username": "Weekend", "hashCode": "6Gu8NdADp"}[0m
+[1;31mE (14770) SOCKET_SERVER: Sending to pooling queue[0m
+[1;31mE (14770) SOCKET_SERVER: Socket listening[0m
+[0;32mI (14770) POOL_MSG_TASK: Invalid token[0m
+[1;31mE (14780) SOCKET_SERVER: Payload recived {"header": "pool", "username": "Roux", "hashCode": "yl37jprgr"}[0m
+[1;31mE (14790) SOCKET_SERVER: Sending to pooling queue[0m
+[1;31mE (14800) SOCKET_SERVER: Socket listening[0m
+[0;32mI (14800) POOL_MSG_TASK: Invalid token[0m
+[1;31mE (17230) SOCKET_SERVER: Payload recived {"header": "pool", "username": "Weekend", "hashCode": "6Gu8NdADp"}[0m
+[1;31mE (17230) SOCKET_SERVER: Sending to pooling queue[0m
+[1;31mE (17230) SOCKET_SERVER: Socket listening[0m
+[0;32mI (17230) POOL_MSG_TASK: Invalid token[0m
+[1;31mE (17240) SOCKET_SERVER: Payload recived {"header": "pool", "username": "Roux", "hashCode": "yl37jprgr"}[0m
+[1;31mE (17250) SOCKET_SERVER: Sending to pooling queue[0m
+[1;31mE (17260) SOCKET_SERVER: Socket listening[0m
+[0;32mI (17260) POOL_MSG_TASK: Invalid token[0m
+[1;31mE (19690) SOCKET_SERVER: Payload recived {"header": "pool", "username": "Weekend", "hashCode": "6Gu8NdADp"}[0m
+[1;31mE (19690) SOCKET_SERVER: Sending to pooling queue[0m
+[1;31mE (19690) SOCKET_SERVER: Socket listening[0m
+[0;32mI (19690) POOL_MSG_TASK: Invalid token[0m
+[1;31mE (19690) SOCKET_SERVER: Payload recived {"header": "pool", "username": "Roux", "hashCode": "yl37jprgr"}[0m
+[1;31mE (19710) SOCKET_SERVER: Sending to pooling queue[0m
+[1;31mE (19710) SOCKET_SERVER: Socket listening[0m
+[0;32mI (19710) POOL_MSG_TASK: Invalid token[0m
+[1;31mE (22150) SOCKET_SERVER: Payload recived {"header": "pool", "username": "Weekend", "hashCode": "6Gu8NdADp"}[0m
+[1;31mE (22150) SOCKET_SERVER: Sending to pooling queue[0m
+[1;31mE (22150) SOCKET_SERVER: Socket listening[0m
+[0;32mI (22150) POOL_MSG_TASK: Invalid token[0m
+[1;31mE (22160) SOCKET_SERVER: Payload recived {"header": "pool", "username": "Roux", "hashCode": "yl37jprgr"}[0m
+[1;31mE (22170) SOCKET_SERVER: Sending to pooling queue[0m
+[1;31mE (22170) SOCKET_SERVER: Socket listening[0m
+[0;32mI (22170) POOL_MSG_TASK: Invalid token[0m
+[1;31mE (24500) SOCKET_SERVER: Payload recived {"header": "pool", "username": "Weekend", "hashCode": "6Gu8NdADp"}[0m
+[1;31mE (24500) SOCKET_SERVER: Sending to pooling queue[0m
+[1;31mE (24500) SOCKET_SERVER: Socket listening[0m
+[0;32mI (24500) POOL_MSG_TASK: Invalid token[0m
+[1;31mE (24510) SOCKET_SERVER: Payload recived {"header": "pool", "username": "Roux", "hashCode": "yl37jprgr"}[0m
+[1;31mE (24520) SOCKET_SERVER: Sending to pooling queue[0m
+[1;31mE (24530) SOCKET_SERVER: Socket listening[0m
+[0;32mI (24530) POOL_MSG_TASK: Invalid token[0m
+[1;31mE (26860) SOCKET_SERVER: Payload recived {"header": "pool", "username": "Weekend", "hashCode": "6Gu8NdADp"}[0m
+[1;31mE (26860) SOCKET_SERVER: Sending to pooling queue[0m
+[1;31mE (26860) SOCKET_SERVER: Socket listening[0m
+[0;32mI (26860) POOL_MSG_TASK: Invalid token[0m
+[1;31mE (143600) SOCKET_SERVER: Payload recived {"header": "register", "username": "roxo2"}[0m
+[1;31mE (143600) SOCKET_SERVER: Sending to register queue[0m
+[1;31mE (143600) SOCKET_SERVER: Socket listening[0m
+[0;32mI (143600) REGISTER_SERVICE: New Request Recived: roxo2[0m
+[0;32mI (151870) USER_REPO: DB: User registrado: roxo2[0m
+[1;31mE (151920) SOCKET_SERVER: Payload recived {"header": "pool", "username": "roxo2", "hashCode": "GOO3AdSWR"}[0m
+[1;31mE (151920) SOCKET_SERVER: Sending to pooling queue[0m
+E (
+assert failed: xQueueSemaphoreTake queue.c:1709 (( pxQueue ))
+
+
+Backtrace: 0x4008aac9:0x3ffcd890 0x4008aa91:0x3ffcd8b0 0x40089cb5:0x3ffcd8d0 0x4015b366:0x3ffcd9f0 0x400db479:0x3ffcda30 0x400db554:0x3ffcda50 0x4015abfe:0x3ffcda80
+
+
+
+
+ELF file SHA256: 35c6f80a6
+
+Rebooting...
+ets Jul 29 2019 12:21:46
+
+rst:0xc (SW_CPU_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0040,len:6376
+load:0x40078000,len:15900
+ho 0 tail 12 room 4
+load:0x40080400,len:3920
+entry 0x40080644
+[0;32mI (29) boot: ESP-IDF v6.1-dev-828-g41e9060961 2nd stage bootloader[0m
+[0;32mI (29) boot: compile time Nov 25 2025 21:00:15[0m
+[0;32mI (29) boot: Multicore bootloader[0m
+[0;32mI (32) boot: chip revision: v3.0[0m
+[0;32mI (35) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (39) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (42) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (46) boot: Enabling RNG early entropy source...[0m
+[0;32mI (50) boot: Partition Table:[0m
+[0;32mI (53) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (59) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (66) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (72) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (79) boot: End of partition table[0m
+[0;32mI (82) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=1b0f4h (110836) map[0m
+[0;32mI (129) esp_image: segment 1: paddr=0002b11c vaddr=3ffb0000 size=04184h ( 16772) load[0m
+[0;32mI (136) esp_image: segment 2: paddr=0002f2a8 vaddr=40080000 size=00d70h (  3440) load[0m
+[0;32mI (137) esp_image: segment 3: paddr=00030020 vaddr=400d0020 size=8ee4ch (585292) map[0m
+[0;32mI (349) esp_image: segment 4: paddr=000bee74 vaddr=40080d70 size=15d70h ( 89456) load[0m
+[0;32mI (386) esp_image: segment 5: paddr=000d4bec vaddr=50000000 size=00028h (    40) load[0m
+[0;32mI (397) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (397) boot: Disabling RNG early entropy source...[0m
+[0;32mI (408) cpu_start: Multicore app[0m
+[0;32mI (416) cpu_start: GPIO 3 and 1 are used as console UART I/O pins[0m
+[0;32mI (416) cpu_start: Pro cpu start user code[0m
+[0;32mI (416) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (418) app_init: Application information:[0m
+[0;32mI (422) app_init: Project name:     secure-chat-server[0m
+[0;32mI (427) app_init: App version:      e88e1a6-dirty[0m
+[0;32mI (431) app_init: Compile time:     Dec 14 2025 15:58:28[0m
+[0;32mI (436) app_init: ELF file SHA256:  35c6f80a6...[0m
+[0;32mI (440) app_init: ESP-IDF:          v6.1-dev-828-g41e9060961[0m
+[0;32mI (446) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (450) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (454) efuse_init: Chip rev:         v3.0[0m
+[0;32mI (458) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (464) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (469) heap_init: At 3FFB9DF8 len 00026208 (152 KiB): DRAM[0m
+[0;32mI (474) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (479) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (485) heap_init: At 40096AE0 len 00009520 (37 KiB): IRAM[0m
+[0;32mI (492) spi_flash: detected chip: generic[0m
+[0;32mI (494) spi_flash: flash io: dio[0m
+[0;33mW (497) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;33mW (509) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+[0;32mI (520) main_task: Started on CPU0[0m
+[0;32mI (530) main_task: Calling app_main()[0m
+[0;32mI (550) MAIN: Connecting to WiFi...[0m
+[0;32mI (570) wifi:wifi driver task: 3ffc1f54, prio:23, stack:6656, core=0[0m
+[0;32mI (580) wifi:wifi firmware version: 6a8253a[0m
+[0;32mI (580) wifi:wifi certification version: v7.0[0m
+[0;32mI (580) wifi:config NVS flash: enabled[0m
+[0;32mI (580) wifi:config nano formatting: disabled[0m
+[0;32mI (590) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (590) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (600) wifi:Init management short buffer num: 32[0m
+[0;32mI (600) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (610) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (610) wifi:Init static rx buffer num: 10[0m
+[0;32mI (610) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (620) wifi_init: rx ba win: 6[0m
+[0;32mI (620) wifi_init: accept mbox: 6[0m
+[0;32mI (620) wifi_init: tcpip mbox: 32[0m
+[0;32mI (630) wifi_init: udp mbox: 6[0m
+[0;32mI (630) wifi_init: tcp mbox: 6[0m
+[0;32mI (630) wifi_init: tcp tx win: 5760[0m
+[0;32mI (640) wifi_init: tcp rx win: 5760[0m
+[0;32mI (640) wifi_init: tcp mss: 1440[0m
+[0;32mI (640) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (650) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (650) phy_init: phy_version 4863,a3a4459,Oct 28 2025,14:30:06[0m
+[0;32mI (730) wifi:mode : sta (b0:a7:32:f2:cd:f0)[0m
+[0;32mI (730) wifi:enable tsf[0m
+[0;32mI (730) WIFI_STATION: wifi_init_sta finished.[0m
+[0;32mI (730) WIFI_STATION: Aguardando conexão WiFi...[0m
+[0;32mI (750) wifi:new:<8,0>, old:<1,0>, ap:<255,255>, sta:<8,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (750) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (760) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (770) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (780) wifi:<ba-add>idx:0 (ifx:0, cc:58:30:02:43:61), tid:5, ssn:0, winSize:64[0m
+[0;32mI (780) wifi:<ba-add>idx:1 (ifx:0, cc:58:30:02:43:61), tid:0, ssn:0, winSize:64[0m
+[0;32mI (800) wifi:connected with PEDRO, aid = 1, channel 8, BW20, bssid = cc:58:30:02:43:61[0m
+[0;32mI (800) wifi:security: WPA2-PSK, phy: bgn, rssi: -19[0m
+[0;32mI (800) wifi:pm start, type: 1[0m
+
+[0;32mI (800) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (840) wifi:AP's beacon interval = 102400 us, DTIM period = 1[0m
+[0;32mI (2880) esp_netif_handlers: sta ip: 192.168.0.29, mask: 255.255.255.0, gw: 192.168.0.1[0m
+[0;32mI (2880) WIFI_STATION: got ip:192.168.0.29[0m
+[0;32mI (2880) WIFI_STATION: connected to ap SSID:PEDRO[0m
+[0;32mI (2880) MAIN: Starting Socket Server...[0m
+[0;32mI (2890) MAIN: Starting Register Task[0m
+[1;31mE (2890) SOCKET_SERVER: Socket listening[0m
+[0;32mI (3070) MAIN: Starting Send Message Task[0m
+[0;32mI (3070) MAIN: Starting Pool Message Task[0m
+[0;32mI (3070) main_task: Returned from app_main()[0m
+[1;31mE (5170) SOCKET_SERVER: Payload recived {"header": "pool", "username": "roxo2", "hashCode": "GOO3AdSWR"}[0m
+[1;31mE (5170) SOCKET_SERVER: Sending to pooling queue[0m
+[1;31mE (5170) SOCKET_SERVER: Socket listening[0m
+[0;32mI (5170) POOL_MSG_TASK: Invalid token[0m
+[1;31mE (7600) SOCKET_SERVER: Payload recived {"header": "pool", "username": "roxo2", "hashCode": "GOO3AdSWR"}[0m
+[1;31mE (7610) SOCKET_SERVER: Sending to pooling queue[0m
+[1;31mE (7610) SOCKET_SERVER: Socket listening[0m
+[0;32mI (7610) POOL_MSG_TASK: Invalid token[0m
+[1;31mE (10060) SOCKET_SERVER: Payload recived {"header": "pool", "username": "roxo2", "hashCode": "GOO3AdSWR"}[0m
+[1;31mE (10060) SOCKET_SERVER: Sending to pooling queue[0m
+[1;31mE (10070) SOCKET_SERVER: Socket listening[0m
+[0;32mI (10070) POOL_MSG_TASK: Invalid token[0m
+[1;31mE (12520) SOCKET_SERVER: Payload recived {"header": "pool", "username": "roxo2", "hashCode": "GOO3AdSWR"}[0m
+[1;31mE (12520) SOCKET_SERVER: Sending to pooling queue[0m
+[1;31mE (12520) SOCKET_SERVER: Socket listening[0m
+[0;32mI (12520) POOL_MSG_TASK: Invalid token[0m
+[1;31mE (14980) SOCKET_SERVER: Payload recived {"header": "pool", "username": "roxo2", "hashCode": "GOO3AdSWR"}[0m
+[1;31mE (14980) SOCKET_SERVER: Sending to pooling queue[0m
+[1;31mE (14980) SOCKET_SERVER: Socket listening[0m
+[0;32mI (14980) POOL_MSG_TASK: Invalid token[0m
+[1;31mE (17440) SOCKET_SERVER: Payload recived {"header": "pool", "username": "roxo2", "hashCode": "GOO3AdSWR"}[0m
+[1;31mE (17440) SOCKET_SERVER: Sending to pooling queue[0m
+[1;31mE (17440) SOCKET_SERVER: Socket listening[0m
+[0;32mI (17440) POOL_MSG_TASK: Invalid token[0m
+[1;31mE (19890) SOCKET_SERVER: Payload recived {"header": "pool", "username": "roxo2", "hashCode": "GOO3AdSWR"}[0m
+[1;31mE (19890) SOCKET_SERVER: Sending to pooling queue[0m
+[1;31mE (19900) SOCKET_SERVER: Socket listening[0m
+[0;32mI (19900) POOL_MSG_TASK: Invalid token[0m
+[1;31mE (22350) SOCKET_SERVER: Payload recived {"header": "pool", "username": "roxo2", "hashCode": "GOO3AdSWR"}[0m
+[1;31mE (22350) SOCKET_SERVER: Sending to pooling queue[0m
+[1;31mE (22360) SOCKET_SERVER: Socket listening[0m
+[0;32mI (22360) POOL_MSG_TASK: Invalid token[0m
+[1;31mE (24810) SOCKET_SERVER: Payload recived {"header": "pool", "username": "roxo2", "hashCode": "GOO3AdSWR"}[0m
+[1;31mE (24810) SOCKET_SERVER: Sending to pooling queue[0m
+[1;31mE (24810) SOCKET_SERVER: Socket listening[0m
+[0;32mI (24810) POOL_MSG_TASK: Invalid token[0m
+[1;31mE (27270) SOCKET_SERVER: Payload recived {"header": "pool", "username": "roxo2", "hashCode": "GOO3AdSWR"}[0m
+[1;31mE (27270) SOCKET_SERVER: Sending to pooling queue[0m
+[1;31mE (27270) SOCKET_SERVER: Socket listening[0m
+[0;32mI (27270) POOL_MSG_TASK: Invalid token[0m
+[1;31mE (29720) SOCKET_SERVER: Payload recived {"header": "pool", "username": "roxo2", "hashCode": "GOO3AdSWR"}[0m
+[1;31mE (29720) SOCKET_SERVER: Sending to pooling queue[0m
+[1;31mE (29730) SOCKET_SERVER: Socket listening[0m
+[0;32mI (29730) POOL_MSG_TASK: Invalid token[0m
+[1;31mE (32180) SOCKET_SERVER: Payload recived {"header": "pool", "username": "roxo2", "hashCode": "GOO3AdSWR"}[0m
+[1;31mE (32180) SOCKET_SERVER: Sending to pooling queue[0m
+[1;31mE (32180) SOCKET_SERVER: Socket listening[0m
+[0;32mI (32180) POOL_MSG_TASK: Invalid token[0m
+[1;31mE (34540) SOCKET_SERVER: Payload recived {"header": "pool", "username": "roxo2", "hashCode": "GOO3AdSWR"}[0m
+[1;31mE (34540) SOCKET_SERVER: Sending to pooling queue[0m
+[1;31mE (34540) SOCKET_SERVER: Socket listening[0m
+[0;32mI (34540) POOL_MSG_TASK: Invalid token[0m
+[1;31mE (36990) SOCKET_SERVER: Payload recived {"header": "pool", "username": "roxo2", "hashCode": "GOO3AdSWR"}[0m
+[1;31mE (36990) SOCKET_SERVER: Sending to pooling queue[0m
+[1;31mE (37000) SOCKET_SERVER: Socket listening[0m
+[0;32mI (37000) POOL_MSG_TASK: Invalid token[0m
+[1;31mE (39450) SOCKET_SERVER: Payload recived {"header": "pool", "username": "roxo2", "hashCode": "GOO3AdSWR"}[0m
+[1;31mE (39460) SOCKET_SERVER: Sending to pooling queue[0m
+[1;31mE (39460) SOCKET_SERVER: Socket listening[0m
+[0;32mI (39460) POOL_MSG_TASK: Invalid token[0m
+[1;31mE (41920) SOCKET_SERVER: Payload recived {"header": "pool", "username": "roxo2", "hashCode": "GOO3AdSWR"}[0m
+[1;31mE (41920) SOCKET_SERVER: Sending to pooling queue[0m
+[1;31mE (41920) SOCKET_SERVER: Socket listening[0m
+[0;32mI (41920) POOL_MSG_TASK: Invalid token[0m
+[1;31mE (44370) SOCKET_SERVER: Payload recived {"header": "pool", "username": "roxo2", "hashCode": "GOO3AdSWR"}[0m
+[1;31mE (44370) SOCKET_SERVER: Sending to pooling queue[0m
+[1;31mE (44370) SOCKET_SERVER: Socket listening[0m
+[0;32mI (44370) POOL_MSG_TASK: Invalid token[0m
+[1;31mE (46640) SOCKET_SERVER: Payload recived {"header": "pool", "username": "roxo2", "hashCode": "GOO3AdSWR"}[0m
+[1;31mE (46640) SOCKET_SERVER: Sending to pooling queue[0m
+[1;31mE (46640) SOCKET_SERVER: Socket listening[0m
+[0;32mI (46640) POOL_MSG_TASK: Invalid token[0m
+[1;31mE (48880) SOCKET_SERVER: Payload recived {"header": "pool", "username": "roxo2", "hashCode": "GOO3AdSWR"}[0m
+[1;31mE (48890) SOCKET_SERVER: Sending to pooling queue[0m
+[1;31mE (48890) SOCKET_SERVER: Socket listening[0m
+[0;32mI (48890) POOL_MSG_TASK: Invalid token[0m
+[1;31mE (52170) SOCKET_SERVER: Payload recived {"header": "register", "username": "roxo2"}[0m
+[1;31mE (52170) SOCKET_SERVER: Sending to register queue[0m
+[1;31mE (52170) SOCKET_SERVER: Socket listening[0m
+[0;32mI (52170) REGISTER_SERVICE: New Request Recived: roxo2[0m
+[1;31mE (65770) SOCKET_SERVER: Payload recived {"header": "register", "username": "roxo2"}[0m
+[1;31mE (65770) SOCKET_SERVER: Sending to register queue[0m
+[1;31mE (65770) SOCKET_SERVER: Socket listening[0m
+[0;32mI (65770) REGISTER_SERVICE: New Request Recived: roxo2[0m
+[0;32mI (68590) USER_REPO: DB: User registrado: roxo2[0m
+[1;31mE (68670) SOCKET_SERVER: Payload recived {"header": "pool", "username": "roxo2", "hashCode": "RWnmHGJyl"}[0m
+[1;31mE (68670) SOCKET_SERVER: Sending to pooling queue[0m
+E (
+assert failed: xQueueSemaphoreTake queue.c:1709 (( pxQueue ))
+
+
+Backtrace: 0x4008aac9:0x3ffcd820 0x4008aa91:0x3ffcd840 0x40089cb5:0x3ffcd860 0x4015b366:0x3ffcd980 0x400db479:0x3ffcd9c0 0x400db554:0x3ffcd9e0 0x4015abfe:0x3ffcda10
+
+
+
+
+ELF file SHA256: 35c6f80a6
+
+Rebooting...
+ets Jul 29 2019 12:21:46
+
+rst:0xc (SW_CPU_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0040,len:6376
+load:0x40078000,len:15900
+ho 0 tail 12 room 4
+load:0x40080400,len:3920
+entry 0x40080644
+[0;32mI (29) boot: ESP-IDF v6.1-dev-828-g41e9060961 2nd stage bootloader[0m
+[0;32mI (29) boot: compile time Nov 25 2025 21:00:15[0m
+[0;32mI (29) boot: Multicore bootloader[0m
+[0;32mI (32) boot: chip revision: v3.0[0m
+[0;32mI (35) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (39) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (42) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (46) boot: Enabling RNG early entropy source...[0m
+[0;32mI (50) boot: Partition Table:[0m
+[0;32mI (53) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (59) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (66) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (72) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (79) boot: End of partition table[0m
+[0;32mI (82) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=1b0f4h (110836) map[0m
+[0;32mI (129) esp_image: segment 1: paddr=0002b11c vaddr=3ffb0000 size=04184h ( 16772) load[0m
+[0;32mI (136) esp_image: segment 2: paddr=0002f2a8 vaddr=40080000 size=00d70h (  3440) load[0m
+[0;32mI (137) esp_image: segment 3: paddr=00030020 vaddr=400d0020 size=8ee4ch (585292) map[0m
+[0;32mI (349) esp_image: segment 4: paddr=000bee74 vaddr=40080d70 size=15d70h ( 89456) load[0m
+[0;32mI (386) esp_image: segment 5: paddr=000d4bec vaddr=50000000 size=00028h (    40) load[0m
+[0;32mI (397) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (397) boot: Disabling RNG early entropy source...[0m
+[0;32mI (408) cpu_start: Multicore app[0m
+[0;32mI (416) cpu_start: GPIO 3 and 1 are used as console UART I/O pins[0m
+[0;32mI (416) cpu_start: Pro cpu start user code[0m
+[0;32mI (416) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (418) app_init: Application information:[0m
+[0;32mI (422) app_init: Project name:     secure-chat-server[0m
+[0;32mI (427) app_init: App version:      e88e1a6-dirty[0m
+[0;32mI (431) app_init: Compile time:     Dec 14 2025 15:58:28[0m
+[0;32mI (436) app_init: ELF file SHA256:  35c6f80a6...[0m
+[0;32mI (440) app_init: ESP-IDF:          v6.1-dev-828-g41e9060961[0m
+[0;32mI (446) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (450) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (454) efuse_init: Chip rev:         v3.0[0m
+[0;32mI (458) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (464) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (469) heap_init: At 3FFB9DF8 len 00026208 (152 KiB): DRAM[0m
+[0;32mI (474) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (479) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (485) heap_init: At 40096AE0 len 00009520 (37 KiB): IRAM[0m
+[0;32mI (492) spi_flash: detected chip: generic[0m
+[0;32mI (494) spi_flash: flash io: dio[0m
+[0;33mW (497) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;33mW (509) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+[0;32mI (520) main_task: Started on CPU0[0m
+[0;32mI (530) main_task: Calling app_main()[0m
+[0;32mI (550) MAIN: Connecting to WiFi...[0m
+[0;32mI (570) wifi:wifi driver task: 3ffc1f54, prio:23, stack:6656, core=0[0m
+[0;32mI (580) wifi:wifi firmware version: 6a8253a[0m
+[0;32mI (580) wifi:wifi certification version: v7.0[0m
+[0;32mI (580) wifi:config NVS flash: enabled[0m
+[0;32mI (580) wifi:config nano formatting: disabled[0m
+[0;32mI (590) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (590) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (600) wifi:Init management short buffer num: 32[0m
+[0;32mI (600) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (610) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (610) wifi:Init static rx buffer num: 10[0m
+[0;32mI (610) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (620) wifi_init: rx ba win: 6[0m
+[0;32mI (620) wifi_init: accept mbox: 6[0m
+[0;32mI (620) wifi_init: tcpip mbox: 32[0m
+[0;32mI (630) wifi_init: udp mbox: 6[0m
+[0;32mI (630) wifi_init: tcp mbox: 6[0m
+[0;32mI (630) wifi_init: tcp tx win: 5760[0m
+[0;32mI (640) wifi_init: tcp rx win: 5760[0m
+[0;32mI (640) wifi_init: tcp mss: 1440[0m
+[0;32mI (640) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (650) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (650) phy_init: phy_version 4863,a3a4459,Oct 28 2025,14:30:06[0m
+[0;32mI (730) wifi:mode : sta (b0:a7:32:f2:cd:f0)[0m
+[0;32mI (730) wifi:enable tsf[0m
+[0;32mI (730) WIFI_STATION: wifi_init_sta finished.[0m
+[0;32mI (730) WIFI_STATION: Aguardando conexão WiFi...[0m
+[0;32mI (740) wifi:new:<8,0>, old:<1,0>, ap:<255,255>, sta:<8,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (740) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (750) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (760) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (770) wifi:<ba-add>idx:0 (ifx:0, cc:58:30:02:43:61), tid:0, ssn:0, winSize:64[0m
+[0;32mI (770) wifi:<ba-add>idx:1 (ifx:0, cc:58:30:02:43:61), tid:5, ssn:0, winSize:64[0m
+[0;32mI (790) wifi:connected with PEDRO, aid = 1, channel 8, BW20, bssid = cc:58:30:02:43:61[0m
+[0;32mI (790) wifi:security: WPA2-PSK, phy: bgn, rssi: -20[0m
+[0;32mI (790) wifi:pm start, type: 1[0m
+
+[0;32mI (790) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (840) wifi:AP's beacon interval = 102400 us, DTIM period = 1[0m
+[0;32mI (2890) esp_netif_handlers: sta ip: 192.168.0.29, mask: 255.255.255.0, gw: 192.168.0.1[0m
+[0;32mI (2890) WIFI_STATION: got ip:192.168.0.29[0m
+[0;32mI (2890) WIFI_STATION: connected to ap SSID:PEDRO[0m
+[0;32mI (2890) MAIN: Starting Socket Server...[0m
+[0;32mI (2900) MAIN: Starting Register Task[0m
+[1;31mE (2900) SOCKET_SERVER: Socket listening[0m
+[0;32mI (3080) MAIN: Starting Send Message Task[0m
+[0;32mI (3080) MAIN: Starting Pool Message Task[0m
+[0;32mI (3080) main_task: Returned from app_main()[0m
+[1;31mE (5350) SOCKET_SERVER: Payload recived {"header": "pool", "username": "roxo2", "hashCode": "RWnmHGJyl"}[0m
+[1;31mE (5350) SOCKET_SERVER: Sending to pooling queue[0m
+[1;31mE (5360) SOCKET_SERVER: Socket listening[0m
+[0;32mI (5360) POOL_MSG_TASK: Invalid token[0m
+[1;31mE (7810) SOCKET_SERVER: Payload recived {"header": "pool", "username": "roxo2", "hashCode": "RWnmHGJyl"}[0m
+[1;31mE (7810) SOCKET_SERVER: Sending to pooling queue[0m
+[1;31mE (7810) SOCKET_SERVER: Socket listening[0m
+[0;32mI (7810) POOL_MSG_TASK: Invalid token[0m
+[1;31mE (10270) SOCKET_SERVER: Payload recived {"header": "pool", "username": "roxo2", "hashCode": "RWnmHGJyl"}[0m
+[1;31mE (10270) SOCKET_SERVER: Sending to pooling queue[0m
+[1;31mE (10270) SOCKET_SERVER: Socket listening[0m
+[0;32mI (10270) POOL_MSG_TASK: Invalid token[0m
+[1;31mE (12730) SOCKET_SERVER: Payload recived {"header": "pool", "username": "roxo2", "hashCode": "RWnmHGJyl"}[0m
+[1;31mE (12730) SOCKET_SERVER: Sending to pooling queue[0m
+[1;31mE (12730) SOCKET_SERVER: Socket listening[0m
+[0;32mI (12730) POOL_MSG_TASK: Invalid token[0m
+[1;31mE (15180) SOCKET_SERVER: Payload recived {"header": "pool", "username": "roxo2", "hashCode": "RWnmHGJyl"}[0m
+[1;31mE (15180) SOCKET_SERVER: Sending to pooling queue[0m
+[1;31mE (15180) SOCKET_SERVER: Socket listening[0m
+[0;32mI (15180) POOL_MSG_TASK: Invalid token[0m
+[1;31mE (17640) SOCKET_SERVER: Payload recived {"header": "pool", "username": "roxo2", "hashCode": "RWnmHGJyl"}[0m
+[1;31mE (17640) SOCKET_SERVER: Sending to pooling queue[0m
+[1;31mE (17650) SOCKET_SERVER: Socket listening[0m
+[0;32mI (17650) POOL_MSG_TASK: Invalid token[0m
+[1;31mE (20100) SOCKET_SERVER: Payload recived {"header": "pool", "username": "roxo2", "hashCode": "RWnmHGJyl"}[0m
+[1;31mE (20100) SOCKET_SERVER: Sending to pooling queue[0m
+[1;31mE (20100) SOCKET_SERVER: Socket listening[0m
+[0;32mI (20100) POOL_MSG_TASK: Invalid token[0m
+[1;31mE (22560) SOCKET_SERVER: Payload recived {"header": "pool", "username": "roxo2", "hashCode": "RWnmHGJyl"}[0m
+[1;31mE (22560) SOCKET_SERVER: Sending to pooling queue[0m
+[1;31mE (22560) SOCKET_SERVER: Socket listening[0m
+[0;32mI (22560) POOL_MSG_TASK: Invalid token[0m
+[1;31mE (25010) SOCKET_SERVER: Payload recived {"header": "pool", "username": "roxo2", "hashCode": "RWnmHGJyl"}[0m
+[1;31mE (25010) SOCKET_SERVER: Sending to pooling queue[0m
+[1;31mE (25010) SOCKET_SERVER: Socket listening[0m
+[0;32mI (25010) POOL_MSG_TASK: Invalid token[0m
+[1;31mE (27470) SOCKET_SERVER: Payload recived {"header": "pool", "username": "roxo2", "hashCode": "RWnmHGJyl"}[0m
+[1;31mE (27470) SOCKET_SERVER: Sending to pooling queue[0m
+[1;31mE (27470) SOCKET_SERVER: Socket listening[0m
+[0;32mI (27470) POOL_MSG_TASK: Invalid token[0m
+[1;31mE (29640) SOCKET_SERVER: Payload recived {"header": "pool", "username": "roxo2", "hashCode": "RWnmHGJyl"}[0m
+[1;31mE (29640) SOCKET_SERVER: Sending to pooling queue[0m
+[1;31mE (29640) SOCKET_SERVER: Socket listening[0m
+[0;32mI (29640) POOL_MSG_TASK: Invalid token[0m
+[1;31mE (31900) SOCKET_SERVER: Payload recived {"header": "pool", "username": "roxo2", "hashCode": "RWnmHGJyl"}[0m
+[1;31mE (31900) SOCKET_SERVER: Sending to pooling queue[0m
+[1;31mE (31900) SOCKET_SERVER: Socket listening[0m
+[0;32mI (31900) POOL_MSG_TASK: Invalid token[0m
+[1;31mE (34050) SOCKET_SERVER: Payload recived {"header": "pool", "username": "roxo2", "hashCode": "RWnmHGJyl"}[0m
+[1;31mE (34050) SOCKET_SERVER: Send

@@ -20,12 +20,12 @@ void handle_sendMsg_queue(void* pvParameters){
 
         xQueueReceive(sendMsgQueue, (void*)&req, portMAX_DELAY);
 
-        if(req->username == "" || req->hashCode == "" || req->msg == ""){
+        if(strcmp(req->username, "") == 0 || strcmp(req->hashCode, "") == 0 || strcmp(req->msg, "") == 0){
             ESP_LOGI(TAG, "Invalid payload");
             cJSON_AddStringToObject(res, "error", "Invalid payload");
         }
 
-        else if(!user_repo_auth(req->username, req->hashCode)){
+        else if(user_repo_auth(req->username, req->hashCode)){
             msg_repo_save(req->username, req->msg);
             ESP_LOGI(TAG, "Message saved: %s", req->msg);
 
@@ -43,6 +43,8 @@ void handle_sendMsg_queue(void* pvParameters){
             send(req->client_sock, json_string, strlen(json_string), 0);
             free(json_string);
         }
+
+        close(req->client_sock);
 
         free(req);
         cJSON_Delete(res);

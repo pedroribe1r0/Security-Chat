@@ -32,14 +32,13 @@ void msg_repo_save(const char* sender, const char* content) {
             head = 0;
         }
 
-        
-
         xSemaphoreGive(xMsgMutex);
     }
 }
 
 ChatMessage* msg_repo_get_all(int* return_count) {
     ChatMessage* buffer = (ChatMessage*)malloc(MAX_HISTORY * sizeof(ChatMessage));
+    if (xMsgMutex == NULL) msg_repo_init();
     
     if (buffer == NULL) return NULL; // Falta de RAM
 

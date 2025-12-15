@@ -120,7 +120,7 @@ static void handle_register_queue(void *pvParameters){
             }
 
             else{
-                cJSON_AddStringToObject(res, "erro", "Invalid username");
+                cJSON_AddStringToObject(res, "error", "Invalid username");
             }
 
             char *json_string = cJSON_Print(res);

@@ -1,0 +1,40 @@
+{
+  "name": "secure-chat-client",
+  "version": "1.0.0",
+  "description": "Cliente Secure Chat ESP32",
+  "main": "electron-main.js",
+  "scripts": {
+    "start": "electron .",
+    "prebuild": "cd frontend && npm install && npm run build && cd ../backend && npm install && npm run build",
+    "dist": "npm run prebuild && electron-builder"
+  },
+  "build": {
+    "appId": "com.securechat.app",
+    "productName": "Secure Chat",
+    "files": [
+      "electron-main.js",
+      "frontend/dist/**/*",
+      "backend/dist/**/*",
+      "backend/node_modules/**/*",
+      "package.json"
+    ],
+    "directories": {
+      "output": "dist-electron"
+    },
+    "win": {
+      "target": "nsis",
+      "icon": "icon.ico"
+    },
+    "mac": {
+      "target": "dmg"
+    },
+    "linux": {
+      "target": "AppImage"
+    },
+    "asar": true 
+  },
+  "devDependencies": {
+    "electron": "^28.0.0",
+    "electron-builder": "^24.9.1"
+  }
+}

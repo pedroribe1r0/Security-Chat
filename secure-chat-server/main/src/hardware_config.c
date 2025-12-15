@@ -10,7 +10,7 @@
 #define LCD_ADDR          0x27         
 #define TAG_LCD           "LCD"
 
-// Mudei 'char' para 'uint8_t' para garantir precisão nos bits
+
 void lcd_send_cmd (uint8_t cmd) {
   uint8_t data_u, data_l;
   uint8_t data_t[4];
@@ -37,7 +37,6 @@ void lcd_send_data (uint8_t data) {
 
 void lcd_clear (void) {
     lcd_send_cmd(0x01);
-    // <--- MUDANÇA 2: Aumentei drasticamente para garantir que limpou
     vTaskDelay(pdMS_TO_TICKS(10)); 
 }
 
